@@ -1,6 +1,6 @@
 # Data Science Across Disciplines
 
-This repository contains the handbook for [IM939: Data Science Across Disciplines](https://cagatayturkay.github.io/data-science-across-disciplines), taught at the [Centre for Interdisciplinary Methodologies](https://warwick.ac.uk/fac/cross_fac/cim/) at the University of Warwick.
+This repository contains the handbook for [IM939: Data Science Across Disciplines](https://warwick.ac.uk/fac/cross_fac/cim/apply-to-study/cross-disciplinary-postgraduate-modules/im939-data-science-across-disciplines), taught at the [Centre for Interdisciplinary Methodologies](https://warwick.ac.uk/fac/cross_fac/cim/) at the University of Warwick.
 
 ![IM939 Logo](media/IM939_logo.png)
 
@@ -11,5 +11,3 @@ Teaching Staff (2023-24):
 - [Cagatay Turkay](https://warwick.ac.uk/fac/cross_fac/cim/people/cagatay-turkay/) (Module leader)
 - [Kavin Narasimhan](https://warwick.ac.uk/fac/cross_fac/cim/people/kavin-narasimhan/)
 - [Carlos Cámara-Menoyo](https://warwick.ac.uk/fac/cross_fac/cim/people/carlos-camara/)
-
-
