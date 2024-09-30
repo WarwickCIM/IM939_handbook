@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Science Across Disciplines - 30&nbsp; IM939 - Lab 6 Part 5 Simpson’s Paradox</title>
+<title>30&nbsp; IM939 - Lab 6 Part 5 Simpson’s Paradox – Data Science Across Disciplines</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -82,7 +82,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -91,21 +97,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
-<meta name="twitter:title" content="Data Science Across Disciplines - 30&nbsp; IM939 - Lab 6 Part 5 Simpson’s Paradox">
+<meta name="twitter:title" content="30&nbsp; IM939 - Lab 6 Part 5 Simpson’s Paradox – Data Science Across Disciplines">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_6/IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-10-output-2.png">
-<meta name="twitter:image-height" content="822">
-<meta name="twitter:image-width" content="1132">
+<meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_6/media/IM939_logo.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -115,13 +120,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/sessions/session-06.html">Recognising and avoiding traps</a></li><li class="breadcrumb-item"><a href="../../../content/labs/Lab_6/IM939_Lab_6_5-Simpsons_Paradox.html"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">IM939 - Lab 6 Part 5 Simpson's Paradox</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/sessions/session-06.html">Recognising and avoiding traps</a></li><li class="breadcrumb-item"><a href="../../../content/labs/Lab_6/IM939_Lab_6_5-Simpsons_Paradox.html"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">IM939 - Lab 6 Part 5 Simpson’s Paradox</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -130,7 +135,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../../../index.html" class="sidebar-logo-link">
       <img src="../../../media/IM939_logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -138,7 +143,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="sidebar-title mb-0 py-0">
       <a href="../../../">Data Science Across Disciplines</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/WarwickCIM/IM939_handbook" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/WarwickCIM/IM939_handbook" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
     </div>
       </div>
@@ -157,9 +162,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">About</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -192,9 +197,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Introduction and Historical Perspectives</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -227,9 +232,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">Thinking Data: Theoretical and Practical Concerns</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -268,9 +273,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
  <span class="menu-text">Abstractions &amp; Models</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -303,9 +308,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Structures &amp; Spaces</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -344,9 +349,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
  <span class="menu-text">Multi-model thinking and rigour</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -391,9 +396,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Recognising and avoiding traps</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -438,9 +443,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
  <span class="menu-text">Data Science &amp; Society</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -473,9 +478,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Data Science Workshop</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -508,9 +513,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -532,7 +537,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -569,12 +574,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/WarwickCIM/IM939_handbook/blob/main/content/labs/Lab_6/IM939_Lab_6_5-Simpsons_Paradox.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/WarwickCIM/IM939_handbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.dev/WarwickCIM/IM939_handbook/blob/main/content/labs/Lab_6/IM939_Lab_6_5-Simpsons_Paradox.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/WarwickCIM/IM939_handbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/sessions/session-06.html">Recognising and avoiding traps</a></li><li class="breadcrumb-item"><a href="../../../content/labs/Lab_6/IM939_Lab_6_5-Simpsons_Paradox.html"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">IM939 - Lab 6 Part 5 Simpson’s Paradox</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">IM939 - Lab 6 Part 5 Simpson’s Paradox</span></h1>
 </div>
@@ -589,7 +594,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
+
 
 <p>In the session 6 (week 7) video we discussed the Simpson’s Paradox. You can explore some case studies in the <strong>applet</strong> by clicking <a href="https://math.usu.edu/~schneit/Statlets/Simpson's%20Paradox/">here</a></p>
 <p>Here we are going to look at the case study of <strong>“Expenditure data for developmentally-disabled California residents”</strong>. This dataset was adjusted (the original dataset you can find <a href="www.StatLit.org/XLS/2014-Taylor-Mickel-Paradox-Data.xlsx">here</a>) in order to explain the Simpson’s Paradox. You can read the research paper “Simpson’s Paradox A Data Set and Discrimination Case Study” that uses and explains this dataset <a href="http://jse.amstat.org/v22n1/mickel.pdf">here</a> There is also a <a href="http://www.amstat.org/publications/jse/v22n1/mickel/paradox_documentation.docx">documentation of the dataset</a></p>
@@ -618,19 +625,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="reading-the-dataset" class="level2" data-number="30.2">
 <h2 data-number="30.2" class="anchored" data-anchor-id="reading-the-dataset"><span class="header-section-number">30.2</span> 2 Reading the dataset</h2>
 <p>You should know the Pandas library already from the lab 1 with James. Here we are going to use it to explore the data and for pivot tables. In the folder you downloaded from the Moodle you have a dataset called ‘Lab 6 - Paradox Dataset’.</p>
-<div class="cell" data-execution_count="1">
+<div id="cell-3" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'data/Paradox_Dataset.xlsx'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>A reminder: anything with a pd. prefix comes from pandas. This is particulary useful for preventing a module from overwriting inbuilt Python functionality.</p>
 <p>Let’s have a look at our dataset</p>
-<div class="cell" data-execution_count="2">
+<div id="cell-6" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -750,7 +757,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>We have 6 columns (variables) in 1000 rows. Let’s see what type of object is our dataset and what types of objects are in the dataset.</p>
-<div class="cell" data-execution_count="3">
+<div id="cell-8" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>pandas.core.frame.DataFrame</code></pre>
@@ -762,7 +769,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="missing-values" class="level3" data-number="30.3.1">
 <h3 data-number="30.3.1" class="anchored" data-anchor-id="missing-values"><span class="header-section-number">30.3.1</span> Missing values</h3>
 <p>Let’s check if we have any missing data</p>
-<div class="cell" data-execution_count="4">
+<div id="cell-10" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -782,14 +789,14 @@ memory usage: 47.0+ KB</code></pre>
 </div>
 <p>The above tables shows that we have 1000 observations for each of 6 columns.</p>
 <p>Let’s see if there are any unexpected values.</p>
-<div class="cell" data-execution_count="5">
+<div id="cell-12" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>np.unique(df.AgeCohort)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>array([' 0-5', ' 51 +', '13-17', '18-21', '22-50', '6-12'], dtype=object)</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="6">
+<div id="cell-13" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>np.unique(df.Age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,
@@ -800,13 +807,13 @@ memory usage: 47.0+ KB</code></pre>
        95])</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="7">
+<div id="cell-14" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>np.unique(df.Gender)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>array(['Female', 'Male'], dtype=object)</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="8">
+<div id="cell-15" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>np.unique(df.Ethnicity)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>array(['American Indian', 'Asian', 'Black', 'Hispanic', 'Multi Race',
@@ -814,30 +821,32 @@ memory usage: 47.0+ KB</code></pre>
 </div>
 </div>
 <p>There aren’t any unexpected values in neither of these 4 variables. We didn’t run this command for Expenditures on purpose, as this would return us too many values. An easier way to check this variable would be just a boxplot.</p>
-<div class="cell" data-execution_count="9">
+<div id="cell-17" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df.boxplot(column<span class="op">=</span>[<span class="st">'Age'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
-<pre><code>&lt;Axes: &gt;</code></pre>
-</div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-10-output-2.png" width="566" height="411"></p>
+<div>
+<figure class="figure">
+<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-10-output-1.png" width="566" height="411" class="figure-img"></p>
+</figure>
 </div>
 </div>
-<div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df.boxplot(column<span class="op">=</span>[<span class="st">'Expenditures'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
-<pre><code>&lt;Axes: &gt;</code></pre>
 </div>
+<div id="cell-18" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>df.boxplot(column<span class="op">=</span>[<span class="st">'Expenditures'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-11-output-2.png" width="592" height="411"></p>
+<div>
+<figure class="figure">
+<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-11-output-1.png" width="592" height="411" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Let’s see a summary of data types we have here.</p>
 </section>
 <section id="data-types" class="level3" data-number="30.3.2">
 <h3 data-number="30.3.2" class="anchored" data-anchor-id="data-types"><span class="header-section-number">30.3.2</span> Data types</h3>
-<div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>df.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-20" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>Id               int64
 AgeCohort       object
@@ -849,20 +858,20 @@ dtype: object</code></pre>
 </div>
 </div>
 <p>We are creating a new categorical column cat_AgeCohort that would make our work a bit easier later. You can read more <a href="https://pandas.pydata.org/pandas-docs/version/0.23.4/generated/pandas.Categorical.html">here</a></p>
-<div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'cat_AgeCohort'</span>] <span class="op">=</span> pd.Categorical(df[<span class="st">'AgeCohort'</span>], </span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>                                     ordered<span class="op">=</span><span class="va">True</span>, </span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>                                     categories<span class="op">=</span>[<span class="st">'0-5'</span>, <span class="st">'6-12'</span>, <span class="st">'13-17'</span>, <span class="st">'18-21'</span>, <span class="st">'22-50'</span>, <span class="st">'51 +'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-22" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'cat_AgeCohort'</span>] <span class="op">=</span> pd.Categorical(df[<span class="st">'AgeCohort'</span>], </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>                                     ordered<span class="op">=</span><span class="va">True</span>, </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>                                     categories<span class="op">=</span>[<span class="st">'0-5'</span>, <span class="st">'6-12'</span>, <span class="st">'13-17'</span>, <span class="st">'18-21'</span>, <span class="st">'22-50'</span>, <span class="st">'51 +'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Here int64 mean ‘a 64-bit integer’ and ‘object’ are strings. This gives you also a hint they are different types of variables. The ‘bit’ refers to how long and precise the number is. Pandas uses data types from numpy (<a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html#basics-dtypes">pandas documentation</a>, <a href="https://numpy.org/doc/stable/user/basics.types.html?highlight=array%20interface">numpy documentation</a>). In our dataset three variables are numeric: Id, age are ordinal variables, Expenditures is a scale variable. AgeCohort is categorical and Gender and Ethnicity are nominal.<br>
 For that reason ‘data.describe’ will bring us a summary of numeric variables only.</p>
-<div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-24" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -927,13 +936,14 @@ For that reason ‘data.describe’ will bring us a summary of numeric variables
 </div>
 </div>
 <p>It doesn’t make sense to plot not numeric variables or ids. That’s why we are going to just plot age and expenditures.</p>
-<div class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>df.plot(x <span class="op">=</span> <span class="st">'Age'</span>, y <span class="op">=</span> <span class="st">'Expenditures'</span>, kind<span class="op">=</span><span class="st">'scatter'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
-<pre><code>&lt;Axes: xlabel='Age', ylabel='Expenditures'&gt;</code></pre>
-</div>
+<div id="cell-26" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df.plot(x <span class="op">=</span> <span class="st">'Age'</span>, y <span class="op">=</span> <span class="st">'Expenditures'</span>, kind<span class="op">=</span><span class="st">'scatter'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-15-output-2.png" width="610" height="429"></p>
+<div>
+<figure class="figure">
+<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-15-output-1.png" width="610" height="429" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>The pattern of data is very interesting, expecially around x-values of ca. 25. The research paper can bring us more clarification.</p>
@@ -943,18 +953,19 @@ For that reason ‘data.describe’ will bring us a summary of numeric variables
 <p>The crucial factor in this case study is age: “As consumers get older, their financial needs increase as they move out of their parent’s home, etc. Therefore, it is expected that expenditures for older consumers will be higher than for the younger consumers”</p>
 <p>In the dataset we have two age variables that both refer to the same information - age of consumers. They are saved as two distinct data types: binned ‘AgeCohort’ and unbinned ‘Age’.</p>
 <p><strong>Age categories</strong> If you look at the binned one you will notice that the categories are somewhat interesting:</p>
-<div class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'Age'</span>]].plot(kind<span class="op">=</span><span class="st">'hist'</span>, ec<span class="op">=</span><span class="st">'black'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="15">
-<pre><code>&lt;Axes: ylabel='Frequency'&gt;</code></pre>
-</div>
+<div id="cell-28" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'Age'</span>]].plot(kind<span class="op">=</span><span class="st">'hist'</span>, ec<span class="op">=</span><span class="st">'black'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-16-output-2.png" width="593" height="411"></p>
+<div>
+<figure class="figure">
+<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-16-output-1.png" width="593" height="411" class="figure-img"></p>
+</figure>
 </div>
 </div>
-<div class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"AgeCohort"</span>].describe() <span class="co">#we will receive the output for the categorical variable "AgeCohort"</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'cat_AgeCohort'</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-29" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"AgeCohort"</span>].describe() <span class="co">#we will receive the output for the categorical variable "AgeCohort"</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'cat_AgeCohort'</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>count       812
 unique        4
@@ -964,36 +975,38 @@ Name: cat_AgeCohort, dtype: object</code></pre>
 </div>
 </div>
 <p>Here we will run a bar plot of age categories.</p>
-<div class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'cat_AgeCohort'</span>].value_counts().plot(kind<span class="op">=</span><span class="st">"bar"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="17">
-<pre><code>&lt;Axes: xlabel='cat_AgeCohort'&gt;</code></pre>
-</div>
+<div id="cell-31" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'cat_AgeCohort'</span>].value_counts().plot(kind<span class="op">=</span><span class="st">"bar"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-18-output-2.png" width="575" height="455"></p>
+<div>
+<figure class="figure">
+<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-18-output-1.png" width="575" height="455" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>The default order of plot elements is ‘value count’. For the age variable it might be more useful to look at the order chronologically.</p>
-<div class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">#using sns.countplot from seaborn we will plot AgeCohort</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co">#the order in plotting this variable is really crucial, we want to have sorted by age categories</span></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="co">#here is without sorting / ordering</span></span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="co">#sns.countplot(x="AgeCohort", data=df)</span></span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="co">#here we plot the variable with sorting</span></span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>sns.countplot(x<span class="op">=</span><span class="st">"cat_AgeCohort"</span>, data<span class="op">=</span>df)</span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="co">#You can try playing with the commands below too:</span></span>
-<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="co">#sns.countplot(x="AgeCohort", data=df, order=df['AgeCohort'].value_counts().index)</span></span>
-<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a><span class="co">#sns.countplot(x="AgeCohort", data=df, order=['0-5', '6-12', '13-17', '18-21', '22-50','51+'])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="18">
-<pre><code>&lt;Axes: xlabel='cat_AgeCohort', ylabel='count'&gt;</code></pre>
-</div>
+<div id="cell-33" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">#using sns.countplot from seaborn we will plot AgeCohort</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co">#the order in plotting this variable is really crucial, we want to have sorted by age categories</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co">#here is without sorting / ordering</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co">#sns.countplot(x="AgeCohort", data=df)</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="co">#here we plot the variable with sorting</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>sns.countplot(x<span class="op">=</span><span class="st">"cat_AgeCohort"</span>, data<span class="op">=</span>df)</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="co">#You can try playing with the commands below too:</span></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a><span class="co">#sns.countplot(x="AgeCohort", data=df, order=df['AgeCohort'].value_counts().index)</span></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="co">#sns.countplot(x="AgeCohort", data=df, order=['0-5', '6-12', '13-17', '18-21', '22-50','51+'])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-19-output-2.png" width="593" height="429"></p>
+<div>
+<figure class="figure">
+<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-19-output-1.png" width="593" height="429" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Why would the data be binned in such “uneven” categories like ‘0-5 years’, ‘6-12’ and ‘22-50’? Instead of even categories e.g.&nbsp;‘0-10’, ‘11-20’, ‘21-30’ etc. or every 5 years ‘0-5’, ‘6-10’ etc.?</p>
@@ -1010,46 +1023,48 @@ Name: cat_AgeCohort, dtype: object</code></pre>
 <h3 data-number="30.4.1" class="anchored" data-anchor-id="age-x-expenditures"><span class="header-section-number">30.4.1</span> Age x expenditures</h3>
 <p>Let’s see how expenditures are distributed across age groups.</p>
 <p>We are going to use a <em>swarm plot</em> which I believe works well here to notice the paradox and “the points are adjusted (only along the categorical axis) so that they don’t overlap. This gives a better representation of the distribution of values, but it does not scale well to large numbers of observations. A swarm plot can be drawn on its own, but it is also a good complement to a box or violin plot in cases where you want to show all observations along with some representation of the underlying distribution.” Read more <a href="https://seaborn.pydata.org/generated/seaborn.swarmplot.html#seaborn.swarmplot">here</a></p>
-<div class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>sns.catplot(x<span class="op">=</span><span class="st">"AgeCohort"</span>, y<span class="op">=</span><span class="st">"Expenditures"</span>, kind<span class="op">=</span><span class="st">"swarm"</span>, data<span class="op">=</span>df)</span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co">#you can also do a boxplot if you change kind="box"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-35" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>sns.catplot(x<span class="op">=</span><span class="st">"AgeCohort"</span>, y<span class="op">=</span><span class="st">"Expenditures"</span>, kind<span class="op">=</span><span class="st">"swarm"</span>, data<span class="op">=</span>df)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co">#you can also do a boxplot if you change kind="box"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 83.5% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/_base.py:948: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
+  data_subset = grouped_data.get_group(pd_key)
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/categorical.py:3370: UserWarning: 83.5% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 35.4% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/categorical.py:3370: UserWarning: 35.4% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 76.8% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/categorical.py:3370: UserWarning: 76.8% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 58.8% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/categorical.py:3370: UserWarning: 58.8% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 14.2% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/categorical.py:3370: UserWarning: 14.2% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+  warnings.warn(msg, UserWarning)
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/categorical.py:3370: UserWarning: 84.0% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 84.0% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
-  warnings.warn(msg, UserWarning)</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 85.8% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/categorical.py:3370: UserWarning: 85.8% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 42.5% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/categorical.py:3370: UserWarning: 42.5% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 80.5% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/categorical.py:3370: UserWarning: 80.5% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 64.8% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/categorical.py:3370: UserWarning: 64.8% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 21.7% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
-  warnings.warn(msg, UserWarning)</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 86.9% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/categorical.py:3370: UserWarning: 21.7% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+  warnings.warn(msg, UserWarning)
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/categorical.py:3370: UserWarning: 86.9% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-20-output-5.png" width="469" height="468"></p>
+<div>
+<figure class="figure">
+<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-20-output-3.png" width="469" height="468" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -1057,89 +1072,98 @@ Name: cat_AgeCohort, dtype: object</code></pre>
 <h3 data-number="30.4.2" class="anchored" data-anchor-id="ethnicity"><span class="header-section-number">30.4.2</span> Ethnicity</h3>
 <p>Ethnicity could be another discriminating factor. Let’s check this here too by plotting expenditures by ethnicity.</p>
 <p>These groups reflect the demographic profile of the State of California.</p>
-<div class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>sns.catplot(x<span class="op">=</span><span class="st">"Ethnicity"</span>, y<span class="op">=</span><span class="st">"Expenditures"</span>, kind<span class="op">=</span><span class="st">"swarm"</span>, data<span class="op">=</span>df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-37" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>sns.catplot(x<span class="op">=</span><span class="st">"Ethnicity"</span>, y<span class="op">=</span><span class="st">"Expenditures"</span>, kind<span class="op">=</span><span class="st">"swarm"</span>, data<span class="op">=</span>df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 50.1% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/_base.py:948: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
+  data_subset = grouped_data.get_group(pd_key)
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/categorical.py:3370: UserWarning: 50.1% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+  warnings.warn(msg, UserWarning)
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/categorical.py:3370: UserWarning: 64.6% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+  warnings.warn(msg, UserWarning)
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/categorical.py:3370: UserWarning: 10.2% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+  warnings.warn(msg, UserWarning)
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/categorical.py:3370: UserWarning: 11.5% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+  warnings.warn(msg, UserWarning)
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/categorical.py:3370: UserWarning: 25.6% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 64.6% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/categorical.py:3370: UserWarning: 58.6% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 10.2% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/categorical.py:3370: UserWarning: 69.4% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 11.5% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/categorical.py:3370: UserWarning: 18.6% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 25.6% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
-  warnings.warn(msg, UserWarning)</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 58.6% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
-  warnings.warn(msg, UserWarning)</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 69.4% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/categorical.py:3370: UserWarning: 23.1% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 18.6% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
-  warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 23.1% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
-  warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 34.9% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/categorical.py:3370: UserWarning: 34.9% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-21-output-5.png" width="473" height="468"></p>
+<div>
+<figure class="figure">
+<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-21-output-3.png" width="473" height="468" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
 <section id="gender" class="level3" data-number="30.4.3">
 <h3 data-number="30.4.3" class="anchored" data-anchor-id="gender"><span class="header-section-number">30.4.3</span> Gender</h3>
 <p>Gender could have been another discriminating factor (as gender based discrimination is also very common). It is not the case here. See below plots to confirm these. We are plotting expenditures by gender.</p>
-<div class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="co">#sns.catplot(x="Gender", y="Expenditures", kind="swarm", data=df)</span></span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="co">#you can create even a nicer plot than for ethnicity, using tips here https://seaborn.pydata.org/tutorial/categorical.html</span></span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="co">#It's a combination of swarmplot and violin plot to show each observation along with a summary of the distribution</span></span>
-<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> sns.catplot(x<span class="op">=</span><span class="st">"Gender"</span>, y<span class="op">=</span><span class="st">"Expenditures"</span>, kind<span class="op">=</span><span class="st">"violin"</span>, inner<span class="op">=</span><span class="va">None</span>, data<span class="op">=</span>df)</span>
-<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>sns.swarmplot(x<span class="op">=</span><span class="st">"Gender"</span>, y<span class="op">=</span><span class="st">"Expenditures"</span>, color<span class="op">=</span><span class="st">"k"</span>, size<span class="op">=</span><span class="dv">3</span>, data<span class="op">=</span>df, ax<span class="op">=</span>g.ax)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-39" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co">#sns.catplot(x="Gender", y="Expenditures", kind="swarm", data=df)</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co">#you can create even a nicer plot than for ethnicity, using tips here https://seaborn.pydata.org/tutorial/categorical.html</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="co">#It's a combination of swarmplot and violin plot to show each observation along with a summary of the distribution</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> sns.catplot(x<span class="op">=</span><span class="st">"Gender"</span>, y<span class="op">=</span><span class="st">"Expenditures"</span>, kind<span class="op">=</span><span class="st">"violin"</span>, inner<span class="op">=</span><span class="va">None</span>, data<span class="op">=</span>df)</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>sns.swarmplot(x<span class="op">=</span><span class="st">"Gender"</span>, y<span class="op">=</span><span class="st">"Expenditures"</span>, color<span class="op">=</span><span class="st">"k"</span>, size<span class="op">=</span><span class="dv">3</span>, data<span class="op">=</span>df, ax<span class="op">=</span>g.ax)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 12.9% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/_base.py:948: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
+  data_subset = grouped_data.get_group(pd_key)
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/_base.py:948: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
+  data_subset = grouped_data.get_group(pd_key)
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/_base.py:948: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
+  data_subset = grouped_data.get_group(pd_key)
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/categorical.py:3370: UserWarning: 12.9% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 10.5% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/categorical.py:3370: UserWarning: 10.5% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="21">
-<pre><code>&lt;Axes: xlabel='Gender', ylabel='Expenditures'&gt;</code></pre>
-</div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 13.1% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/categorical.py:3370: UserWarning: 13.1% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 10.9% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/categorical.py:3370: UserWarning: 10.9% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-22-output-4.png" width="469" height="468"></p>
+<div>
+<figure class="figure">
+<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-22-output-3.png" width="469" height="468" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
 <section id="mean-expenditures" class="level3" data-number="30.4.4">
 <h3 data-number="30.4.4" class="anchored" data-anchor-id="mean-expenditures"><span class="header-section-number">30.4.4</span> Mean Expenditures</h3>
 <p>This was a quick visual analysis. Let’s check means to see how it looks like by age, ethnicity and gender. Why would it be also good to check medians here?</p>
-<div class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="co">#By default the aggreggate function is mean</span></span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">round</span>(df.pivot_table(index<span class="op">=</span>[<span class="st">'Ethnicity'</span>], values<span class="op">=</span>[<span class="st">'Expenditures'</span>]), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-41" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co">#By default the aggreggate function is mean</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">round</span>(df.pivot_table(index<span class="op">=</span>[<span class="st">'Ethnicity'</span>], values<span class="op">=</span>[<span class="st">'Expenditures'</span>]), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1189,13 +1213,13 @@ Name: cat_AgeCohort, dtype: object</code></pre>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">round</span>(df.pivot_table(index<span class="op">=</span>[<span class="st">'Gender'</span>], values<span class="op">=</span>[<span class="st">'Expenditures'</span>]), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-42" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">round</span>(df.pivot_table(index<span class="op">=</span>[<span class="st">'Gender'</span>], values<span class="op">=</span>[<span class="st">'Expenditures'</span>]), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1221,13 +1245,17 @@ Name: cat_AgeCohort, dtype: object</code></pre>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">round</span>(df.pivot_table(index<span class="op">=</span>[<span class="st">'cat_AgeCohort'</span>], values<span class="op">=</span>[<span class="st">'Expenditures'</span>]), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-43" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">round</span>(df.pivot_table(index<span class="op">=</span>[<span class="st">'cat_AgeCohort'</span>], values<span class="op">=</span>[<span class="st">'Expenditures'</span>]), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_1451/3240227018.py:1: FutureWarning: The default value of observed=False is deprecated and will change to observed=True in a future version of pandas. Specify observed=False to silence this warning and retain the current behavior
+  np.round(df.pivot_table(index=['cat_AgeCohort'], values=['Expenditures']), 2)</code></pre>
+</div>
 <div class="cell-output cell-output-display" data-execution_count="24">
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1269,23 +1297,27 @@ Name: cat_AgeCohort, dtype: object</code></pre>
 <h1 data-number="31"><span class="header-section-number">31</span> 5 In-depth Analysis - Outliers</h1>
 <p>Let’s try to go a bit more in-depth . We know that gender doesn’t show many differences. In age there are not big differences except for one case. Let’s focus on ethnicity then.</p>
 <p><em>We are going to use Seaborn’s ‘catplot’. In the <a href="https://seaborn.pydata.org/tutorial/categorical.html">documentation</a> we can read what are the error bars here: “In seaborn, the barplot() function operates on a full dataset and applies a function to obtain the estimate (taking the mean by default). When there are multiple observations in each category, it also uses bootstrapping to compute a confidence interval around the estimate, which is plotted using error bars.”</em></p>
-<div class="cell" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>sns.catplot(x<span class="op">=</span><span class="st">"Ethnicity"</span>, y<span class="op">=</span><span class="st">'Expenditures'</span>, </span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>            kind<span class="op">=</span><span class="st">"bar"</span>, data<span class="op">=</span>df)</span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="co">#you can also run a nested table, but the chart might be more straightforward in analysis.</span></span>
-<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a><span class="co">#np.round(df.pivot_table(index=['cat_AgeCohort','Ethnicity'], values=['Expenditures']), 2)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-46" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>sns.catplot(x<span class="op">=</span><span class="st">"Ethnicity"</span>, y<span class="op">=</span><span class="st">'Expenditures'</span>, </span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>            kind<span class="op">=</span><span class="st">"bar"</span>, data<span class="op">=</span>df)</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co">#you can also run a nested table, but the chart might be more straightforward in analysis.</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="co">#np.round(df.pivot_table(index=['cat_AgeCohort','Ethnicity'], values=['Expenditures']), 2)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-26-output-1.png" width="473" height="468"></p>
+<div>
+<figure class="figure">
+<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-26-output-1.png" width="473" height="468" class="figure-img"></p>
+</figure>
 </div>
 </div>
-<div class="cell" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">round</span>(df.pivot_table(index<span class="op">=</span>[<span class="st">'Ethnicity'</span>], values<span class="op">=</span>[<span class="st">'Expenditures'</span>]), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-47" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">round</span>(df.pivot_table(index<span class="op">=</span>[<span class="st">'Ethnicity'</span>], values<span class="op">=</span>[<span class="st">'Expenditures'</span>]), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="26">
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1336,13 +1368,13 @@ Name: cat_AgeCohort, dtype: object</code></pre>
 </div>
 </div>
 <p>So there are big differences in the averages between ethnicities. Does it mean there is discrimination?</p>
-<div class="cell" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>df.groupby(<span class="st">'Ethnicity'</span>).count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-49" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>df.groupby(<span class="st">'Ethnicity'</span>).count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="27">
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1448,15 +1480,15 @@ Name: cat_AgeCohort, dtype: object</code></pre>
 <p>2). Also, if you look into actual demographics of California State <a href="https://en.wikipedia.org/wiki/Demographics_of_California#/media/File:Ethic_California_Organized_Pie.png">here</a></p>
 <p>You will notce that the proportions of the state are similar to proportions of this case study. Hispanic and White non-Hispanic constitute a majority of California’s population.</p>
 <p>Let’s focus on the top 2 biggest groups. We can see there is a difference in the average expenditures between the White non-Hispanic and Hispanic groups.</p>
-<div class="cell" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co">##selecting cases that are either 'Hispanic' or 'White non Hispanic' </span></span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>Hispanic <span class="op">=</span> df[(df[<span class="st">"Ethnicity"</span>] <span class="op">==</span> <span class="st">'Hispanic'</span>) <span class="op">|</span> (df[<span class="st">"Ethnicity"</span>] <span class="op">==</span> <span class="st">'White not Hispanic'</span>)]</span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>Hispanic</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-51" class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co">##selecting cases that are either 'Hispanic' or 'White non Hispanic' </span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>Hispanic <span class="op">=</span> df[(df[<span class="st">"Ethnicity"</span>] <span class="op">==</span> <span class="st">'Hispanic'</span>) <span class="op">|</span> (df[<span class="st">"Ethnicity"</span>] <span class="op">==</span> <span class="st">'White not Hispanic'</span>)]</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>Hispanic</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="28">
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1587,13 +1619,17 @@ Name: cat_AgeCohort, dtype: object</code></pre>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">round</span>(Hispanic.pivot_table(index<span class="op">=</span>[<span class="st">'Ethnicity'</span>, <span class="st">'cat_AgeCohort'</span>], values<span class="op">=</span>[<span class="st">'Expenditures'</span>]), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-52" class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">round</span>(Hispanic.pivot_table(index<span class="op">=</span>[<span class="st">'Ethnicity'</span>, <span class="st">'cat_AgeCohort'</span>], values<span class="op">=</span>[<span class="st">'Expenditures'</span>]), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_1451/1448044209.py:1: FutureWarning: The default value of observed=False is deprecated and will change to observed=True in a future version of pandas. Specify observed=False to silence this warning and retain the current behavior
+  np.round(Hispanic.pivot_table(index=['Ethnicity', 'cat_AgeCohort'], values=['Expenditures']), 2)</code></pre>
+</div>
 <div class="cell-output cell-output-display" data-execution_count="29">
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1647,22 +1683,32 @@ Name: cat_AgeCohort, dtype: object</code></pre>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>sns.catplot(x<span class="op">=</span><span class="st">"cat_AgeCohort"</span>, y<span class="op">=</span><span class="st">'Expenditures'</span>, hue<span class="op">=</span><span class="st">"Ethnicity"</span>, kind<span class="op">=</span><span class="st">"bar"</span>, data<span class="op">=</span>Hispanic)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-53" class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>sns.catplot(x<span class="op">=</span><span class="st">"cat_AgeCohort"</span>, y<span class="op">=</span><span class="st">'Expenditures'</span>, hue<span class="op">=</span><span class="st">"Ethnicity"</span>, kind<span class="op">=</span><span class="st">"bar"</span>, data<span class="op">=</span>Hispanic)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/_base.py:948: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
+  data_subset = grouped_data.get_group(pd_key)
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.12/site-packages/seaborn/_base.py:948: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
+  data_subset = grouped_data.get_group(pd_key)</code></pre>
+</div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-31-output-1.png" width="620" height="468"></p>
+<div>
+<figure class="figure">
+<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-31-output-2.png" width="620" height="468" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Let’s get back to our original question : does discrimination exist in this case?</p>
 <p>“Is the typical Hispanic consumer receiving fewer funds (i.e., expenditures) than the typical White non-Hispanic consumer? If a Hispanic consumer was to file for discrimination based upon ethnicity, s/he would more than likely be asked his/her age. Since the typical amount of expenditures for Hispanics (in all but one age cohort) is higher than the typical amount of expenditures for White non-Hispanics in the respective age cohort, the discrimination claim would be refuted”.</p>
 <p>This case study shows <strong>Simpson’s Paradox</strong>. You may ask: “Why is the overall average for all consumers significantly different indicating ethnic discrimination of Hispanics, yet in all but one age cohort (18-21) the average of expenditures for Hispanic consumers are greater than those of the White non-Hispanic population?” Look at the table below.</p>
-<div class="cell" data-execution_count="31">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>pd.crosstab([Hispanic.cat_AgeCohort],Hispanic.Ethnicity)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-56" class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>pd.crosstab([Hispanic.cat_AgeCohort],Hispanic.Ethnicity)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="31">
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th">Ethnicity</th>
@@ -1706,16 +1752,16 @@ Name: cat_AgeCohort, dtype: object</code></pre>
 <p>“There are more Hispanics in the youngest four age cohorts, while the White non-Hispanics have more consumers in the oldest two age cohorts. The two populations are close in overall counts (376 vs.&nbsp;401). On top of this, consumers expenditures increase as they age to see the paradox.</p>
 <p>Expenditure average for Hispanic consumers are higher in all but one of the age cohorts, but the trend reverses when the groups are combined resulting in a lower expenditure average for all Hispanic consumers when compared to all White non-Hispanics.”</p>
 <p>“The overall Hispanic consumer population is a relatively younger when compared to the White non-Hispanic consumer population. Since the expenditures for younger consumers is lower, the overall average of expenditures for Hispanics (vs White non-Hispanics) is less.”</p>
-<div class="cell" data-execution_count="32">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>pd.crosstab(Hispanic.cat_AgeCohort,Hispanic.Ethnicity, </span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>            normalize<span class="op">=</span><span class="st">'columns'</span>)</span>
-<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="co"># values=Hispanic.Ethnicity,aggfunc=sum,</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-58" class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>pd.crosstab(Hispanic.cat_AgeCohort,Hispanic.Ethnicity, </span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>            normalize<span class="op">=</span><span class="st">'columns'</span>)</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="co"># values=Hispanic.Ethnicity,aggfunc=sum,</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="32">
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th">Ethnicity</th>
@@ -1816,18 +1862,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1859,11 +1894,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/warwickcim\.github\.io\/IM939_handbook\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1873,8 +1947,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1886,7 +1969,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1930,6 +2136,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1955,6 +2162,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -2016,12 +2249,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../content/labs/Lab_6/IM939_Lab_6_4-Exercises.html" class="pagination-link">
+      <a href="../../../content/labs/Lab_6/IM939_Lab_6_4-Exercises.html" class="pagination-link" aria-label="Exercise: Data visualisation">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Exercise: Data visualisation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../content/sessions/session-07.html" class="pagination-link">
+      <a href="../../../content/sessions/session-07.html" class="pagination-link" aria-label="Introduction">
         <span class="nav-page-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -2029,10 +2262,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left"><a href="https://warwick.ac.uk/fac/cross_fac/cim/">Centre for Interdisciplinary Methodologies</a></div>   
+    <div class="nav-footer-left">
+<p><a href="https://warwick.ac.uk/fac/cross_fac/cim/">Centre for Interdisciplinary Methodologies</a></p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
-    </div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/WarwickCIM/IM939_handbook/blob/main/content/labs/Lab_6/IM939_Lab_6_5-Simpsons_Paradox.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/WarwickCIM/IM939_handbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
@@ -2057,6 +2292,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
 
 
 
