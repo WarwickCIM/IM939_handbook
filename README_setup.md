@@ -92,14 +92,13 @@ conda env export > environment.yml
 
 This handbook relies on jupyter notebooks. Quarto renders any `*.ipynb` file into a handbook, and displays the output of any code block, according to the settings. Regretfully, that means that it executes every code cell and therefore, jupyter notebooks stores the results in the notebook too, which is not what we'd like to do.
 
-To have clean notebooks (this is, without any executed cell) in an automated way, the following command must be run within the repository's root:
+To prevent executed cells from being pushed to the repo in an automated way, the following command must be run once within the repository's root:
 
 ```bash
-$ git config --local include.path ../.gitconfig
+nbstripout --install
 ```
 
-Please note that this command only needs to be run once: the first time we are setting up the repo. More information about the implemented solution here: <https://zhauniarovich.com/post/2020/2020-10-clearing-jupyter-output-p3/>
-
+This will setup a [git filter](https://github.com/kynan/nbstripout?tab=readme-ov-file#using-as-a-git-filter) and is only needed once. Any notebooks being committed to the repo will be striped out from executed cells.
 
 ## Recreating the handbook
 

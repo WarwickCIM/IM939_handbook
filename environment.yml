@@ -9,6 +9,7 @@ dependencies:
   - pip
   - python=3.12.4
   - jupyterlab
+  - nbstripout
   - openpyxl
   - scikit-learn
   - seaborn=0.13.*
