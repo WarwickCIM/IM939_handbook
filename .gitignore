@@ -7,6 +7,7 @@
 
 # Quarto book specifics
 _book/
+_freeze/
 .jupyter_cache/
 .jupyter_checkpoints/
 */.jupyter_cache/
