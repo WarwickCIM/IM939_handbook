@@ -172,7 +172,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/about/teaching_staff.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Teaching Staff</span></a>
+ <span class="menu-text">Teaching Staff 2024-2025</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -724,7 +724,7 @@ dtype: int64</code></pre>
 <section id="sec-inputting-missing-data" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="sec-inputting-missing-data"><span class="header-section-number">8.2</span> Inputting values</h2>
 <p>A quick solution is to replace missing values with either <code>0</code> or give them a roughtly central value (the mean).</p>
-<p>To do this we use the <code>fillna</code> method, which <em>fills</em> any missing values (<code>NA</code> -Not Available or <code>NaN</code> )</p>
+<p>To do this we use the <code>fillna</code> method, which <em>fills</em> any missing values (<code>NA</code> -Not Available or <code>NaN</code> ), in this case with a <code>0</code>.</p>
 <div id="cell-11" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'imdb_rating_with_0'</span>] <span class="op">=</span> df[<span class="st">'imdb_rating'</span>].fillna(<span class="dv">0</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
