@@ -551,8 +551,14 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../README_setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Setup &amp; Usage</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../content/files-and-folders.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Working with files and directories</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Working with files and directories</span></span></a>
   </div>
 </li>
       </ul>
@@ -637,7 +643,7 @@ Copying code block’s content
 </div>
 </div>
 <p>The following is a code block:</p>
-<div id="87066e2c" class="cell" data-execution_count="1">
+<div id="d6c0f988" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a comment in a code block.</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -646,7 +652,7 @@ Copying code block’s content
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Some blocks have the resulting code below, exactly as it would appear if we ran it in a terminal using R or Python<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;In fact, this whole book has been created using literate programming, which combines text and code. The code displayed in these codeblocks has actually been run when creating the book, in exactly the same way it would have happened in a regular script.</p></div></div><div id="8861bcde" class="cell" data-execution_count="2">
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;In fact, this whole book has been created using literate programming, which combines text and code. The code displayed in these codeblocks has actually been run when creating the book, in exactly the same way it would have happened in a regular script.</p></div></div><div id="3a02dd39" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a code block with resulting code.</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"This is the output resulting from the code above"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -654,7 +660,7 @@ Copying code block’s content
 </div>
 </div>
 <p>Output can be a simple line (like above) or something more complex, like this:</p>
-<div id="94948a80" class="cell" data-execution_count="3">
+<div id="f278680b" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We are displaying the first rows (head) of a dataframe.</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -733,23 +739,23 @@ Copying code block’s content
 <div aria-describedby="fig-default-choropleth-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 
 <style>
-  #altair-viz-173cfe9c7b6c4af087a001baa72e4c83.vega-embed {
+  #altair-viz-3e2f61abe53e41a8a2a41c9bc0ec5f06.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-173cfe9c7b6c4af087a001baa72e4c83.vega-embed details,
-  #altair-viz-173cfe9c7b6c4af087a001baa72e4c83.vega-embed details summary {
+  #altair-viz-3e2f61abe53e41a8a2a41c9bc0ec5f06.vega-embed details,
+  #altair-viz-3e2f61abe53e41a8a2a41c9bc0ec5f06.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-173cfe9c7b6c4af087a001baa72e4c83"></div>
+<div id="altair-viz-3e2f61abe53e41a8a2a41c9bc0ec5f06"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-173cfe9c7b6c4af087a001baa72e4c83") {
-      outputDiv = document.getElementById("altair-viz-173cfe9c7b6c4af087a001baa72e4c83");
+    if (outputDiv.id !== "altair-viz-3e2f61abe53e41a8a2a41c9bc0ec5f06") {
+      outputDiv = document.getElementById("altair-viz-3e2f61abe53e41a8a2a41c9bc0ec5f06");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",

@@ -528,8 +528,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../README_setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Setup &amp; Usage</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../content/files-and-folders.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Working with files and directories</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Working with files and directories</span></span></a>
   </div>
 </li>
       </ul>
@@ -551,6 +557,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#histograms" id="toc-histograms" class="nav-link" data-scroll-target="#histograms"><span class="header-section-number">7.2.2</span> Histograms</a></li>
   </ul></li>
   <li><a href="#sec-dv-bibariate" id="toc-sec-dv-bibariate" class="nav-link" data-scroll-target="#sec-dv-bibariate"><span class="header-section-number">7.3</span> Bivariate - Two variables</a></li>
+  <li><a href="#dates" id="toc-dates" class="nav-link" data-scroll-target="#dates"><span class="header-section-number">7.4</span> Dates</a></li>
+  <li><a href="#multivariate" id="toc-multivariate" class="nav-link" data-scroll-target="#multivariate"><span class="header-section-number">7.5</span> Multivariate</a></li>
+  <li><a href="#how-to-make-good-decisions-on-choosing-suitable-visualisations" id="toc-how-to-make-good-decisions-on-choosing-suitable-visualisations" class="nav-link" data-scroll-target="#how-to-make-good-decisions-on-choosing-suitable-visualisations"><span class="header-section-number">7.6</span> How to make good decisions on choosing suitable visualisations?</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.dev/WarwickCIM/IM939_handbook/blob/main/content/labs/Lab_2/IM939_Lab_2_2.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/WarwickCIM/IM939_handbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -773,7 +782,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>A positively skewed distribution - many smaller values and very few high values.</p>
 </section>
 </section>
-<section id="sec-dv-bibariate" class="level2 page-columns page-full" data-number="7.3">
+<section id="sec-dv-bibariate" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="sec-dv-bibariate"><span class="header-section-number">7.3</span> Bivariate - Two variables</h2>
 <p>Sometimes, instead of visualising variables individually, we may want to see them in relation to others, so we can identify possible correlations. <strong>Scatter plots</strong> are simple ways to explore the relationship between two variables, where one is displayed on the <code>X</code> axis and the other one in the <code>Y</code> axis.</p>
 <p>We may want to see if the number of votes and the imdb rating are not independent events. In other words, we want to know if these two data variables are related. We will be creating a scatterplot using the following syntax: <code>&lt;object&gt;.plot(x = "&lt;variable1&gt;", y = "&lt;variable2&gt;", kind = "scatter")</code></p>
@@ -789,8 +798,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>That is really interesting. The episodes with the highest rating also have the greatest number of votes. There was a cleary a great outpouring of happiness there.</p>
-<div class="callout callout-style-default callout-caution callout-titled page-columns page-full">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -799,9 +808,9 @@ Which episodes were the most voted?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse page-columns page-full">
-<div class="callout-body-container callout-body page-columns page-full">
-<p>As seen previously, we could filter our dataset:</p>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>As seen previously, There are three chapters which received more than 5,000 votes, so we could filter our dataset and see which were those chapters:</p>
 <div id="cell-24" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df[df[<span class="st">'total_votes'</span>] <span class="op">&gt;</span> <span class="dv">5000</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
@@ -854,7 +863,9 @@ Which episodes were the most voted?
 </div>
 </div>
 </div>
-<p>There are three chapters which received more than 5,000 votes.</p>
+</div>
+</div>
+</div>
 <p>Excellent. We may want to know if there’s any influence of season on the ratings:</p>
 <div id="cell-27" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>df.plot(x<span class="op">=</span><span class="st">'season'</span>, y<span class="op">=</span><span class="st">'imdb_rating'</span>, kind<span class="op">=</span><span class="st">'scatter'</span>, title<span class="op">=</span><span class="st">'IMDB ratings and season'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -867,6 +878,7 @@ Which episodes were the most voted?
 </div>
 </div>
 <p>Season 8 seems to be a bit low. But nothing too extreme.</p>
+</section>
 <section id="dates" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="dates"><span class="header-section-number">7.4</span> Dates</h2>
 <p>Our data contains air date information. Currently, that column is <code>object</code> or a string.</p>
@@ -1121,10 +1133,6 @@ dtype: object</code></pre>
 <p>See a high-res version of the graphic above is here: <a href="https://github.com/Financial-Times/chart-doctor/tree/main/visual-vocabulary" class="uri">https://github.com/Financial-Times/chart-doctor/tree/main/visual-vocabulary</a></p>
 
 
-</section>
-</div>
-</div>
-</div>
 </section>
 
 
