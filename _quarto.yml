@@ -99,6 +99,7 @@ book:
     - content/references.qmd
   appendices:
      - content/labs/labs_setup.qmd
+     - README_setup.md
      - content/files-and-folders.md
 
   page-footer: 

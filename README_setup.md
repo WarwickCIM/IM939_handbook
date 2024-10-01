@@ -1,5 +1,14 @@
 # Setup & Usage {#sec-setup}
 
+::: callout-note
+
+These instructions are only relevant if you want to contribute to the handbook's content or want to recreate the book locally.
+
+:::
+
+
+## Overview
+
 This repository uses the following technologies:
 
 - `conda environments` (part of [Anaconda](https://www.anaconda.com/)) for creating and managing virtual environments
@@ -7,6 +16,23 @@ This repository uses the following technologies:
 - [jupyter](https://jupyter.org/) notebooks for course materials combining rich-text and code
 
 - [quarto](https://quarto.org) to generate the handbook from the course's notebooks and some extra `md` files.
+
+
+### Outline
+
+The workflow's outline is as follows:
+
+1. (only once per machine) Setting up the environment
+   1. conda and dependencies
+   2. quarto
+2. Activating conda environment
+3. Edit changes
+   1. in content (by editing the notebooks in `content/`folder)
+   2. in book structure
+4. Preview changes locally using `quarto preview`
+5. Adding changes to repo
+   1. Source code: by pushing commits to the repo
+   2. Live handbook: by publishing it to Github Pages using `quarto publish gh-pages`
 
 ## Setting up the environment
 
@@ -88,17 +114,46 @@ We can create a file (in this case `environment.yml`) containing the exact libra
 conda env export > environment.yml
 ```
 
+## Installing quarto
+
+Quarto is a binary that needs to be downloaded from <https://quarto.org/docs/get-started/> and manually installed by running the installer.
+
+## Editing the book's structure
+
+This handbook is organised in sections and chapters. The book's structure is defined in the project's configuration file: `_quarto.yml`, particularly in the chapters' section (Line 38). 
+
+If you want to add new structure
+
+Please, refer to this page at quarto's official documentation for more information: <https://quarto.org/docs/books/book-structure.html>
+
+### Crosslinking
+
+Quarto cross references provide automatic numbering and reference creation for figures, tables, equations, sections, listings, theorems, and proofs. In books, cross references work the same way except they can reach across chapters.
+
+Please, refer to these pages at quarto's official documentation for more information: <https://quarto.org/docs/books/book-crossrefs.html> and <https://quarto.org/docs/authoring/cross-references.html>
+
+
 ## Preventing commits with execution cells
+
+
 
 This handbook relies on jupyter notebooks. Quarto renders any `*.ipynb` file into a handbook, and displays the output of any code block, according to the settings. Regretfully, that means that it executes every code cell and therefore, jupyter notebooks stores the results in the notebook too, which is not what we'd like to do.
 
-To prevent executed cells from being pushed to the repo in an automated way, the following command must be run once within the repository's root:
+::: callout-warning
+
+### This is WIP
+
+The solution proposed below was not working. We need to find a proper solution for this, see: https://github.com/WarwickCIM/IM939_handbook/issues/4
+
+To have clean notebooks (this is, without any executed cell) in an automated way, the following command must be run within the repository's root:
 
 ```bash
-nbstripout --install
+$ git config --local include.path ../.gitconfig
 ```
 
-This will setup a [git filter](https://github.com/kynan/nbstripout?tab=readme-ov-file#using-as-a-git-filter) and is only needed once. Any notebooks being committed to the repo will be striped out from executed cells.
+Please note that this command only needs to be run once: the first time we are setting up the repo. More information about the implemented solution here: <https://zhauniarovich.com/post/2020/2020-10-clearing-jupyter-output-p3/>
+
+:::
 
 ## Recreating the handbook
 
