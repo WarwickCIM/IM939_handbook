@@ -2,23 +2,34 @@
   {
     "objectID": "content/about/teaching_staff.html",
     "href": "content/about/teaching_staff.html",
-    "title": "Teaching Staff 2024-2025",
+    "title": "Teaching Staff",
     "section": "",
     "text": "Kavin Narasimhan\nAssistant Professor\nAgent-based Modelling, Computational Modelling for Public Policy, Network Analysis, and Participatory Research Methods are my areas of research interest and expertise. I continue to work at the intersection of academic research and public policy through which I see firsthand the impact of reliable data analysis and effective story telling using data on decision-making.",
     "crumbs": [
       "About",
-      "Teaching Staff 2024-2025"
+      "Teaching Staff"
+    ]
+  },
+  {
+    "objectID": "content/about/teaching_staff.html#support-staff",
+    "href": "content/about/teaching_staff.html#support-staff",
+    "title": "Teaching Staff",
+    "section": "Support staff",
+    "text": "Support staff\n\nCagatay Turkay\n Professor, Module Convener\nMy research falls under the broad area that can be referred to as Visual Data Science and focuses on designing visualisations, interactions and computational methods to enable an effective combination of human and machine capabilities to facilitate data-intensive problem solving. I have a special interest in working on problems where high-dimensional, spatio-temporal, heterogenous and large datasets are used in answering questions with data.\n\n\nCarlos Cámara-Menoyo\n Senior Research Software Engineer\nI am a versatile, transdisciplinary, and passionate person with a mixed technical and sociological background. As a Senior Research Software Engineer, I am responsible to support research and teaching by using and developing research software while promoting an open, reproducible research culture and outputs.",
+    "crumbs": [
+      "About",
+      "Teaching Staff"
     ]
   },
   {
     "objectID": "content/about/teaching_staff.html#sec-staff-all",
     "href": "content/about/teaching_staff.html#sec-staff-all",
-    "title": "Teaching Staff 2024-2025",
+    "title": "Teaching Staff",
     "section": "Present and former staff",
     "text": "Present and former staff\nThis module has also been taught by the following people in the past (in alphabetical order):\n\nBusola Oronti, Teaching Assistant (2022-Present)\nCagatay Turkay, Professor (2020-Present)\nCarlos Cámara-Menoyo, Senior Research Software Engineer (2022-Present)\nChing Jin, Assistant Professor (2024-2025)\nEsha Nasir, Research Software Engineer (2024-25)\nJames Tripp, Senior Research Software Engineer (2020-2022)\nKavin Narasimhan, Assistant Professor (2023-Present)\nMaria Petrescu, Teaching Assistant (2021-2022)\nYulu Pi, Teaching Assistant (2022-2023)\nZofia Bednarowska-Michaiel, Teaching Fellow (2021-2022)\n\nWe would like to thank them all for their contributions to the module, some of which are also reflected in these materials.",
     "crumbs": [
       "About",
-      "Teaching Staff 2024-2025"
+      "Teaching Staff"
     ]
   },
   {
