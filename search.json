@@ -1709,26 +1709,26 @@
     "href": "README_setup.html#overview",
     "title": "Appendix B — Setup & Usage",
     "section": "",
-    "text": "conda environments (part of Anaconda) for creating and managing virtual environments\njupyter notebooks for course materials combining rich-text and code\nquarto to generate the handbook from the course’s notebooks and some extra md files.\n\n\nB.1.1 Outline\nThe workflow’s outline is as follows:\n\n(only once per machine) Setting up the environment\n\nconda and dependencies\nquarto\n\nActivating conda environment\nEdit changes\n\nin content (by editing the notebooks in content/folder)\nin book structure\n\nPreview changes locally using quarto preview\nAdding changes to repo\n\nSource code: by pushing commits to the repo\nLive handbook: by publishing it to Github Pages using quarto publish gh-pages",
+    "text": "conda environments (part of Anaconda) for creating and managing virtual environments\njupyter notebooks for course materials combining rich-text and code\nquarto to generate the handbook from the course’s notebooks and some extra md files.\n\n\nB.1.1 Outline\nThe workflow’s outline is as follows:\n\n(only once per machine) Setting up the environment\n\nconda and dependencies (Section B.2)\nquarto (Section B.3)\ngit filters (Section B.4)\n\nActivating conda environment\nEdit changes\n\nin content (by editing the notebooks in content/folder)\nin book structure\n\nPreview changes locally using quarto preview\nAdding changes to repo (Section B.6)\n\nSource code: by pushing commits to the repo\nLive handbook: by publishing it to Github Pages using quarto publish gh-pages",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>B</span>  <span class='chapter-title'>Setup & Usage</span>"
     ]
   },
   {
-    "objectID": "README_setup.html#setting-up-the-environment",
-    "href": "README_setup.html#setting-up-the-environment",
+    "objectID": "README_setup.html#sec-conda-environment",
+    "href": "README_setup.html#sec-conda-environment",
     "title": "Appendix B — Setup & Usage",
-    "section": "B.2 Setting up the environment",
-    "text": "B.2 Setting up the environment\nVirtual environments are a way to install all the dependencies (and their right version) required for a certain project by isolating python and libraries’ specific versions. Every person who recreatesthe virtual environment will be using the same packages and versions, reducing errors and increasing reproducibility.\nThis project, uses a conda environment called IM939, which will install all the packages and versions (as well as their dependencies) as defined in the file environment.yml at the root of this project.\n\nB.2.1 Installing Anaconda\nYou will need to install Anaconda distribution your machine if it is not already installed. You can run the following command to see if it is already present in your system:\nconda --help\nIf you get a command not found error, you will need to install Anaconda following these instructions on their website).\n\n\nB.2.2 Creating the virtual environment\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this once in the same machine. After the virtual environment is created we can always update it to follow any change in the file environment.yml\n\n\nTo recreate the virtual environment from environment.yml, run the following command:\nconda env create -f environment.yml\nor, if we want to install the environment within the project:\nconda env create --prefix env -f environment.yml\n\n\nB.2.3 Activating the virtual environment\nOnce the environment has been created, it needs to be activated by typing the following command\nconda activate IM939\nor, if it is stored in env/ folder:\nconda activate env/\n\n\n\n\n\n\nOnce per session\n\n\n\nYou will need to activate the environment every time you open your editor anew.\n\n\nDeactivate virtual environment:\nIf you want, you can always deactivate your environment (and, actually open the default one, called base) by running:\nconda deactivate\nUpdate virtual environment from environment.yml:\nconda env update -f environment.yml\nFreeze used dependencies into a file\nWe can create a file (in this case environment.yml) containing the exact libraries and versions used in the current environment. This can be useful to update the versions used in the environment in the future.\nconda env export &gt; environment.yml",
+    "section": "B.2 Setting up the virtual environment",
+    "text": "B.2 Setting up the virtual environment\nVirtual environments are a way to install all the dependencies (and their right version) required for a certain project by isolating python and libraries’ specific versions. Every person who recreatesthe virtual environment will be using the same packages and versions, reducing errors and increasing reproducibility.\nThis project, uses a conda environment called IM939, which will install all the packages and versions (as well as their dependencies) as defined in the file environment.yml at the root of this project.\n\nB.2.1 Installing Anaconda\nYou will need to install Anaconda distribution your machine if it is not already installed. You can run the following command to see if it is already present in your system:\nconda --help\nIf you get a command not found error, you will need to install Anaconda following these instructions on their website).\n\n\nB.2.2 Creating the virtual environment\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this once in the same machine. After the virtual environment is created we can always update it to follow any change in the file environment.yml\n\n\nTo recreate the virtual environment from environment.yml, run the following command:\nconda env create -f environment.yml\nor, if we want to install the environment within the project:\nconda env create --prefix env -f environment.yml\n\n\nB.2.3 Activating the virtual environment\nOnce the environment has been created, it needs to be activated by typing the following command\nconda activate IM939\nor, if it is stored in env/ folder:\nconda activate env/\n\n\n\n\n\n\nOnce per session\n\n\n\nYou will need to activate the environment every time you open your editor anew.\n\n\nDeactivate virtual environment:\nIf you want, you can always deactivate your environment (and, actually open the default one, called base) by running:\nconda deactivate\nUpdate virtual environment from environment.yml:\nconda env update -f environment.yml\nFreeze used dependencies into a file\nWe can create a file (in this case environment.yml) containing the exact libraries and versions used in the current environment. This can be useful to update the versions used in the environment in the future.\nconda env export &gt; environment.yml",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>B</span>  <span class='chapter-title'>Setup & Usage</span>"
     ]
   },
   {
-    "objectID": "README_setup.html#installing-quarto",
-    "href": "README_setup.html#installing-quarto",
+    "objectID": "README_setup.html#sec-quarto",
+    "href": "README_setup.html#sec-quarto",
     "title": "Appendix B — Setup & Usage",
     "section": "B.3 Installing quarto",
     "text": "B.3 Installing quarto\nQuarto is a binary that needs to be downloaded from https://quarto.org/docs/get-started/ and manually installed by running the installer.",
@@ -1738,30 +1738,30 @@
     ]
   },
   {
-    "objectID": "README_setup.html#editing-the-books-structure",
-    "href": "README_setup.html#editing-the-books-structure",
+    "objectID": "README_setup.html#sec-git-setup",
+    "href": "README_setup.html#sec-git-setup",
     "title": "Appendix B — Setup & Usage",
-    "section": "B.4 Editing the book’s structure",
-    "text": "B.4 Editing the book’s structure\nThis handbook is organised in sections and chapters. The book’s structure is defined in the project’s configuration file: _quarto.yml, particularly in the chapters’ section (Line 38).\nIf you want to add new structure\nPlease, refer to this page at quarto’s official documentation for more information: https://quarto.org/docs/books/book-structure.html\n\nB.4.1 Crosslinking\nQuarto cross references provide automatic numbering and reference creation for figures, tables, equations, sections, listings, theorems, and proofs. In books, cross references work the same way except they can reach across chapters.\nPlease, refer to these pages at quarto’s official documentation for more information: https://quarto.org/docs/books/book-crossrefs.html and https://quarto.org/docs/authoring/cross-references.html",
+    "section": "B.4 Git setup - Preventing commits with execution cells",
+    "text": "B.4 Git setup - Preventing commits with execution cells\nThis handbook relies on jupyter notebooks. Quarto renders any *.ipynb file into a handbook, and displays the output of any code block, according to the settings. Regretfully, that means that it executes every code cell and therefore, jupyter notebooks stores the results in the notebook too, which is not what we’d like to do.\nTo prevent executed cells from being pushed to the repo in an automated way, the following command must be run once within the repository’s root:\nnbstripout --install\nThis will setup a git filter and is only needed once. Any notebooks being committed to the repo will be striped out from executed cells.",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>B</span>  <span class='chapter-title'>Setup & Usage</span>"
     ]
   },
   {
-    "objectID": "README_setup.html#preventing-commits-with-execution-cells",
-    "href": "README_setup.html#preventing-commits-with-execution-cells",
+    "objectID": "README_setup.html#sec-book-structure",
+    "href": "README_setup.html#sec-book-structure",
     "title": "Appendix B — Setup & Usage",
-    "section": "B.5 Preventing commits with execution cells",
-    "text": "B.5 Preventing commits with execution cells\nThis handbook relies on jupyter notebooks. Quarto renders any *.ipynb file into a handbook, and displays the output of any code block, according to the settings. Regretfully, that means that it executes every code cell and therefore, jupyter notebooks stores the results in the notebook too, which is not what we’d like to do.\n\n\n\n\n\n\nThis is WIP\n\n\n\nThe solution proposed below was not working. We need to find a proper solution for this, see: https://github.com/WarwickCIM/IM939_handbook/issues/4\nTo have clean notebooks (this is, without any executed cell) in an automated way, the following command must be run within the repository’s root:\n$ git config --local include.path ../.gitconfig\nPlease note that this command only needs to be run once: the first time we are setting up the repo. More information about the implemented solution here: https://zhauniarovich.com/post/2020/2020-10-clearing-jupyter-output-p3/",
+    "section": "B.5 Editing the book’s structure",
+    "text": "B.5 Editing the book’s structure\nThis handbook is organised in sections and chapters. The book’s structure is defined in the project’s configuration file: _quarto.yml, particularly in the chapters’ section (Line 38).\nIf you want to add new structure\nPlease, refer to this page at quarto’s official documentation for more information: https://quarto.org/docs/books/book-structure.html\n\nB.5.1 Crosslinking\nQuarto cross references provide automatic numbering and reference creation for figures, tables, equations, sections, listings, theorems, and proofs. In books, cross references work the same way except they can reach across chapters.\nPlease, refer to these pages at quarto’s official documentation for more information: https://quarto.org/docs/books/book-crossrefs.html and https://quarto.org/docs/authoring/cross-references.html",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>B</span>  <span class='chapter-title'>Setup & Usage</span>"
     ]
   },
   {
-    "objectID": "README_setup.html#recreating-the-handbook",
-    "href": "README_setup.html#recreating-the-handbook",
+    "objectID": "README_setup.html#sec-quarto-book",
+    "href": "README_setup.html#sec-quarto-book",
     "title": "Appendix B — Setup & Usage",
     "section": "B.6 Recreating the handbook",
     "text": "B.6 Recreating the handbook\n\n\n\n\n\n\nTip\n\n\n\nQuarto has extensive documentation at their website (specifically in this page about authoring document and this other on managing books).\n\n\nThe workflow can be summarised as follows (detailed instructions below):\n\nCreate new content or edit existing one\n\nCreate a .md, .iypnb or .qmd file and put it in the /content/ folder\nAdd an entry to to the table of contents in _quarto.yml (more info in quarto\n\nEdit existing content in /content/ folder\nRender book locally to see changes\nCommit & Push changes to the source documents in /content/ folder\ngit commit -a -m \"My fancy message\"\ngit push origin main\nPublish book online\n\n\nB.6.1 Rendering the book locally:\nRendering the book will convert jupyternotebooks, qmd files or md files listed in _quarto.yml’s table of contents into a a book, applying the styles and configurations from _quarto.yml. Do this to preview how your changes would look like as a book. From the repo’s root, run:\nquarto render\n\n\n\n\n\n\nFirst time render\n\n\n\nOn its first run, this command will take several minutes to process. This is because quarto will run and execute the computations in every cell within every jupyter notebook, some of which are really time consuming. The good news, is that quarto will create a cached version of it (stored in the /_freeze/ folder) , which means that further runs of quarto render will not need to execute the cells again (unless the original jupyternotebook is changed or the corresponding folder is deleted).\nIf you want the cache to be regenerated:\nquarto render --cache-refresh\n\n\n\n\nB.6.2 Publishing book to github pages\nThis book is published using GitHub pages, and assumes that your rendered book will be located on a dedicated branch called gh-pages which needs to be created in the repo if not present already. Also, the repository needs to be configured as to use that branch’s root for publishing a GithubPage.\nOnce gh-pagesbranch has been created, run the following command:\nquarto publish gh-pages   \nThis command will render the book in the branch gh-pages and will push it to the corresponding branch in our repo and then checking out again to the previous branch (usually, main). More info about it here: https://quarto.org/docs/publishing/github-pages.html\n\n\n\n\n\n\nOther useful resources\n\n\n\n\nNotebook embedding: https://quarto.org/docs/authoring/notebook-embed.html",

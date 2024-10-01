@@ -553,19 +553,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#outline" id="toc-outline" class="nav-link" data-scroll-target="#outline"><span class="header-section-number">B.1.1</span> Outline</a></li>
   </ul></li>
-  <li><a href="#setting-up-the-environment" id="toc-setting-up-the-environment" class="nav-link" data-scroll-target="#setting-up-the-environment"><span class="header-section-number">B.2</span> Setting up the environment</a>
+  <li><a href="#sec-conda-environment" id="toc-sec-conda-environment" class="nav-link" data-scroll-target="#sec-conda-environment"><span class="header-section-number">B.2</span> Setting up the virtual environment</a>
   <ul class="collapse">
   <li><a href="#installing-anaconda" id="toc-installing-anaconda" class="nav-link" data-scroll-target="#installing-anaconda"><span class="header-section-number">B.2.1</span> Installing Anaconda</a></li>
   <li><a href="#creating-the-virtual-environment" id="toc-creating-the-virtual-environment" class="nav-link" data-scroll-target="#creating-the-virtual-environment"><span class="header-section-number">B.2.2</span> Creating the virtual environment</a></li>
   <li><a href="#activating-the-virtual-environment" id="toc-activating-the-virtual-environment" class="nav-link" data-scroll-target="#activating-the-virtual-environment"><span class="header-section-number">B.2.3</span> Activating the virtual environment</a></li>
   </ul></li>
-  <li><a href="#installing-quarto" id="toc-installing-quarto" class="nav-link" data-scroll-target="#installing-quarto"><span class="header-section-number">B.3</span> Installing quarto</a></li>
-  <li><a href="#editing-the-books-structure" id="toc-editing-the-books-structure" class="nav-link" data-scroll-target="#editing-the-books-structure"><span class="header-section-number">B.4</span> Editing the book’s structure</a>
+  <li><a href="#sec-quarto" id="toc-sec-quarto" class="nav-link" data-scroll-target="#sec-quarto"><span class="header-section-number">B.3</span> Installing quarto</a></li>
+  <li><a href="#sec-git-setup" id="toc-sec-git-setup" class="nav-link" data-scroll-target="#sec-git-setup"><span class="header-section-number">B.4</span> Git setup - Preventing commits with execution cells</a></li>
+  <li><a href="#sec-book-structure" id="toc-sec-book-structure" class="nav-link" data-scroll-target="#sec-book-structure"><span class="header-section-number">B.5</span> Editing the book’s structure</a>
   <ul class="collapse">
-  <li><a href="#crosslinking" id="toc-crosslinking" class="nav-link" data-scroll-target="#crosslinking"><span class="header-section-number">B.4.1</span> Crosslinking</a></li>
+  <li><a href="#crosslinking" id="toc-crosslinking" class="nav-link" data-scroll-target="#crosslinking"><span class="header-section-number">B.5.1</span> Crosslinking</a></li>
   </ul></li>
-  <li><a href="#preventing-commits-with-execution-cells" id="toc-preventing-commits-with-execution-cells" class="nav-link" data-scroll-target="#preventing-commits-with-execution-cells"><span class="header-section-number">B.5</span> Preventing commits with execution cells</a></li>
-  <li><a href="#recreating-the-handbook" id="toc-recreating-the-handbook" class="nav-link" data-scroll-target="#recreating-the-handbook"><span class="header-section-number">B.6</span> Recreating the handbook</a>
+  <li><a href="#sec-quarto-book" id="toc-sec-quarto-book" class="nav-link" data-scroll-target="#sec-quarto-book"><span class="header-section-number">B.6</span> Recreating the handbook</a>
   <ul class="collapse">
   <li><a href="#rendering-the-book-locally" id="toc-rendering-the-book-locally" class="nav-link" data-scroll-target="#rendering-the-book-locally"><span class="header-section-number">B.6.1</span> Rendering the book locally:</a></li>
   <li><a href="#publishing-book-to-github-pages" id="toc-publishing-book-to-github-pages" class="nav-link" data-scroll-target="#publishing-book-to-github-pages"><span class="header-section-number">B.6.2</span> Publishing book to github pages</a></li>
@@ -622,8 +622,9 @@ Note
 <ol type="1">
 <li>(only once per machine) Setting up the environment
 <ol type="1">
-<li>conda and dependencies</li>
-<li>quarto</li>
+<li>conda and dependencies (<a href="#sec-conda-environment" class="quarto-xref"><span>Section B.2</span></a>)</li>
+<li>quarto (<a href="#sec-quarto" class="quarto-xref"><span>Section B.3</span></a>)</li>
+<li>git filters (<a href="#sec-git-setup" class="quarto-xref"><span>Section B.4</span></a>)</li>
 </ol></li>
 <li>Activating conda environment</li>
 <li>Edit changes
@@ -632,7 +633,7 @@ Note
 <li>in book structure</li>
 </ol></li>
 <li>Preview changes locally using <code>quarto preview</code></li>
-<li>Adding changes to repo
+<li>Adding changes to repo (<a href="#sec-quarto-book" class="quarto-xref"><span>Section B.6</span></a>)
 <ol type="1">
 <li>Source code: by pushing commits to the repo</li>
 <li>Live handbook: by publishing it to Github Pages using <code>quarto publish gh-pages</code></li>
@@ -640,8 +641,8 @@ Note
 </ol>
 </section>
 </section>
-<section id="setting-up-the-environment" class="level2" data-number="B.2">
-<h2 data-number="B.2" class="anchored" data-anchor-id="setting-up-the-environment"><span class="header-section-number">B.2</span> Setting up the environment</h2>
+<section id="sec-conda-environment" class="level2" data-number="B.2">
+<h2 data-number="B.2" class="anchored" data-anchor-id="sec-conda-environment"><span class="header-section-number">B.2</span> Setting up the virtual environment</h2>
 <p>Virtual environments are a way to install all the dependencies (and their right version) required for a certain project by isolating python and libraries’ specific versions. Every person who recreatesthe virtual environment will be using the same packages and versions, reducing errors and increasing reproducibility.</p>
 <p>This project, uses a <code>conda</code> environment called <code>IM939</code>, which will install all the packages and versions (as well as their dependencies) as defined in the file <code>environment.yml</code> at the root of this project.</p>
 <section id="installing-anaconda" class="level3" data-number="B.2.1">
@@ -699,43 +700,30 @@ Once per session
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env export <span class="op">&gt;</span> environment.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="installing-quarto" class="level2" data-number="B.3">
-<h2 data-number="B.3" class="anchored" data-anchor-id="installing-quarto"><span class="header-section-number">B.3</span> Installing quarto</h2>
+<section id="sec-quarto" class="level2" data-number="B.3">
+<h2 data-number="B.3" class="anchored" data-anchor-id="sec-quarto"><span class="header-section-number">B.3</span> Installing quarto</h2>
 <p>Quarto is a binary that needs to be downloaded from <a href="https://quarto.org/docs/get-started/" class="uri">https://quarto.org/docs/get-started/</a> and manually installed by running the installer.</p>
 </section>
-<section id="editing-the-books-structure" class="level2" data-number="B.4">
-<h2 data-number="B.4" class="anchored" data-anchor-id="editing-the-books-structure"><span class="header-section-number">B.4</span> Editing the book’s structure</h2>
+<section id="sec-git-setup" class="level2" data-number="B.4">
+<h2 data-number="B.4" class="anchored" data-anchor-id="sec-git-setup"><span class="header-section-number">B.4</span> Git setup - Preventing commits with execution cells</h2>
+<p>This handbook relies on jupyter notebooks. Quarto renders any <code>*.ipynb</code> file into a handbook, and displays the output of any code block, according to the settings. Regretfully, that means that it executes every code cell and therefore, jupyter notebooks stores the results in the notebook too, which is not what we’d like to do.</p>
+<p>To prevent executed cells from being pushed to the repo in an automated way, the following command must be run once within the repository’s root:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nbstripout</span> <span class="at">--install</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will setup a <a href="https://github.com/kynan/nbstripout?tab=readme-ov-file#using-as-a-git-filter">git filter</a> and is only needed once. Any notebooks being committed to the repo will be striped out from executed cells.</p>
+</section>
+<section id="sec-book-structure" class="level2" data-number="B.5">
+<h2 data-number="B.5" class="anchored" data-anchor-id="sec-book-structure"><span class="header-section-number">B.5</span> Editing the book’s structure</h2>
 <p>This handbook is organised in sections and chapters. The book’s structure is defined in the project’s configuration file: <code>_quarto.yml</code>, particularly in the chapters’ section (Line 38).</p>
 <p>If you want to add new structure</p>
 <p>Please, refer to this page at quarto’s official documentation for more information: <a href="https://quarto.org/docs/books/book-structure.html" class="uri">https://quarto.org/docs/books/book-structure.html</a></p>
-<section id="crosslinking" class="level3" data-number="B.4.1">
-<h3 data-number="B.4.1" class="anchored" data-anchor-id="crosslinking"><span class="header-section-number">B.4.1</span> Crosslinking</h3>
+<section id="crosslinking" class="level3" data-number="B.5.1">
+<h3 data-number="B.5.1" class="anchored" data-anchor-id="crosslinking"><span class="header-section-number">B.5.1</span> Crosslinking</h3>
 <p>Quarto cross references provide automatic numbering and reference creation for figures, tables, equations, sections, listings, theorems, and proofs. In books, cross references work the same way except they can reach across chapters.</p>
 <p>Please, refer to these pages at quarto’s official documentation for more information: <a href="https://quarto.org/docs/books/book-crossrefs.html" class="uri">https://quarto.org/docs/books/book-crossrefs.html</a> and <a href="https://quarto.org/docs/authoring/cross-references.html" class="uri">https://quarto.org/docs/authoring/cross-references.html</a></p>
 </section>
 </section>
-<section id="preventing-commits-with-execution-cells" class="level2" data-number="B.5">
-<h2 data-number="B.5" class="anchored" data-anchor-id="preventing-commits-with-execution-cells"><span class="header-section-number">B.5</span> Preventing commits with execution cells</h2>
-<p>This handbook relies on jupyter notebooks. Quarto renders any <code>*.ipynb</code> file into a handbook, and displays the output of any code block, according to the settings. Regretfully, that means that it executes every code cell and therefore, jupyter notebooks stores the results in the notebook too, which is not what we’d like to do.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-This is WIP
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The solution proposed below was not working. We need to find a proper solution for this, see: https://github.com/WarwickCIM/IM939_handbook/issues/4</p>
-<p>To have clean notebooks (this is, without any executed cell) in an automated way, the following command must be run within the repository’s root:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--local</span> include.path ../.gitconfig</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Please note that this command only needs to be run once: the first time we are setting up the repo. More information about the implemented solution here: <a href="https://zhauniarovich.com/post/2020/2020-10-clearing-jupyter-output-p3/" class="uri">https://zhauniarovich.com/post/2020/2020-10-clearing-jupyter-output-p3/</a></p>
-</div>
-</div>
-</section>
-<section id="recreating-the-handbook" class="level2" data-number="B.6">
-<h2 data-number="B.6" class="anchored" data-anchor-id="recreating-the-handbook"><span class="header-section-number">B.6</span> Recreating the handbook</h2>
+<section id="sec-quarto-book" class="level2" data-number="B.6">
+<h2 data-number="B.6" class="anchored" data-anchor-id="sec-quarto-book"><span class="header-section-number">B.6</span> Recreating the handbook</h2>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
