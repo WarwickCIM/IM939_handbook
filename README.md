@@ -6,8 +6,9 @@ This repository contains the handbook for [IM939: Data Science Across Discipline
 
 This handbook has been created by Carlos Cámara-Menoyo and Cagatay Turkay, based on the materials from previous years created by Cagatay Turkay and James Tripp.
 
-Teaching Staff (2023-24):
-
-- [Cagatay Turkay](https://warwick.ac.uk/fac/cross_fac/cim/people/cagatay-turkay/) (Module leader)
-- [Kavin Narasimhan](https://warwick.ac.uk/fac/cross_fac/cim/people/kavin-narasimhan/)
-- [Carlos Cámara-Menoyo](https://warwick.ac.uk/fac/cross_fac/cim/people/carlos-camara/)
+Teaching Staff (2024-25):
+- [Kavin Narasimhan](https://warwick.ac.uk/fac/cross_fac/cim/people/kavin-narasimhan/) (Module Leader)
+- [Cagatay Turkay](https://warwick.ac.uk/fac/cross_fac/cim/people/cagatay-turkay/) 
+- [Ching Jin](https://warwick.ac.uk/fac/cross_fac/cim/people/ching-jin/) 
+- [Esha Nasir](https://warwick.ac.uk/fac/cross_fac/cim/people/eshasadianasir/)
+- [Busola Oronti](https://warwick.ac.uk/fac/sci/eng/research/grouplist/biomedicaleng/abspie/busolaoronti/)
