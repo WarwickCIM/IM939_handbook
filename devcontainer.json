@@ -1,1 +1,14 @@
+{
+  "name": "Python Environment from environment.yml",
+  "dockerFile": "Dockerfile",  // Reference the Dockerfile we created
+  "workspaceFolder": "/workspace",  // The folder inside the container
+  "extensions": [
+    "ms-python.python",  // Python extension for VSCode
+    "ms-toolsai.jupyter"  // Jupyter notebook extension
+  ],
+  "postCreateCommand": "pip install -r /workspace/requirements.txt",  // Install packages
+  "settings": {
+    "python.pythonPath": "/usr/local/bin/python"  // Set the correct Python interpreter path
+  }
+}
 
