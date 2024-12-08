@@ -1,0 +1,10 @@
+altair==5.4.*
+geopandas==1.0.*
+pandas==2.2.*
+jupyterlab
+nbstripout
+openpyxl
+scikit-learn
+seaborn==0.13.*
+ghp-import
+jupyterlab-quarto
