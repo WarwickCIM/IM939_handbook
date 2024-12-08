@@ -1,0 +1,16 @@
+name: IM939
+dependencies:
+  - altair=5.4.*
+  - geopandas=1.0.*
+  - pandas=2.2.*
+  - pip
+  - python=3.12.4
+  - jupyterlab
+  - nbstripout
+  - openpyxl
+  - scikit-learn
+  - seaborn=0.13.*
+  - pip:
+    - ghp-import
+    - jupyterlab-quarto
+ 
