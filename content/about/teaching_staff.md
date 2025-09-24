@@ -34,7 +34,7 @@ I am pursuing a PhD in Computer Science at the University of Warwick, specializi
 
 I am a versatile, transdisciplinary, and passionate person with a mixed technical and sociological background. As a Senior Research Software Engineer, I am responsible to support research and teaching by using and developing research software while promoting an open, reproducible research culture and outputs.
 
-## Present and former staff {#sec-staff-all}
+## Present and former staff 
 
 This module has also been taught by the following people in the past (in alphabetical order):
 
