@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.7.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>11&nbsp; Lab: Data Processing and Summarization – Data Science Across Disciplines</title>
+<title>12&nbsp; Lab: Data Processing and Summarization – Data Science Across Disciplines</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,8 +21,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -67,15 +68,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../content/labs/Lab_3/IM939_Lab_3_2_Linear_Regression.html" rel="next">
 <link href="../../../content/sessions/session-03.html" rel="prev">
 <link href="../../../media/CIM_logo.png" rel="icon" type="image/png">
-<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-07b24a03df13974727b670a48c0144b0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -108,13 +110,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
-<meta name="twitter:title" content="11&nbsp; Lab: Data Processing and Summarization – Data Science Across Disciplines">
+<meta name="twitter:title" content="12&nbsp; Lab: Data Processing and Summarization – Data Science Across Disciplines">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_3/media/IM939_logo.png">
+<meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_3/IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-7-output-1.png">
+<meta name="twitter:image-height" content="862">
+<meta name="twitter:image-width" content="1481">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating slimcontent">
+<body class="nav-sidebar floating slimcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -123,7 +127,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/sessions/session-03.html">Abstractions &amp; Models</a></li><li class="breadcrumb-item"><a href="../../../content/labs/Lab_3/IM939_Lab_3_1_Data_Processing_and_Summarization.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Lab: Data Processing and Summarization</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/sessions/session-03.html">Abstractions &amp; Models</a></li><li class="breadcrumb-item"><a href="../../../content/labs/Lab_3/IM939_Lab_3_1_Data_Processing_and_Summarization.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Lab: Data Processing and Summarization</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -172,7 +176,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/about/teaching_staff.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Teaching Staff</span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Teaching Staff</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -207,25 +211,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/sessions/session-01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_1/IM939_Lab_1_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Lab: Introduction to Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Lab: Introduction to Python</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_1/IM939_Lab_1_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Lab: Repetition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lab: Repetition</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_1/IM939_Lab_1_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lab: Libraries</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Lab: Libraries</span></span></a>
   </div>
 </li>
       </ul>
@@ -242,31 +246,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/sessions/session-02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_2/IM939_Lab_2_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Lab: Pandas</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Lab: Pandas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_2/IM939_Lab_2_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Lab: Visualising Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Lab: Visualising Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_2/IM939_Lab_2_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Lab: Missing data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lab: Missing data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_2/IM939_Lab_2_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lab: Seaborn</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Lab: Seaborn</span></span></a>
   </div>
 </li>
       </ul>
@@ -283,25 +287,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/sessions/session-03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_3/IM939_Lab_3_1_Data_Processing_and_Summarization.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Lab: Data Processing and Summarization</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Lab: Data Processing and Summarization</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_3/IM939_Lab_3_2_Linear_Regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Lab: Regressions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Lab: Regressions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_3/IM939_Lab_3_Exercise_Linear_Regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Exercise: Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Exercise: Regression</span></span></a>
   </div>
 </li>
       </ul>
@@ -318,31 +322,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/sessions/session-04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_4/IM939_Session-04_PCA_playground.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Working with Dimension Reduction Methods</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Working with Dimension Reduction Methods</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_4/IM939_Lab_4_1_Iris.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Lab: Dimension Reduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Lab: Dimension Reduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_4/IM939_Lab_4_2_Crime.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Lab: Dimension reduction (2)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Lab: Dimension reduction (2)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_4/IM939_Lab_4_Exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Exercise: Wine dataset</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Exercise: Wine dataset</span></span></a>
   </div>
 </li>
       </ul>
@@ -359,37 +363,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/sessions/session-05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/week5_recap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Recap</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Recap</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_Lab_5_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Lab: Working with multiple models</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Lab: Working with multiple models</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_Lab_5_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Lab: Clustering and Ground Truth</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Lab: Clustering and Ground Truth</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_Lab_5_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Lab: Cross validation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Lab: Cross validation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_lab_5_Exercise.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">IM939 lab 5 - Exercise</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">IM939 lab 5 - Exercise</span></span></a>
   </div>
 </li>
       </ul>
@@ -406,25 +410,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/sessions/session-06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_6/IM939_Lab_6_1-illusions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Lab: Illusions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Lab: Illusions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_6/IM939_Lab_6_2-AxisManipulation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Lab: Axes manipulation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../content/labs/Lab_6/IM939_Lab_6_3-Choropleths.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Lab: Choropleth Maps</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Lab: Axes manipulation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -550,28 +548,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#outliers" id="toc-outliers" class="nav-link active" data-scroll-target="#outliers"><span class="header-section-number">11.1</span> Outliers</a>
+  <li><a href="#outliers" id="toc-outliers" class="nav-link active" data-scroll-target="#outliers"><span class="header-section-number">12.1</span> Outliers</a>
   <ul class="collapse">
-  <li><a href="#assess-data" id="toc-assess-data" class="nav-link" data-scroll-target="#assess-data"><span class="header-section-number">11.1.1</span> Assess data</a></li>
-  <li><a href="#identify-outliers-visually" id="toc-identify-outliers-visually" class="nav-link" data-scroll-target="#identify-outliers-visually"><span class="header-section-number">11.1.2</span> Identify outliers visually</a></li>
-  <li><a href="#computing-outliers-threshold-standard-deviation" id="toc-computing-outliers-threshold-standard-deviation" class="nav-link" data-scroll-target="#computing-outliers-threshold-standard-deviation"><span class="header-section-number">11.1.3</span> Computing outliers’ threshold: standard deviation</a></li>
-  <li><a href="#computing-outliers-threshold-mahalanobis-distance" id="toc-computing-outliers-threshold-mahalanobis-distance" class="nav-link" data-scroll-target="#computing-outliers-threshold-mahalanobis-distance"><span class="header-section-number">11.1.4</span> Computing outliers’ threshold: Mahalanobis distance</a></li>
+  <li><a href="#assess-data" id="toc-assess-data" class="nav-link" data-scroll-target="#assess-data"><span class="header-section-number">12.1.1</span> Assess data</a></li>
+  <li><a href="#identify-outliers-visually" id="toc-identify-outliers-visually" class="nav-link" data-scroll-target="#identify-outliers-visually"><span class="header-section-number">12.1.2</span> Identify outliers visually</a></li>
+  <li><a href="#computing-outliers-threshold-standard-deviation" id="toc-computing-outliers-threshold-standard-deviation" class="nav-link" data-scroll-target="#computing-outliers-threshold-standard-deviation"><span class="header-section-number">12.1.3</span> Computing outliers’ threshold: standard deviation</a></li>
+  <li><a href="#computing-outliers-threshold-mahalanobis-distance" id="toc-computing-outliers-threshold-mahalanobis-distance" class="nav-link" data-scroll-target="#computing-outliers-threshold-mahalanobis-distance"><span class="header-section-number">12.1.4</span> Computing outliers’ threshold: Mahalanobis distance</a></li>
   </ul></li>
-  <li><a href="#q-q-plots" id="toc-q-q-plots" class="nav-link" data-scroll-target="#q-q-plots"><span class="header-section-number">11.2</span> Q-Q Plots</a>
+  <li><a href="#q-q-plots" id="toc-q-q-plots" class="nav-link" data-scroll-target="#q-q-plots"><span class="header-section-number">12.2</span> Q-Q Plots</a>
   <ul class="collapse">
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">11.2.1</span> Data</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">12.2.1</span> Data</a></li>
   </ul></li>
-  <li><a href="#distributions-sampling" id="toc-distributions-sampling" class="nav-link" data-scroll-target="#distributions-sampling"><span class="header-section-number">11.3</span> Distributions, Sampling</a></li>
-  <li><a href="#robust-statistics" id="toc-robust-statistics" class="nav-link" data-scroll-target="#robust-statistics"><span class="header-section-number">11.4</span> Robust Statistics</a></li>
+  <li><a href="#distributions-sampling" id="toc-distributions-sampling" class="nav-link" data-scroll-target="#distributions-sampling"><span class="header-section-number">12.3</span> Distributions, Sampling</a></li>
+  <li><a href="#robust-statistics" id="toc-robust-statistics" class="nav-link" data-scroll-target="#robust-statistics"><span class="header-section-number">12.4</span> Robust Statistics</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.dev/WarwickCIM/IM939_handbook/blob/main/content/labs/Lab_3/IM939_Lab_3_1_Data_Processing_and_Summarization.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/WarwickCIM/IM939_handbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/sessions/session-03.html">Abstractions &amp; Models</a></li><li class="breadcrumb-item"><a href="../../../content/labs/Lab_3/IM939_Lab_3_1_Data_Processing_and_Summarization.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Lab: Data Processing and Summarization</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/sessions/session-03.html">Abstractions &amp; Models</a></li><li class="breadcrumb-item"><a href="../../../content/labs/Lab_3/IM939_Lab_3_1_Data_Processing_and_Summarization.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Lab: Data Processing and Summarization</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Lab: Data Processing and Summarization</span></h1>
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Lab: Data Processing and Summarization</span></h1>
 </div>
 
 
@@ -589,7 +587,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Here we will be exploring different functions in data processing and summarization.</p>
-<div id="cell-3" class="cell" data-execution_count="1">
+<div id="cell-2" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">'ignore'</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -604,13 +602,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#%matplotlib inline # Display matplotlib plots inline with the text. +info: https://stackoverflow.com/a/43028034/1913457</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="outliers" class="level2 page-columns page-full" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="outliers"><span class="header-section-number">11.1</span> Outliers</h2>
+<section id="outliers" class="level2 page-columns page-full" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="outliers"><span class="header-section-number">12.1</span> Outliers</h2>
 <p>In this section we will be applying several methods to identify outliers. We will be using a custom dataset called <code>accord_sedan.csv</code> that contains cars properties. The dataset is provided as a csv file.</p>
-<section id="assess-data" class="level3" data-number="11.1.1">
-<h3 data-number="11.1.1" class="anchored" data-anchor-id="assess-data"><span class="header-section-number">11.1.1</span> Assess data</h3>
+<section id="assess-data" class="level3" data-number="12.1.1">
+<h3 data-number="12.1.1" class="anchored" data-anchor-id="assess-data"><span class="header-section-number">12.1.1</span> Assess data</h3>
 <p>As usual, we will want to start loading the data and assessing it:</p>
-<div id="cell-5" class="cell" data-execution_count="2">
+<div id="cell-4" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading Data</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'data/raw/accord_sedan.csv'</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -685,7 +683,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>And we can get some summary statistics, too:</p>
-<div id="cell-7" class="cell" data-execution_count="3">
+<div id="cell-6" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
@@ -766,7 +764,7 @@ Do this yourself:
 </div>
 <div class="callout-body-container callout-body">
 <p>We only get the summaries for the numeric values here. How about the others, such as <code>trim</code>, <code>engine</code> or <code>transmission</code>? Can you think of a way to get an idea of statistics that will provide you an overview of the distribution of these values? Also, do you think the mean of the <code>year</code> values make sense? What could be a better statistics here?</p>
-<div id="cell-9" class="cell" data-execution_count="4">
+<div id="cell-8" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">## One thing to try is the describe function with an "all" parameter:</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df.describe(include<span class="op">=</span><span class="st">'all'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -891,8 +889,8 @@ Do this yourself:
 </div>
 </div>
 </div>
-<div id="cell-10" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># But this doesn't address out question. Think about visuals that can help you here? Maybe a histrogram would help?</span></span>
+<div id="cell-9" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># But this doesn't address our question. Think about visuals that can help you here? Maybe a histrogram would help?</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>?, x<span class="op">=</span><span class="st">"?"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -900,10 +898,10 @@ Do this yourself:
 </div>
 <p>Once you have an idea of the descriptive statistics, you might want to focus on the outliers. It might be difficult to spot outliers just with the descriptive statistics. This is where we can use data visualisations to identify outliers visually and also make use of a few proxy metrics to help us assess data points.</p>
 </section>
-<section id="identify-outliers-visually" class="level3 page-columns page-full" data-number="11.1.2">
-<h3 data-number="11.1.2" class="anchored" data-anchor-id="identify-outliers-visually"><span class="header-section-number">11.1.2</span> Identify outliers visually</h3>
+<section id="identify-outliers-visually" class="level3 page-columns page-full" data-number="12.1.2">
+<h3 data-number="12.1.2" class="anchored" data-anchor-id="identify-outliers-visually"><span class="header-section-number">12.1.2</span> Identify outliers visually</h3>
 <p>In this case we will <strong>explore variables individually (1D)</strong> by creating a <em>boxplot</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. We will visualise the columns <code>price</code> and <code>mileage</code> using matplotlib’s subplots, which combines multiple plots into a single figure:</p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Boxplots may be difficult to interpret if we are not used to them. It is used to visualise distributions, where the box represents the <em>Interquartile range (IQR)</em>, whereas the whiskers can be defined in multiple ways (e.g.&nbsp;the first and third quartiles, 1.5 IQR…) . <img src="figs/440px-Boxplot_vs_PDF.svg.png" class="img-fluid" alt="A visualisation depicting how a Box Plot works. Source: Wikipedia"> From <a href="https://en.wikipedia.org/wiki/Box_plot">Wikipedia</a>: “In descriptive statistics, a box plot or boxplot is a method for graphically demonstrating the locality, spread and skewness groups of numerical data through their quartiles.”</p></div></div><div id="cell-13" class="cell" data-execution_count="6">
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Boxplots may be difficult to interpret if we are not used to them. It is used to visualise distributions, where the box represents the <em>Interquartile range (IQR)</em>, whereas the whiskers can be defined in multiple ways (e.g.&nbsp;the first and third quartiles, 1.5 IQR…) . <img src="figs/440px-Boxplot_vs_PDF.svg.png" class="img-fluid" alt="A visualisation depicting how a Box Plot works. Source: Wikipedia"> From <a href="https://en.wikipedia.org/wiki/Box_plot">Wikipedia</a>: “In descriptive statistics, a box plot or boxplot is a method for graphically demonstrating the locality, spread and skewness groups of numerical data through their quartiles.”</p></div></div><div id="cell-12" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1D Visualizations</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">5</span>)) <span class="co"># Setting the figure's size: format width, height (in inches)</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>) <span class="co"># subplot(nrows, ncols, index, **kwargs)</span></span>
@@ -923,7 +921,7 @@ Do this yourself:
 </div>
 </div>
 <p>But we may want to <strong>identify the 2D outliers</strong> using a scatterplot</p>
-<div id="cell-15" class="cell" data-execution_count="7">
+<div id="cell-14" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2D Visualization</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(df.price, df.mileage, alpha <span class="op">=</span> <span class="fl">.5</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Price'</span>)</span>
@@ -951,10 +949,10 @@ Note
 </div>
 </div>
 </section>
-<section id="computing-outliers-threshold-standard-deviation" class="level3" data-number="11.1.3">
-<h3 data-number="11.1.3" class="anchored" data-anchor-id="computing-outliers-threshold-standard-deviation"><span class="header-section-number">11.1.3</span> Computing outliers’ threshold: standard deviation</h3>
+<section id="computing-outliers-threshold-standard-deviation" class="level3" data-number="12.1.3">
+<h3 data-number="12.1.3" class="anchored" data-anchor-id="computing-outliers-threshold-standard-deviation"><span class="header-section-number">12.1.3</span> Computing outliers’ threshold: standard deviation</h3>
 <p>Add two new columns to the dataframe called <code>isOutlierPrice</code> and <code>isOutlierMileage</code>. We will define our threshold as <strong>2 times standard deviations away from the mean</strong> for <code>price</code> and <code>mileage</code>, respectively.</p>
-<div id="cell-18" class="cell" data-execution_count="8">
+<div id="cell-17" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Computing the isOutlierPrice column</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>upper_threshold_price <span class="op">=</span> df.price.mean() <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>df.price.std() </span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>lower_threshold_price <span class="op">=</span> df.price.mean() <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>df.price.std()</span>
@@ -1058,7 +1056,7 @@ Alternative method
 </div>
 <div class="callout-body-container callout-body">
 <p>We may want to use this more succint approach:</p>
-<div id="cell-20" class="cell" data-execution_count="9">
+<div id="cell-19" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Second way of doing the above using the np.where() function</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'isOutlierPrice'</span>] <span class="op">=</span> np.where(<span class="bu">abs</span>(df.price <span class="op">-</span> df.price.mean()) <span class="op">&lt;</span> <span class="dv">2</span><span class="op">*</span>df.price.std(), <span class="va">False</span>, <span class="va">True</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'isOutlierMileage'</span>] <span class="op">=</span> np.where(<span class="bu">abs</span>(df.mileage <span class="op">-</span> df.mileage.mean()) <span class="op">&lt;</span> <span class="dv">2</span><span class="op">*</span>df.mileage.std(), <span class="va">False</span>, <span class="va">True</span>)</span>
@@ -1149,7 +1147,7 @@ Alternative method
 </div>
 </div>
 <p>Now that we have these two new columns, we could visualize these values with a different color in the plot. Observe whether they are the same as you would mark them:</p>
-<div id="cell-23" class="cell" data-execution_count="10">
+<div id="cell-22" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizing outliers in a different color</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>col <span class="op">=</span> [<span class="st">'tomato'</span> <span class="cf">if</span> i<span class="op">+</span>j <span class="cf">else</span> <span class="st">'seagreen'</span> <span class="cf">for</span> i,j <span class="kw">in</span> <span class="bu">zip</span>(df.isOutlierPrice, df.isOutlierMileage)]</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>plt.scatter(df.price, df.mileage, color <span class="op">=</span> col)</span>
@@ -1167,7 +1165,7 @@ Alternative method
 <p>Visually filtering out outliers can be an effective tactic if we’re just trying to conduct a quick and dirty experimentation. However, when we need to perform a solid and founded analysis, it’s better to have a robust justification for our choices.</p>
 <p>In this case, we can use the deviation from the mean to define a threshold that separates ‘normal’ values from ‘outliers’. Here, we opted for a two standard deviation threshold.</p>
 <p>The mathematical intuition behind this, is that under the normality assumption (if we assume our variable is normally distributed, which it almost is, refer to the next plot), then the probability of it having a value two standard deviations OR MORE away from the mean, is around 5%, which is very unlikely to happen. This is why we label these data points as outliers with respect to the (assumed) probability distribution of the variable. But this remains a way to identify 1D outliers only (identifying outliers within each column separately)</p>
-<div id="cell-25" class="cell" data-execution_count="11">
+<div id="cell-24" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Histograms of Price and Mileage (checking the normality assumption)</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>plt.hist(df.price, bins <span class="op">=</span> <span class="dv">12</span>)</span>
@@ -1184,15 +1182,15 @@ Alternative method
 </div>
 </div>
 </section>
-<section id="computing-outliers-threshold-mahalanobis-distance" class="level3 page-columns page-full" data-number="11.1.4">
-<h3 data-number="11.1.4" class="anchored" data-anchor-id="computing-outliers-threshold-mahalanobis-distance"><span class="header-section-number">11.1.4</span> Computing outliers’ threshold: Mahalanobis distance</h3>
+<section id="computing-outliers-threshold-mahalanobis-distance" class="level3 page-columns page-full" data-number="12.1.4">
+<h3 data-number="12.1.4" class="anchored" data-anchor-id="computing-outliers-threshold-mahalanobis-distance"><span class="header-section-number">12.1.4</span> Computing outliers’ threshold: Mahalanobis distance</h3>
 <ol type="1">
 <li>Using the 2D Mahalanobis distance to find outliers</li>
 </ol>
-<div id="cell-27" class="cell page-columns page-full" data-execution_count="12">
+<div id="cell-26" class="cell page-columns page-full" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mean vector (computing the mean returns a Series, which we need to convert back to a DataFrame because cdist requires it)</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>mean_v <span class="op">=</span> df.iloc[:, <span class="dv">0</span>:<span class="dv">2</span>].mean().to_frame().T <span class="co"># DataFrame.T returns the Transpose of the DataFrame</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#mean_v = np.asarray([df.price.mean(), df.mileage.mean() ]).reshape(1,2) # This is a better way of writing the line before (for our use case : cdist function)</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#mean_v = np.asarray([df.price.mean(), df.mileage.mean()]).reshape(1,2) # This is a better way of writing the line before (for our use case : cdist function)</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Computing the Mahalanobis distance of each row to the mean vector</span></span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> cdist(df.iloc[:, <span class="dv">0</span>:<span class="dv">2</span>], mean_v, metric<span class="op">=</span><span class="st">'mahalanobis'</span>)</span>
@@ -1215,13 +1213,13 @@ Alternative method
 </div>
 </section>
 </section>
-<section id="q-q-plots" class="level2 page-columns page-full" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="q-q-plots"><span class="header-section-number">11.2</span> Q-Q Plots</h2>
-<section id="data" class="level3 page-columns page-full" data-number="11.2.1">
-<h3 data-number="11.2.1" class="anchored" data-anchor-id="data"><span class="header-section-number">11.2.1</span> Data</h3>
+<section id="q-q-plots" class="level2 page-columns page-full" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="q-q-plots"><span class="header-section-number">12.2</span> Q-Q Plots</h2>
+<section id="data" class="level3 page-columns page-full" data-number="12.2.1">
+<h3 data-number="12.2.1" class="anchored" data-anchor-id="data"><span class="header-section-number">12.2.1</span> Data</h3>
 <p>In this case, we will be using data reported by countries to WHO and estimates of tuberculosis burden generated by WHO for the <em>Global Tuberculosis Report</em>, as part of WHO’s <a href="https://www.who.int/teams/global-tuberculosis-programme/data">Global Tuberculosis Programme</a>. You can refer to <a href="https://www.who.int/teams/global-tuberculosis-programme/data#csv_files">this section</a> at WHO’s website to know more about the data and their variables.</p>
 <p>For your convenience, we have stored a copy in a csv file, but you could try to replicate the code with more up-to-date data from the original website. As usual, it is a best practice to explore the data before proceeding any further:</p>
-<div id="cell-30" class="cell" data-execution_count="13">
+<div id="cell-29" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Getting the Data</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df_tuber <span class="op">=</span> pd.read_csv(<span class="st">'data/raw/TB_burden_countries_2014-09-29.csv'</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1385,7 +1383,7 @@ Alternative method
 </div>
 </div>
 </div>
-<div id="cell-31" class="cell" data-execution_count="14">
+<div id="cell-30" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df_tuber.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -1437,7 +1435,7 @@ memory usage: 1.5+ MB</code></pre>
 </div>
 </div>
 <p>As you can see we have a pretty large dataset numerical and categorical variables, some of which have many missing values. In this case we will be filling missing values with the mean<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Refer to <a href="../Lab_2/IM939_Lab_2_3.html#sec-inputting-missing-data" class="quarto-xref"><span>Section 8.2</span></a> for a detailed explanation and alternative methods to inputting missing values.</p></div></div><div id="cell-33" class="cell" data-execution_count="15">
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Refer to <a href="../Lab_2/IM939_Lab_2_3.html#sec-inputting-missing-data" class="quarto-xref"><span>Section 9.2</span></a> for a detailed explanation and alternative methods to inputting missing values.</p></div></div><div id="cell-32" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filling missing numeric values ONLY (categorical values will be untouched)</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>df_tuber <span class="op">=</span> df_tuber.fillna(value<span class="op">=</span>df_tuber.mean(numeric_only <span class="op">=</span> <span class="va">True</span>))</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1489,7 +1487,7 @@ dtype: int64</code></pre>
 <ol type="1">
 <li>Pick one of the columns from the Tuberculosis data and copy it into a numpy array as before</li>
 </ol>
-<div id="cell-35" class="cell" data-execution_count="16">
+<div id="cell-34" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Picking a column (I created a variable for this so I (and you (: ) can modify the column easily here and the change will be carried out everywhere I use the variable colname)</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>colname <span class="op">=</span> <span class="st">'e_prev_100k'</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1502,10 +1500,10 @@ dtype: int64</code></pre>
 <pre><code>&lt;class 'numpy.ndarray'&gt;</code></pre>
 </div>
 </div>
-<ol type="1">
+<ol start="2" type="1">
 <li>Compare this selected column to a Normal distribution. Then Sample from a Normal distribution and show a second Q-Q plot</li>
 </ol>
-<div id="cell-37" class="cell" data-execution_count="17">
+<div id="cell-36" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the Q-Q Plot for our column</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>sm.qqplot(col, line<span class="op">=</span><span class="st">'r'</span>)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Q-Q Plot of the "</span><span class="sc">{}</span><span class="st">" column of our dataset'</span>.<span class="bu">format</span>(colname))<span class="op">;</span></span>
@@ -1564,7 +1562,7 @@ Ok ? Now try to guess the shape of the distribution of our selected column (shap
 <ol type="1">
 <li>Visualise the column on a histogram and reflect on whether the shape you inferred from Q-Q plots and the shape of the histogram correlate</li>
 </ol>
-<div id="cell-42" class="cell page-columns page-full" data-execution_count="18">
+<div id="cell-41" class="cell page-columns page-full" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Histogramming the column we picked (not sure the verb exists though)</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">5</span>))</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
@@ -1586,13 +1584,13 @@ Of course it does ! From the shape of the Q-Q Plot above (convex, slope upwards)
 </p>
 </section>
 </section>
-<section id="distributions-sampling" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="distributions-sampling"><span class="header-section-number">11.3</span> Distributions, Sampling</h2>
+<section id="distributions-sampling" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="distributions-sampling"><span class="header-section-number">12.3</span> Distributions, Sampling</h2>
 <ol type="1">
 <li>Inspecting the effect of sample size on descriptive statistics</li>
 </ol>
-<div id="cell-46" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Defining a few variables se we can change their values easiliy without having to change the rest of the code</span></span>
+<div id="cell-45" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Defining a few variables se we can change their values easily without having to change the rest of the code</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">20</span>, <span class="dv">100</span>, <span class="dv">2000</span>]</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>stds <span class="op">=</span> [<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">3</span>]</span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -1656,7 +1654,7 @@ Results for the Kurtosis :</code></pre>
 <th data-quarto-table-cell-role="th">1.0</th>
 <th data-quarto-table-cell-role="th">3.0</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">Sample Size</th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -1666,27 +1664,27 @@ Results for the Kurtosis :</code></pre>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">5</td>
-<td>-1.014009</td>
-<td>-0.367523</td>
-<td>-0.592649</td>
+<td>-1.470879</td>
+<td>-0.274282</td>
+<td>-1.644427</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">20</td>
-<td>1.613498</td>
-<td>0.497900</td>
-<td>-1.049867</td>
+<td>-0.093057</td>
+<td>-0.773104</td>
+<td>2.089259</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">100</td>
-<td>-0.110038</td>
-<td>-0.491078</td>
-<td>-0.109846</td>
+<td>-0.335413</td>
+<td>-0.653950</td>
+<td>-0.566262</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2000</td>
-<td>0.038718</td>
-<td>0.184164</td>
-<td>0.031062</td>
+<td>0.098834</td>
+<td>-0.002571</td>
+<td>0.007787</td>
 </tr>
 </tbody>
 </table>
@@ -1694,62 +1692,89 @@ Results for the Kurtosis :</code></pre>
 </div>
 </div>
 </div>
+<div id="cell-46" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># are the outputs overwritten? Try this instead</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># concatenate the dataframes</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>combined_df <span class="op">=</span> pd.concat([mean, std, skewness, kurtos], keys<span class="op">=</span>[<span class="st">'Mean'</span>, <span class="st">'Standard Deviation'</span>, <span class="st">'Skewness'</span>, <span class="st">'Kurtosis'</span>])</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Print combined DataFrame</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(combined_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Standard Deviation                   0.5       1.0       3.0
+                   Sample Size                              
+Mean               5            0.042462 -0.146640  2.578423
+                   20          -0.188704 -0.225163  0.471843
+                   100         -0.041065 -0.063242 -0.551446
+                   2000         0.003018  0.026159 -0.080545
+Standard Deviation 5            0.609273  0.914124  2.485569
+                   20           0.564230  0.901972  2.312858
+                   100          0.475544  1.054971  2.979704
+                   2000         0.488299  1.011860  3.002391
+Skewness           5           -0.026639 -1.173979 -0.185526
+                   20          -0.327811 -0.029473  0.967682
+                   100         -0.048692 -0.026696  0.239292
+                   2000        -0.008894 -0.012757  0.169020
+Kurtosis           5           -1.470879 -0.274282 -1.644427
+                   20          -0.093057 -0.773104  2.089259
+                   100         -0.335413 -0.653950 -0.566262
+                   2000         0.098834 -0.002571  0.007787</code></pre>
+</div>
+</div>
 <p>
 Basically, the more data you have (the bigger your sample), the more accurate your empirical estimates are going to be. Observe for example the values of mean (1st DataFrame) and variance (2nd DataFrame) for the 2000 sample size (last row). In the first one, the values are all close to 0, because we generated our sample from a Gaussian with mean 0, and the values in the second one are all close to the values in the column names (which refer to the variance of the distribution of the sample). This means that for with a sample size of 2000, our estimates are really close to the “True” values (with which we generated the sample). Also, the Skew of a Gaussian distribution should be 0, and it is confirmed in the 3rd DataFrame where the values are close to 0 in the last row (i.e big sample size).
 </p>
 <p><b>2) Same as before but with a Poisson distribution (which has just one parameter lambda instead of 2 like the gaussian)</b></p>
-<div id="cell-49" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Defining a few variables se we can change their values easiliy without having to change the rest of the code</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">20</span>, <span class="dv">100</span>, <span class="dv">2000</span>]</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>lambd <span class="op">=</span> [<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">3</span>] <span class="co"># In a gaussian we had two parameters, a var specified here and a mean we chose to be 0 </span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co">#everywhere. Here we have one parameter called lambda.</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Initializing empty 2D arrays where we're going to store the results of our simulation</span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> np.empty([<span class="bu">len</span>(n), <span class="bu">len</span>(lambd)])</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>std <span class="op">=</span> np.empty([<span class="bu">len</span>(n), <span class="bu">len</span>(lambd)])</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>skewness <span class="op">=</span> np.empty([<span class="bu">len</span>(n), <span class="bu">len</span>(lambd)])</span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>kurtos <span class="op">=</span> np.empty([<span class="bu">len</span>(n), <span class="bu">len</span>(lambd)])</span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Conducting the experiments and storing the results in the respective 2D arrays</span></span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, sample_size <span class="kw">in</span> <span class="bu">enumerate</span>(n):</span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j, theoritical_lambd <span class="kw">in</span> <span class="bu">enumerate</span>(lambd):</span>
-<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>        <span class="co">#**********************************************************************</span></span>
-<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>        sample <span class="op">=</span> np.random.poisson(lam <span class="op">=</span> theoritical_lambd, size <span class="op">=</span> sample_size) <span class="co"># THIS IS WHAT WE CHANGED IN Q2 !</span></span>
-<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>        <span class="co">#**********************************************************************</span></span>
-<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>        mean[i,j] <span class="op">=</span> sample.mean()</span>
-<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>        std[i,j] <span class="op">=</span> sample.std()</span>
-<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>        skewness[i,j] <span class="op">=</span> skew(sample)</span>
-<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>        kurtos[i,j] <span class="op">=</span> kurtosis(sample)</span>
-<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Turning the mean 2D array into a pandas dataframe</span></span>
-<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> pd.DataFrame(mean, columns <span class="op">=</span> lambd, index <span class="op">=</span> n)</span>
-<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> mean.rename_axis(<span class="st">'Sample Size'</span>).rename_axis(<span class="st">"Lambda"</span>, axis<span class="op">=</span><span class="st">"columns"</span>)</span>
-<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Turning the std 2D array into a pandas dataframe</span></span>
-<span id="cb24-28"><a href="#cb24-28" aria-hidden="true" tabindex="-1"></a>std <span class="op">=</span> pd.DataFrame(std, columns <span class="op">=</span> lambd, index <span class="op">=</span> n)</span>
-<span id="cb24-29"><a href="#cb24-29" aria-hidden="true" tabindex="-1"></a>std <span class="op">=</span> std.rename_axis(<span class="st">'Sample Size'</span>).rename_axis(<span class="st">"Lambda"</span>, axis<span class="op">=</span><span class="st">"columns"</span>)</span>
-<span id="cb24-30"><a href="#cb24-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-31"><a href="#cb24-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Turning the skewness 2D array into a pandas dataframe</span></span>
-<span id="cb24-32"><a href="#cb24-32" aria-hidden="true" tabindex="-1"></a>skewness <span class="op">=</span> pd.DataFrame(skewness, columns <span class="op">=</span> lambd, index <span class="op">=</span> n)</span>
-<span id="cb24-33"><a href="#cb24-33" aria-hidden="true" tabindex="-1"></a>skewness <span class="op">=</span> skewness.rename_axis(<span class="st">'Sample Size'</span>).rename_axis(<span class="st">"Lambda"</span>, axis<span class="op">=</span><span class="st">"columns"</span>)</span>
-<span id="cb24-34"><a href="#cb24-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-35"><a href="#cb24-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Turning the kurtosis 2D array into a pandas dataframe</span></span>
-<span id="cb24-36"><a href="#cb24-36" aria-hidden="true" tabindex="-1"></a>kurtos <span class="op">=</span> pd.DataFrame(kurtos, columns <span class="op">=</span> lambd, index <span class="op">=</span> n)</span>
-<span id="cb24-37"><a href="#cb24-37" aria-hidden="true" tabindex="-1"></a>kurtos <span class="op">=</span> kurtos.rename_axis(<span class="st">'Sample Size'</span>).rename_axis(<span class="st">"Lambda"</span>, axis<span class="op">=</span><span class="st">"columns"</span>)</span>
-<span id="cb24-38"><a href="#cb24-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-39"><a href="#cb24-39" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"POISSON DISTRIBUTION</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb24-40"><a href="#cb24-40" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Results for the Mean :'</span>)</span>
-<span id="cb24-41"><a href="#cb24-41" aria-hidden="true" tabindex="-1"></a>mean <span class="co"># This is a dataframe containing the means of the samples generated with different values of std and sample size</span></span>
-<span id="cb24-42"><a href="#cb24-42" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Results for the Standard Deviation :'</span>)</span>
-<span id="cb24-43"><a href="#cb24-43" aria-hidden="true" tabindex="-1"></a>std <span class="co"># This is a dataframe containing the standard deviations of the samples generated with different values of std </span></span>
-<span id="cb24-44"><a href="#cb24-44" aria-hidden="true" tabindex="-1"></a><span class="co">#and sample size</span></span>
-<span id="cb24-45"><a href="#cb24-45" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Results for the Skewness :'</span>)</span>
-<span id="cb24-46"><a href="#cb24-46" aria-hidden="true" tabindex="-1"></a>skewness <span class="co"># This is a dataframe containing the skews of the samples generated with different values of std and sample </span></span>
-<span id="cb24-47"><a href="#cb24-47" aria-hidden="true" tabindex="-1"></a><span class="co">#size</span></span>
-<span id="cb24-48"><a href="#cb24-48" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Results for the Kurtosis :'</span>)</span>
-<span id="cb24-49"><a href="#cb24-49" aria-hidden="true" tabindex="-1"></a>kurtos <span class="co"># This is a dataframe containing the kurtosis of the samples generated with different values of std and sample </span></span>
-<span id="cb24-50"><a href="#cb24-50" aria-hidden="true" tabindex="-1"></a><span class="co">#size</span></span>
-<span id="cb24-51"><a href="#cb24-51" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-49" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Defining a few variables se we can change their values easily without having to change the rest of the code</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">20</span>, <span class="dv">100</span>, <span class="dv">2000</span>]</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>lambd <span class="op">=</span> [<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">3</span>] <span class="co"># In a gaussian we had two parameters, a var specified here and a mean we chose to be 0 </span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co">#everywhere. Here we have one parameter called lambda.</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Initializing empty 2D arrays where we're going to store the results of our simulation</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> np.empty([<span class="bu">len</span>(n), <span class="bu">len</span>(lambd)])</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>std <span class="op">=</span> np.empty([<span class="bu">len</span>(n), <span class="bu">len</span>(lambd)])</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>skewness <span class="op">=</span> np.empty([<span class="bu">len</span>(n), <span class="bu">len</span>(lambd)])</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>kurtos <span class="op">=</span> np.empty([<span class="bu">len</span>(n), <span class="bu">len</span>(lambd)])</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Conducting the experiments and storing the results in the respective 2D arrays</span></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, sample_size <span class="kw">in</span> <span class="bu">enumerate</span>(n):</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j, theoritical_lambd <span class="kw">in</span> <span class="bu">enumerate</span>(lambd):</span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>        <span class="co">#**********************************************************************</span></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>        sample <span class="op">=</span> np.random.poisson(lam <span class="op">=</span> theoritical_lambd, size <span class="op">=</span> sample_size) <span class="co"># THIS IS WHAT WE CHANGED FROM ABOVE</span></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>        <span class="co">#**********************************************************************</span></span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>        mean[i,j] <span class="op">=</span> sample.mean()</span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>        std[i,j] <span class="op">=</span> sample.std()</span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>        skewness[i,j] <span class="op">=</span> skew(sample)</span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>        kurtos[i,j] <span class="op">=</span> kurtosis(sample)</span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Turning the mean 2D array into a pandas dataframe</span></span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> pd.DataFrame(mean, columns <span class="op">=</span> lambd, index <span class="op">=</span> n)</span>
+<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> mean.rename_axis(<span class="st">'Sample Size'</span>).rename_axis(<span class="st">"Lambda"</span>, axis<span class="op">=</span><span class="st">"columns"</span>)</span>
+<span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Turning the std 2D array into a pandas dataframe</span></span>
+<span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a>std <span class="op">=</span> pd.DataFrame(std, columns <span class="op">=</span> lambd, index <span class="op">=</span> n)</span>
+<span id="cb26-29"><a href="#cb26-29" aria-hidden="true" tabindex="-1"></a>std <span class="op">=</span> std.rename_axis(<span class="st">'Sample Size'</span>).rename_axis(<span class="st">"Lambda"</span>, axis<span class="op">=</span><span class="st">"columns"</span>)</span>
+<span id="cb26-30"><a href="#cb26-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-31"><a href="#cb26-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Turning the skewness 2D array into a pandas dataframe</span></span>
+<span id="cb26-32"><a href="#cb26-32" aria-hidden="true" tabindex="-1"></a>skewness <span class="op">=</span> pd.DataFrame(skewness, columns <span class="op">=</span> lambd, index <span class="op">=</span> n)</span>
+<span id="cb26-33"><a href="#cb26-33" aria-hidden="true" tabindex="-1"></a>skewness <span class="op">=</span> skewness.rename_axis(<span class="st">'Sample Size'</span>).rename_axis(<span class="st">"Lambda"</span>, axis<span class="op">=</span><span class="st">"columns"</span>)</span>
+<span id="cb26-34"><a href="#cb26-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-35"><a href="#cb26-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Turning the kurtosis 2D array into a pandas dataframe</span></span>
+<span id="cb26-36"><a href="#cb26-36" aria-hidden="true" tabindex="-1"></a>kurtos <span class="op">=</span> pd.DataFrame(kurtos, columns <span class="op">=</span> lambd, index <span class="op">=</span> n)</span>
+<span id="cb26-37"><a href="#cb26-37" aria-hidden="true" tabindex="-1"></a>kurtos <span class="op">=</span> kurtos.rename_axis(<span class="st">'Sample Size'</span>).rename_axis(<span class="st">"Lambda"</span>, axis<span class="op">=</span><span class="st">"columns"</span>)</span>
+<span id="cb26-38"><a href="#cb26-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-39"><a href="#cb26-39" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"POISSON DISTRIBUTION</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb26-40"><a href="#cb26-40" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Results for the Mean :'</span>)</span>
+<span id="cb26-41"><a href="#cb26-41" aria-hidden="true" tabindex="-1"></a>mean <span class="co"># This is a dataframe containing the means of the samples generated with different values of std and sample size</span></span>
+<span id="cb26-42"><a href="#cb26-42" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Results for the Standard Deviation :'</span>)</span>
+<span id="cb26-43"><a href="#cb26-43" aria-hidden="true" tabindex="-1"></a>std <span class="co"># This is a dataframe containing the standard deviations of the samples generated with different values of std </span></span>
+<span id="cb26-44"><a href="#cb26-44" aria-hidden="true" tabindex="-1"></a><span class="co">#and sample size</span></span>
+<span id="cb26-45"><a href="#cb26-45" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Results for the Skewness :'</span>)</span>
+<span id="cb26-46"><a href="#cb26-46" aria-hidden="true" tabindex="-1"></a>skewness <span class="co"># This is a dataframe containing the skews of the samples generated with different values of std and sample </span></span>
+<span id="cb26-47"><a href="#cb26-47" aria-hidden="true" tabindex="-1"></a><span class="co">#size</span></span>
+<span id="cb26-48"><a href="#cb26-48" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Results for the Kurtosis :'</span>)</span>
+<span id="cb26-49"><a href="#cb26-49" aria-hidden="true" tabindex="-1"></a>kurtos <span class="co"># This is a dataframe containing the kurtosis of the samples generated with different values of std and sample </span></span>
+<span id="cb26-50"><a href="#cb26-50" aria-hidden="true" tabindex="-1"></a><span class="co">#size</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>POISSON DISTRIBUTION
 
@@ -1758,7 +1783,7 @@ Results for the Standard Deviation :
 Results for the Skewness :
 Results for the Kurtosis :</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="cell-output cell-output-display" data-execution_count="20">
 <div>
 
 
@@ -1770,7 +1795,7 @@ Results for the Kurtosis :</code></pre>
 <th data-quarto-table-cell-role="th">1.0</th>
 <th data-quarto-table-cell-role="th">3.0</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">Sample Size</th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -1780,27 +1805,27 @@ Results for the Kurtosis :</code></pre>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">5</td>
-<td>NaN</td>
-<td>-0.270833</td>
-<td>-0.500000</td>
+<td>0.250000</td>
+<td>-1.044379</td>
+<td>-0.187243</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">20</td>
-<td>3.285444</td>
-<td>0.212842</td>
-<td>-0.411993</td>
+<td>0.969291</td>
+<td>-0.086168</td>
+<td>-0.795075</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">100</td>
-<td>3.485728</td>
-<td>0.895970</td>
-<td>0.288245</td>
+<td>1.131030</td>
+<td>1.130328</td>
+<td>0.409107</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2000</td>
-<td>1.910071</td>
-<td>0.895998</td>
-<td>0.407630</td>
+<td>1.809259</td>
+<td>1.282974</td>
+<td>0.096190</td>
 </tr>
 </tbody>
 </table>
@@ -1812,15 +1837,15 @@ Results for the Kurtosis :</code></pre>
 Just remember, the lambda parameter that defines the Poisson distribution is also the mean of the distribution. This is confirmed in the first DataFrame where the values (means of samples) are close to the column labels (theoretical lambda which is also equal to theoretical mean), especially in the last row.
 </p>
 </section>
-<section id="robust-statistics" class="level2 page-columns page-full" data-number="11.4">
-<h2 data-number="11.4" class="anchored" data-anchor-id="robust-statistics"><span class="header-section-number">11.4</span> Robust Statistics</h2>
+<section id="robust-statistics" class="level2 page-columns page-full" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="robust-statistics"><span class="header-section-number">12.4</span> Robust Statistics</h2>
 <ol type="1">
 <li>Choose a number of columns with different shapes, for instance, “e_prev_100k_hi” is left skewed or some columns where the variation is high or you notice potential outliers. You can make use of a series of boxplots to exploratively analyse the data for outliers</li>
 </ol>
-<div id="cell-53" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Listing the columns</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>df_tuber.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="20">
+<div id="cell-53" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Listing the columns</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>df_tuber.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>Index(['country', 'iso2', 'iso3', 'iso_numeric', 'g_whoregion', 'year',
        'e_pop_num', 'e_prev_100k', 'e_prev_100k_lo', 'e_prev_100k_hi',
        'e_prev_num', 'e_prev_num_lo', 'e_prev_num_hi', 'e_mort_exc_tbhiv_100k',
@@ -1835,34 +1860,34 @@ Just remember, the lambda parameter that defines the Poisson distribution is als
       dtype='object')</code></pre>
 </div>
 </div>
-<div id="cell-54" class="cell page-columns page-full" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Alright I already know a few columns with outliers but let's try to find them together exploratively using BoxPlots</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>colname <span class="op">=</span> <span class="st">'c_cdr'</span> <span class="co"># change the column name by choosing different ones from above (numeric ones)</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">15</span>,<span class="dv">5</span>))</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>plt.hist(df_tuber[colname])</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(colname))</span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>plt.boxplot(df_tuber[colname])<span class="op">;</span></span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(colname))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-54" class="cell page-columns page-full" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Alright I already know a few columns with outliers but let's try to find them together exploratively using BoxPlots</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>colname <span class="op">=</span> <span class="st">'c_cdr'</span> <span class="co"># change the column name by choosing different ones from above (numeric ones)</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">15</span>,<span class="dv">5</span>))</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>plt.hist(df_tuber[colname])</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(colname))</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>plt.boxplot(df_tuber[colname])<span class="op">;</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(colname))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display page-columns page-full">
 <div class="page-columns page-full">
 <figure class="figure page-columns page-full">
-<p class="page-columns page-full"><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-23-output-1.png" width="1179" height="431" class="figure-img column-screen-inset"></p>
+<p class="page-columns page-full"><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-24-output-1.png" width="1179" height="431" class="figure-img column-screen-inset"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="cell-55" class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chosen columns : I picked 3, feel free to change them and experiment</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>chosen_colnames <span class="op">=</span> [<span class="st">'e_pop_num'</span>, <span class="st">'e_prev_100k'</span>, <span class="st">'c_cdr'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-55" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chosen columns : I picked 3, feel free to change them and experiment</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>chosen_colnames <span class="op">=</span> [<span class="st">'e_pop_num'</span>, <span class="st">'e_prev_100k'</span>, <span class="st">'c_cdr'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><b>2) For the chosen columns, estimate both the conventional and the robust descriptive statistics and compare. Observe how these pairs deviate from each other based on the characteristics of the underlying data</b></p>
-<div id="cell-57" class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Central Tendency : Mean vs Median (Median is the robust version of the mean, because it takes into account </span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co">#the ordering of the points and not the actual values like the mean does)</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>df_tuber[chosen_colnames].describe().loc[[<span class="st">'mean'</span>, <span class="st">'50%'</span>], :] <span class="co"># The 50% is the median (50% quantile)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="23">
+<div id="cell-57" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Central Tendency : Mean vs Median (Median is the robust version of the mean, because it takes into account </span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co">#the ordering of the points and not the actual values like the mean does)</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>df_tuber[chosen_colnames].describe().loc[[<span class="st">'mean'</span>, <span class="st">'50%'</span>], :] <span class="co"># The 50% is the median (50% quantile)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
 <div>
 
 
@@ -1895,18 +1920,18 @@ Just remember, the lambda parameter that defines the Poisson distribution is als
 </div>
 </div>
 <p>Look at how the values are different between the mean and the median … LOOOOOOOK ! This is why when you have a skewed (unsymmetrical) distribution it’s usually more interesting to use the median as a measure of the central tendency of the data. One important thing to note here, for the two first attributes, the mean is higher than the median, but for the last it’s the opposite. This can tell you a thing or two about the shape of your distribution : if the mean is higher than the median, this means that the distribution is skewed to the right (right tail) which pulls the mean higher. And vice-versa.</p>
-<p>Moral of the story is … outliers are a pain in the a**.</p>
-<div id="cell-59" class="cell" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Spread : Standard Deviation vs Inter-Quartile Range vs Median Absolute Deviation (MAD)</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>stds <span class="op">=</span> df_tuber[chosen_colnames].std()</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>iqrs <span class="op">=</span> df_tuber[chosen_colnames].quantile(<span class="fl">0.75</span>) <span class="op">-</span> df_tuber[chosen_colnames].quantile(<span class="fl">0.25</span>)</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>medianAD <span class="op">=</span> mad(df_tuber[chosen_colnames])</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> pd.DataFrame(stds, columns <span class="op">=</span> [<span class="st">'std'</span>]).T</span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> pd.concat([output, pd.DataFrame(iqrs, columns <span class="op">=</span> [<span class="st">'IQR'</span>]).T], ignore_index<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> pd.concat([output, pd.DataFrame(medianAD, columns <span class="op">=</span> [<span class="st">'MAD'</span>], index <span class="op">=</span> chosen_colnames).T], ignore_index<span class="op">=</span><span class="va">False</span>, names <span class="op">=</span> [<span class="st">'std'</span>, <span class="st">'iqr'</span>, <span class="st">'mad'</span>])</span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>output</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="24">
+<p>Moral of the story is … outliers can be a pain!</p>
+<div id="cell-59" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Spread : Standard Deviation vs Inter-Quartile Range vs Median Absolute Deviation (MAD)</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>stds <span class="op">=</span> df_tuber[chosen_colnames].std()</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>iqrs <span class="op">=</span> df_tuber[chosen_colnames].quantile(<span class="fl">0.75</span>) <span class="op">-</span> df_tuber[chosen_colnames].quantile(<span class="fl">0.25</span>)</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>medianAD <span class="op">=</span> mad(df_tuber[chosen_colnames])</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> pd.DataFrame(stds, columns <span class="op">=</span> [<span class="st">'std'</span>]).T</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> pd.concat([output, pd.DataFrame(iqrs, columns <span class="op">=</span> [<span class="st">'IQR'</span>]).T], ignore_index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> pd.concat([output, pd.DataFrame(medianAD, columns <span class="op">=</span> [<span class="st">'MAD'</span>], index <span class="op">=</span> chosen_colnames).T], ignore_index<span class="op">=</span><span class="va">False</span>, names <span class="op">=</span> [<span class="st">'std'</span>, <span class="st">'iqr'</span>, <span class="st">'mad'</span>])</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>output</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="25">
 <div>
 
 
@@ -1947,34 +1972,34 @@ Just remember, the lambda parameter that defines the Poisson distribution is als
 <p>The values here are different as well, maybe more so for the “e_pop_num” attribute than the others, but that is just because of the scaling : “e_pop_num” takes big values overall compared to the other columns, which you can check with the mean values right above.</p>
 <p>For the first attribute, the standard deviation is higher, and both the IQR and MAD are close to each other. For the second attribute, the inter-quartile range is slightly higher than the standard deviation, but the MAD is far below (less than half) the other two values, and the reason for that is a little bit involved : Basically, the standard deviation measures the spread by computing the squared deviation from the mean while the median absolute deviation evaluates the spread by computing the absolute deviation. This means that when the outliers have much bigger values than the “normal” points, the squared difference explodes (figuratively of course ;p) compared to the absolute difference. And this is actually the case for our second distribution (e_prev_100k) where most values are between 50 and 300 while many outliers lay above the 750 mark and go all the way up to 1800 (look at the boxplots below). For the third attribute the values are somewhat close, especially the std and the MAD, that’s because if you inspect the boxplot, this column doesn’t have many outliers to begin with.</p>
 <p>Nonetheless, the differences are real, and if we don’t want to have to handle outliers, then we should be using robust statistics like the median to describe the central tendency and inter-quartile range or median absolute deviation to measure the spread of our data.</p>
-<div id="cell-61" class="cell page-columns page-full" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplots of the different columns</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">20</span>))</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>plt.hist(df_tuber[chosen_colnames[<span class="dv">0</span>]])</span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(chosen_colnames[<span class="dv">0</span>]))</span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>plt.boxplot(df_tuber[chosen_colnames[<span class="dv">0</span>]])</span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(chosen_colnames[<span class="dv">0</span>]))</span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
-<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>plt.hist(df_tuber[chosen_colnames[<span class="dv">1</span>]])</span>
-<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(chosen_colnames[<span class="dv">1</span>]))</span>
-<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>)</span>
-<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>plt.boxplot(df_tuber[chosen_colnames[<span class="dv">1</span>]])</span>
-<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(chosen_colnames[<span class="dv">1</span>]))</span>
-<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">5</span>)</span>
-<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>plt.hist(df_tuber[chosen_colnames[<span class="dv">2</span>]])</span>
-<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(chosen_colnames[<span class="dv">2</span>]))</span>
-<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">6</span>)</span>
-<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>plt.boxplot(df_tuber[chosen_colnames[<span class="dv">2</span>]])</span>
-<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(chosen_colnames[<span class="dv">2</span>]))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-61" class="cell page-columns page-full" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplots of the different columns</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">20</span>))</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>plt.hist(df_tuber[chosen_colnames[<span class="dv">0</span>]])</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(chosen_colnames[<span class="dv">0</span>]))</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>plt.boxplot(df_tuber[chosen_colnames[<span class="dv">0</span>]])</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(chosen_colnames[<span class="dv">0</span>]))</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>plt.hist(df_tuber[chosen_colnames[<span class="dv">1</span>]])</span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(chosen_colnames[<span class="dv">1</span>]))</span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>)</span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a>plt.boxplot(df_tuber[chosen_colnames[<span class="dv">1</span>]])</span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(chosen_colnames[<span class="dv">1</span>]))</span>
+<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">5</span>)</span>
+<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a>plt.hist(df_tuber[chosen_colnames[<span class="dv">2</span>]])</span>
+<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(chosen_colnames[<span class="dv">2</span>]))</span>
+<span id="cb34-21"><a href="#cb34-21" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">6</span>)</span>
+<span id="cb34-22"><a href="#cb34-22" aria-hidden="true" tabindex="-1"></a>plt.boxplot(df_tuber[chosen_colnames[<span class="dv">2</span>]])</span>
+<span id="cb34-23"><a href="#cb34-23" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(chosen_colnames[<span class="dv">2</span>]))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display page-columns page-full">
 <div class="page-columns page-full">
 <figure class="figure page-columns page-full">
-<p class="page-columns page-full"><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-27-output-1.png" width="955" height="1540" class="figure-img column-page-inset-right"></p>
+<p class="page-columns page-full"><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-28-output-1.png" width="955" height="1540" class="figure-img column-page-inset-right"></p>
 </figure>
 </div>
 </div>
@@ -1986,239 +2011,242 @@ Just remember, the lambda parameter that defines the Poisson distribution is als
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/warwickcim\.github\.io\/IM939_handbook\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
+      return false;
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/warwickcim\.github\.io\/IM939_handbook\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
         }
-        return container.innerHTML
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -2226,194 +2254,170 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../../content/sessions/session-03.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../../content/labs/Lab_3/IM939_Lab_3_2_Linear_Regression.html" class="pagination-link" aria-label="Lab: Regressions">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Lab: Regressions</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Lab: Regressions</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

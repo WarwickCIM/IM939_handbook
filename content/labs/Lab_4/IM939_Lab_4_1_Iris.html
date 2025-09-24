@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.7.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>16&nbsp; Lab: Dimension Reduction – Data Science Across Disciplines</title>
+<title>17&nbsp; Lab: Dimension Reduction – Data Science Across Disciplines</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,8 +21,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,15 +88,16 @@ div.csl-indent {
 <link href="../../../content/labs/Lab_4/IM939_Lab_4_2_Crime.html" rel="next">
 <link href="../../../content/labs/Lab_4/IM939_Session-04_PCA_playground.html" rel="prev">
 <link href="../../../media/CIM_logo.png" rel="icon" type="image/png">
-<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-07b24a03df13974727b670a48c0144b0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -157,13 +159,13 @@ window.Quarto = {
 };
 </script>
 
-<meta name="twitter:title" content="16&nbsp; Lab: Dimension Reduction – Data Science Across Disciplines">
+<meta name="twitter:title" content="17&nbsp; Lab: Dimension Reduction – Data Science Across Disciplines">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_4/media/IM939_logo.png">
+<meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_4/media/451px-Petal-sepal.jpg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating slimcontent">
+<body class="nav-sidebar floating slimcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -172,7 +174,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/sessions/session-04.html">Structures &amp; Spaces</a></li><li class="breadcrumb-item"><a href="../../../content/labs/Lab_4/IM939_Lab_4_1_Iris.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Lab: Dimension Reduction</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/sessions/session-04.html">Structures &amp; Spaces</a></li><li class="breadcrumb-item"><a href="../../../content/labs/Lab_4/IM939_Lab_4_1_Iris.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Lab: Dimension Reduction</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -221,7 +223,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/about/teaching_staff.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Teaching Staff</span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Teaching Staff</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -256,25 +258,25 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/sessions/session-01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_1/IM939_Lab_1_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Lab: Introduction to Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Lab: Introduction to Python</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_1/IM939_Lab_1_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Lab: Repetition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lab: Repetition</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_1/IM939_Lab_1_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lab: Libraries</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Lab: Libraries</span></span></a>
   </div>
 </li>
       </ul>
@@ -291,31 +293,31 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/sessions/session-02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_2/IM939_Lab_2_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Lab: Pandas</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Lab: Pandas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_2/IM939_Lab_2_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Lab: Visualising Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Lab: Visualising Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_2/IM939_Lab_2_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Lab: Missing data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lab: Missing data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_2/IM939_Lab_2_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lab: Seaborn</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Lab: Seaborn</span></span></a>
   </div>
 </li>
       </ul>
@@ -332,25 +334,25 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/sessions/session-03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_3/IM939_Lab_3_1_Data_Processing_and_Summarization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Lab: Data Processing and Summarization</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Lab: Data Processing and Summarization</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_3/IM939_Lab_3_2_Linear_Regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Lab: Regressions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Lab: Regressions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_3/IM939_Lab_3_Exercise_Linear_Regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Exercise: Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Exercise: Regression</span></span></a>
   </div>
 </li>
       </ul>
@@ -367,31 +369,31 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/sessions/session-04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_4/IM939_Session-04_PCA_playground.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Working with Dimension Reduction Methods</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Working with Dimension Reduction Methods</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_4/IM939_Lab_4_1_Iris.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Lab: Dimension Reduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Lab: Dimension Reduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_4/IM939_Lab_4_2_Crime.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Lab: Dimension reduction (2)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Lab: Dimension reduction (2)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_4/IM939_Lab_4_Exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Exercise: Wine dataset</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Exercise: Wine dataset</span></span></a>
   </div>
 </li>
       </ul>
@@ -408,37 +410,37 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/sessions/session-05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/week5_recap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Recap</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Recap</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_Lab_5_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Lab: Working with multiple models</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Lab: Working with multiple models</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_Lab_5_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Lab: Clustering and Ground Truth</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Lab: Clustering and Ground Truth</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_Lab_5_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Lab: Cross validation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Lab: Cross validation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_lab_5_Exercise.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">IM939 lab 5 - Exercise</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">IM939 lab 5 - Exercise</span></span></a>
   </div>
 </li>
       </ul>
@@ -455,25 +457,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/sessions/session-06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_6/IM939_Lab_6_1-illusions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Lab: Illusions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Lab: Illusions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_6/IM939_Lab_6_2-AxisManipulation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Lab: Axes manipulation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../content/labs/Lab_6/IM939_Lab_6_3-Choropleths.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Lab: Choropleth Maps</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Lab: Axes manipulation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -599,32 +595,32 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#data-preparations" id="toc-data-preparations" class="nav-link active" data-scroll-target="#data-preparations"><span class="header-section-number">16.1</span> Data preparations</a>
+  <li><a href="#data-preparations" id="toc-data-preparations" class="nav-link active" data-scroll-target="#data-preparations"><span class="header-section-number">17.1</span> Data preparations</a>
   <ul class="collapse">
-  <li><a href="#normalisation" id="toc-normalisation" class="nav-link" data-scroll-target="#normalisation"><span class="header-section-number">16.1.1</span> Normalisation</a></li>
-  <li><a href="#initial-exploration" id="toc-initial-exploration" class="nav-link" data-scroll-target="#initial-exploration"><span class="header-section-number">16.1.2</span> Initial exploration</a></li>
+  <li><a href="#normalisation" id="toc-normalisation" class="nav-link" data-scroll-target="#normalisation"><span class="header-section-number">17.1.1</span> Normalisation</a></li>
+  <li><a href="#initial-exploration" id="toc-initial-exploration" class="nav-link" data-scroll-target="#initial-exploration"><span class="header-section-number">17.1.2</span> Initial exploration</a></li>
   </ul></li>
-  <li><a href="#clustering" id="toc-clustering" class="nav-link" data-scroll-target="#clustering"><span class="header-section-number">16.2</span> Clustering</a>
+  <li><a href="#clustering" id="toc-clustering" class="nav-link" data-scroll-target="#clustering"><span class="header-section-number">17.2</span> Clustering</a>
   <ul class="collapse">
-  <li><a href="#specify-our-number-of-clusters." id="toc-specify-our-number-of-clusters." class="nav-link" data-scroll-target="#specify-our-number-of-clusters."><span class="header-section-number">16.2.1</span> Specify our number of clusters.</a></li>
-  <li><a href="#changing-the-number-of-clusters" id="toc-changing-the-number-of-clusters" class="nav-link" data-scroll-target="#changing-the-number-of-clusters"><span class="header-section-number">16.2.2</span> Changing the number of clusters</a></li>
+  <li><a href="#specify-our-number-of-clusters." id="toc-specify-our-number-of-clusters." class="nav-link" data-scroll-target="#specify-our-number-of-clusters."><span class="header-section-number">17.2.1</span> Specify our number of clusters.</a></li>
+  <li><a href="#changing-the-number-of-clusters" id="toc-changing-the-number-of-clusters" class="nav-link" data-scroll-target="#changing-the-number-of-clusters"><span class="header-section-number">17.2.2</span> Changing the number of clusters</a></li>
   </ul></li>
-  <li><a href="#principal-component-analysis-pca" id="toc-principal-component-analysis-pca" class="nav-link" data-scroll-target="#principal-component-analysis-pca"><span class="header-section-number">16.3</span> Principal Component Analysis (PCA)</a>
+  <li><a href="#principal-component-analysis-pca" id="toc-principal-component-analysis-pca" class="nav-link" data-scroll-target="#principal-component-analysis-pca"><span class="header-section-number">17.3</span> Principal Component Analysis (PCA)</a>
   <ul class="collapse">
-  <li><a href="#dimension-reduction" id="toc-dimension-reduction" class="nav-link" data-scroll-target="#dimension-reduction"><span class="header-section-number">16.3.1</span> Dimension reduction</a></li>
-  <li><a href="#pca-to-clusters" id="toc-pca-to-clusters" class="nav-link" data-scroll-target="#pca-to-clusters"><span class="header-section-number">16.3.2</span> PCA to Clusters</a></li>
-  <li><a href="#missing-values" id="toc-missing-values" class="nav-link" data-scroll-target="#missing-values"><span class="header-section-number">16.3.3</span> Missing values</a></li>
+  <li><a href="#dimension-reduction" id="toc-dimension-reduction" class="nav-link" data-scroll-target="#dimension-reduction"><span class="header-section-number">17.3.1</span> Dimension reduction</a></li>
+  <li><a href="#pca-to-clusters" id="toc-pca-to-clusters" class="nav-link" data-scroll-target="#pca-to-clusters"><span class="header-section-number">17.3.2</span> PCA to Clusters</a></li>
+  <li><a href="#missing-values" id="toc-missing-values" class="nav-link" data-scroll-target="#missing-values"><span class="header-section-number">17.3.3</span> Missing values</a></li>
   </ul></li>
-  <li><a href="#useful-resources" id="toc-useful-resources" class="nav-link" data-scroll-target="#useful-resources"><span class="header-section-number">16.4</span> Useful resources</a></li>
+  <li><a href="#useful-resources" id="toc-useful-resources" class="nav-link" data-scroll-target="#useful-resources"><span class="header-section-number">17.4</span> Useful resources</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.dev/WarwickCIM/IM939_handbook/blob/main/content/labs/Lab_4/IM939_Lab_4_1_Iris.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/WarwickCIM/IM939_handbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/sessions/session-04.html">Structures &amp; Spaces</a></li><li class="breadcrumb-item"><a href="../../../content/labs/Lab_4/IM939_Lab_4_1_Iris.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Lab: Dimension Reduction</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/sessions/session-04.html">Structures &amp; Spaces</a></li><li class="breadcrumb-item"><a href="../../../content/labs/Lab_4/IM939_Lab_4_1_Iris.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Lab: Dimension Reduction</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Lab: Dimension Reduction</span></h1>
+<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Lab: Dimension Reduction</span></h1>
 </div>
 
 
@@ -643,8 +639,8 @@ window.Quarto = {
 
 <p>So far, we have worked with relatively small data sets, but often times, datasets may have a high number of dimensions. In those cases, appliying the methods we have covered in past sessions (i.e., visual exploration using data visualisations, correlations between two variables…) may be really difficult, if not impossible to do.</p>
 <p>In this notebook we are going to explore two different techniques for reducing the dimensionality of our data: Clustering and Principle Component Analysis (PCA).</p>
-<section id="data-preparations" class="level2 page-columns page-full" data-number="16.1">
-<h2 data-number="16.1" class="anchored" data-anchor-id="data-preparations"><span class="header-section-number">16.1</span> Data preparations</h2>
+<section id="data-preparations" class="level2 page-columns page-full" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="data-preparations"><span class="header-section-number">17.1</span> Data preparations</h2>
 <p>In this notebook, we are going to use the simple <a href="https://en.wikipedia.org/wiki/Iris_flower_data_set">Iris flower dataset</a> <span class="citation" data-cites="r_a_fisher_iris_1936">(<a href="../../references.html#ref-r_a_fisher_iris_1936" role="doc-biblioref">Fisher 1936</a>)</span>. The dataset, which is famously used to introduce these methods, consists of 4 measures or attributes (the length and the width of the sepals and petals, in centimeters) describing 50 samples from three species of flowers (<em>Iris setosa</em>, <em>Iris virginica</em> and <em>Iris versicolor</em>).</p>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
@@ -1000,8 +996,8 @@ What is this telling us?
 </div>
 </div>
 </div>
-<section id="normalisation" class="level3" data-number="16.1.1">
-<h3 data-number="16.1.1" class="anchored" data-anchor-id="normalisation"><span class="header-section-number">16.1.1</span> Normalisation</h3>
+<section id="normalisation" class="level3" data-number="17.1.1">
+<h3 data-number="17.1.1" class="anchored" data-anchor-id="normalisation"><span class="header-section-number">17.1.1</span> Normalisation</h3>
 <p>Some algorithms are senstive to the size of variables. For example, if the sepal widths were in meters and the other variables in cm then an algorithm may underweight sepal widths. This means that we will need to rescale our variables to be in the safe side. There are two ways to put variables into the same scale: normalisation and standarisation.</p>
 <ul>
 <li><strong>Normalisation:</strong> rescales a dataset so that each <strong>value</strong> falls between 0 and 1. It uses the following formula to do so:</li>
@@ -1233,11 +1229,11 @@ Questions
 </div>
 </div>
 </section>
-<section id="initial-exploration" class="level3 page-columns page-full" data-number="16.1.2">
-<h3 data-number="16.1.2" class="anchored" data-anchor-id="initial-exploration"><span class="header-section-number">16.1.2</span> Initial exploration</h3>
+<section id="initial-exploration" class="level3 page-columns page-full" data-number="17.1.2">
+<h3 data-number="17.1.2" class="anchored" data-anchor-id="initial-exploration"><span class="header-section-number">17.1.2</span> Initial exploration</h3>
 <p>We can explore a dataset with few variables using plots.</p>
-<section id="distribution-variabilty-and-density" class="level4 page-columns page-full" data-number="16.1.2.1">
-<h4 data-number="16.1.2.1" class="anchored" data-anchor-id="distribution-variabilty-and-density"><span class="header-section-number">16.1.2.1</span> Distribution (variabilty and density)</h4>
+<section id="distribution-variabilty-and-density" class="level4 page-columns page-full" data-number="17.1.2.1">
+<h4 data-number="17.1.2.1" class="anchored" data-anchor-id="distribution-variabilty-and-density"><span class="header-section-number">17.1.2.1</span> Distribution (variabilty and density)</h4>
 <p>We’d like to see each variable’s distributions in terms of variablity and density. We have seen several ways to do this, but in this case we will be using a new plot type (a <a href="https://en.wikipedia.org/wiki/Violin_plot">violin plot</a>) to visualise the distribution.</p>
 <p>To do so, we will be using seaborn’s <a href="https://seaborn.pydata.org/generated/seaborn.violinplot.html"><code>violinplot()</code></a>. Because we want to create a single plot with a violin plot per variable, we will need to transform our data from wide to a long format.</p>
 
@@ -1364,8 +1360,8 @@ Wide vs long data
 </div>
 </div>
 </section>
-<section id="correlations" class="level4 page-columns page-full" data-number="16.1.2.2">
-<h4 data-number="16.1.2.2" class="anchored" data-anchor-id="correlations"><span class="header-section-number">16.1.2.2</span> Correlations</h4>
+<section id="correlations" class="level4 page-columns page-full" data-number="17.1.2.2">
+<h4 data-number="17.1.2.2" class="anchored" data-anchor-id="correlations"><span class="header-section-number">17.1.2.2</span> Correlations</h4>
 <p>The below plots use the wide data structure.</p>
 <div id="cell-17" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>iris_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1504,8 +1500,8 @@ Wide vs long data
 </section>
 </section>
 </section>
-<section id="clustering" class="level2 page-columns page-full" data-number="16.2">
-<h2 data-number="16.2" class="anchored" data-anchor-id="clustering"><span class="header-section-number">16.2</span> Clustering</h2>
+<section id="clustering" class="level2 page-columns page-full" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="clustering"><span class="header-section-number">17.2</span> Clustering</h2>
 <p>A cluster is simply a group based on simliarity. There are several methods and we will use a relatively simple one called K-means clustering.</p>
 <p>In K-means clustering an algorithm tries to group our items (plants in the iris dataset) based on similarity. We decide how many groups we want and the algorithm does the best it can (an accessible introduction to k-means clustering is <a href="https://www.analyticsvidhya.com/blog/2020/10/a-simple-explanation-of-k-means-clustering/">here</a>).</p>
 <p>To start, we import the KMeans function from sklearn cluster module and turn our data into a matrix.</p>
@@ -1667,8 +1663,8 @@ Wide vs long data
        [0.44444444, 0.41666667, 0.69491525, 0.70833333]])</code></pre>
 </div>
 </div>
-<section id="specify-our-number-of-clusters." class="level3 page-columns page-full" data-number="16.2.1">
-<h3 data-number="16.2.1" class="anchored" data-anchor-id="specify-our-number-of-clusters."><span class="header-section-number">16.2.1</span> Specify our number of clusters.</h3>
+<section id="specify-our-number-of-clusters." class="level3 page-columns page-full" data-number="17.2.1">
+<h3 data-number="17.2.1" class="anchored" data-anchor-id="specify-our-number-of-clusters."><span class="header-section-number">17.2.1</span> Specify our number of clusters.</h3>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2108,20 +2104,20 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-3);
 }
-</a></style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>KMeans(init='random', n_clusters=3, n_init=10)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked=""><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;&nbsp;KMeans<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.cluster.KMeans.html">?<span>Documentation for KMeans</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>KMeans(init='random', n_clusters=3, n_init=10)</pre></div> </div></div></div></div>
+</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>KMeans(init='random', n_clusters=3, n_init=10)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked=""><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;&nbsp;KMeans<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.cluster.KMeans.html">?<span>Documentation for KMeans</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>KMeans(init='random', n_clusters=3, n_init=10)</pre></div> </div></div></div></div>
 </div>
 </div>
 <p>The algorithm has assigned the a label to each row.</p>
 <div id="cell-31" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>k_means.labels_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
-<pre><code>array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-       1, 1, 1, 1, 1, 1, 2, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, 2, 2, 2, 0, 2, 2, 2,
-       2, 2, 2, 0, 2, 2, 2, 2, 2, 0, 2, 0, 2, 0, 2, 2, 0, 0, 2, 2, 2, 2,
-       2, 0, 0, 2, 2, 2, 0, 2, 2, 2, 0, 2, 2, 2, 0, 2, 2, 0], dtype=int32)</code></pre>
+<pre><code>array([2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+       2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+       2, 2, 2, 2, 2, 2, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1,
+       1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1,
+       1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0], dtype=int32)</code></pre>
 </div>
 </div>
 <p>Each row has been assigned a label.</p>
@@ -2153,7 +2149,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.625000</td>
 <td>0.067797</td>
 <td>0.041667</td>
-<td>1</td>
+<td>2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
@@ -2161,7 +2157,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.416667</td>
 <td>0.067797</td>
 <td>0.041667</td>
-<td>1</td>
+<td>2</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
@@ -2169,7 +2165,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.500000</td>
 <td>0.050847</td>
 <td>0.041667</td>
-<td>1</td>
+<td>2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
@@ -2177,7 +2173,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.458333</td>
 <td>0.084746</td>
 <td>0.041667</td>
-<td>1</td>
+<td>2</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
@@ -2185,7 +2181,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.666667</td>
 <td>0.067797</td>
 <td>0.041667</td>
-<td>1</td>
+<td>2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -2201,7 +2197,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.916667</td>
-<td>2</td>
+<td>1</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">146</td>
@@ -2217,7 +2213,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.791667</td>
-<td>2</td>
+<td>1</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">148</td>
@@ -2225,7 +2221,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.583333</td>
 <td>0.745763</td>
 <td>0.916667</td>
-<td>2</td>
+<td>1</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">149</td>
@@ -2268,8 +2264,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>k_means.cluster_centers_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>array([[0.44125683, 0.30737705, 0.57571548, 0.54918033],
-       [0.19611111, 0.595     , 0.07830508, 0.06083333],
-       [0.70726496, 0.4508547 , 0.79704476, 0.82478632]])</code></pre>
+       [0.70726496, 0.4508547 , 0.79704476, 0.82478632],
+       [0.19611111, 0.595     , 0.07830508, 0.06083333]])</code></pre>
 </div>
 </div>
 <p>It is tricky to plot these using seaborn but we can use a normal maplotlib scatter plot.</p>
@@ -2328,8 +2324,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 </section>
-<section id="changing-the-number-of-clusters" class="level3 page-columns page-full" data-number="16.2.2">
-<h3 data-number="16.2.2" class="anchored" data-anchor-id="changing-the-number-of-clusters"><span class="header-section-number">16.2.2</span> Changing the number of clusters</h3>
+<section id="changing-the-number-of-clusters" class="level3 page-columns page-full" data-number="17.2.2">
+<h3 data-number="17.2.2" class="anchored" data-anchor-id="changing-the-number-of-clusters"><span class="header-section-number">17.2.2</span> Changing the number of clusters</h3>
 <p>What happens if we change the number of clusters?</p>
 <p>Two groups</p>
 <div id="cell-47" class="cell" data-execution_count="25">
@@ -2393,9 +2389,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.625000</td>
 <td>0.067797</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>4</td>
+<td>2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
@@ -2403,9 +2399,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.416667</td>
 <td>0.067797</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>1</td>
+<td>0</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
@@ -2413,9 +2409,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.500000</td>
 <td>0.050847</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>1</td>
+<td>0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
@@ -2423,9 +2419,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.458333</td>
 <td>0.084746</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>1</td>
+<td>0</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
@@ -2433,9 +2429,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.666667</td>
 <td>0.067797</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>4</td>
+<td>2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -2453,9 +2449,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.916667</td>
-<td>2</td>
+<td>1</td>
 <td>0</td>
-<td>0</td>
+<td>1</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">146</td>
@@ -2465,7 +2461,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.750000</td>
 <td>0</td>
 <td>0</td>
-<td>3</td>
+<td>4</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">147</td>
@@ -2473,9 +2469,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.791667</td>
-<td>2</td>
+<td>1</td>
 <td>0</td>
-<td>3</td>
+<td>1</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">148</td>
@@ -2483,9 +2479,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.583333</td>
 <td>0.745763</td>
 <td>0.916667</td>
-<td>2</td>
+<td>1</td>
 <td>0</td>
-<td>0</td>
+<td>1</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">149</td>
@@ -2495,7 +2491,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.708333</td>
 <td>0</td>
 <td>0</td>
-<td>3</td>
+<td>4</td>
 </tr>
 </tbody>
 </table>
@@ -2520,15 +2516,15 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div id="cell-58" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>k_means_5.inertia_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="32">
-<pre><code>4.58977540011789</code></pre>
+<pre><code>4.600868967422487</code></pre>
 </div>
 </div>
 <p>It looks like our k = 5 model captures the data well. Intertia, <a href="https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html">looking at the sklearn documentation</a> as the <em>Sum of squared distances of samples to their closest cluster center.</em>.</p>
 <p>If you want to dive further into this then Real Python’s <a href="https://realpython.com/k-means-clustering-python/">practical guide to K-Means Clustering</a> is quite good.</p>
 </section>
 </section>
-<section id="principal-component-analysis-pca" class="level2 page-columns page-full" data-number="16.3">
-<h2 data-number="16.3" class="anchored" data-anchor-id="principal-component-analysis-pca"><span class="header-section-number">16.3</span> Principal Component Analysis (PCA)</h2>
+<section id="principal-component-analysis-pca" class="level2 page-columns page-full" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="principal-component-analysis-pca"><span class="header-section-number">17.3</span> Principal Component Analysis (PCA)</h2>
 <p>PCA reduces the dimension of our data. The method derives point in an n dimentional space from our data which are uncorrelated.</p>
 <p>To carry out a PCA on our Iris dataset where there are only two dimensions.</p>
 <div id="cell-62" class="cell" data-execution_count="33">
@@ -2583,8 +2579,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 </div>
-<section id="dimension-reduction" class="level3" data-number="16.3.1">
-<h3 data-number="16.3.1" class="anchored" data-anchor-id="dimension-reduction"><span class="header-section-number">16.3.1</span> Dimension reduction</h3>
+<section id="dimension-reduction" class="level3" data-number="17.3.1">
+<h3 data-number="17.3.1" class="anchored" data-anchor-id="dimension-reduction"><span class="header-section-number">17.3.1</span> Dimension reduction</h3>
 <p>For our purposes, we are interested in using PCA for reducing the number of dimension in our data whilst preseving the maximal data variance.</p>
 <p>We can extract the projected components from the model.</p>
 <div id="cell-71" class="cell" data-execution_count="38">
@@ -2798,9 +2794,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.625000</td>
 <td>0.067797</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>4</td>
+<td>2</td>
 <td>-0.630703</td>
 <td>0.107578</td>
 </tr>
@@ -2810,9 +2806,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.416667</td>
 <td>0.067797</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>1</td>
+<td>0</td>
 <td>-0.622905</td>
 <td>-0.104260</td>
 </tr>
@@ -2822,9 +2818,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.500000</td>
 <td>0.050847</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>1</td>
+<td>0</td>
 <td>-0.669520</td>
 <td>-0.051417</td>
 </tr>
@@ -2834,9 +2830,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.458333</td>
 <td>0.084746</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>1</td>
+<td>0</td>
 <td>-0.654153</td>
 <td>-0.102885</td>
 </tr>
@@ -2846,9 +2842,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.666667</td>
 <td>0.067797</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>4</td>
+<td>2</td>
 <td>-0.648788</td>
 <td>0.133488</td>
 </tr>
@@ -2870,9 +2866,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.916667</td>
-<td>2</td>
+<td>1</td>
 <td>0</td>
-<td>0</td>
+<td>1</td>
 <td>0.551462</td>
 <td>0.059841</td>
 </tr>
@@ -2884,7 +2880,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.750000</td>
 <td>0</td>
 <td>0</td>
-<td>3</td>
+<td>4</td>
 <td>0.407146</td>
 <td>-0.171821</td>
 </tr>
@@ -2894,9 +2890,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.791667</td>
-<td>2</td>
+<td>1</td>
 <td>0</td>
-<td>3</td>
+<td>1</td>
 <td>0.447143</td>
 <td>0.037560</td>
 </tr>
@@ -2906,9 +2902,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.583333</td>
 <td>0.745763</td>
 <td>0.916667</td>
-<td>2</td>
+<td>1</td>
 <td>0</td>
-<td>0</td>
+<td>1</td>
 <td>0.488208</td>
 <td>0.149678</td>
 </tr>
@@ -2920,7 +2916,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.708333</td>
 <td>0</td>
 <td>0</td>
-<td>3</td>
+<td>4</td>
 <td>0.312066</td>
 <td>-0.031130</td>
 </tr>
@@ -2982,9 +2978,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.625000</td>
 <td>0.067797</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>4</td>
+<td>2</td>
 <td>-0.630703</td>
 <td>0.107578</td>
 </tr>
@@ -2994,9 +2990,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.416667</td>
 <td>0.067797</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>1</td>
+<td>0</td>
 <td>-0.622905</td>
 <td>-0.104260</td>
 </tr>
@@ -3006,9 +3002,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.500000</td>
 <td>0.050847</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>1</td>
+<td>0</td>
 <td>-0.669520</td>
 <td>-0.051417</td>
 </tr>
@@ -3018,9 +3014,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.458333</td>
 <td>0.084746</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>1</td>
+<td>0</td>
 <td>-0.654153</td>
 <td>-0.102885</td>
 </tr>
@@ -3030,9 +3026,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.666667</td>
 <td>0.067797</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>4</td>
+<td>2</td>
 <td>-0.648788</td>
 <td>0.133488</td>
 </tr>
@@ -3054,9 +3050,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.916667</td>
-<td>2</td>
+<td>1</td>
 <td>0</td>
-<td>0</td>
+<td>1</td>
 <td>0.551462</td>
 <td>0.059841</td>
 </tr>
@@ -3068,7 +3064,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.750000</td>
 <td>0</td>
 <td>0</td>
-<td>3</td>
+<td>4</td>
 <td>0.407146</td>
 <td>-0.171821</td>
 </tr>
@@ -3078,9 +3074,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.791667</td>
-<td>2</td>
+<td>1</td>
 <td>0</td>
-<td>3</td>
+<td>1</td>
 <td>0.447143</td>
 <td>0.037560</td>
 </tr>
@@ -3090,9 +3086,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.583333</td>
 <td>0.745763</td>
 <td>0.916667</td>
-<td>2</td>
+<td>1</td>
 <td>0</td>
-<td>0</td>
+<td>1</td>
 <td>0.488208</td>
 <td>0.149678</td>
 </tr>
@@ -3104,7 +3100,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.708333</td>
 <td>0</td>
 <td>0</td>
-<td>3</td>
+<td>4</td>
 <td>0.312066</td>
 <td>-0.031130</td>
 </tr>
@@ -3116,8 +3112,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 </section>
-<section id="pca-to-clusters" class="level3" data-number="16.3.2">
-<h3 data-number="16.3.2" class="anchored" data-anchor-id="pca-to-clusters"><span class="header-section-number">16.3.2</span> PCA to Clusters</h3>
+<section id="pca-to-clusters" class="level3" data-number="17.3.2">
+<h3 data-number="17.3.2" class="anchored" data-anchor-id="pca-to-clusters"><span class="header-section-number">17.3.2</span> PCA to Clusters</h3>
 <p>We have reduced our 4D dataset to 2D whilst keeping the data variance. Reducing the data to fewer dimensions can help with the ‘curse of dimensionality’, reduce the change of overfitting a machine learning model (see <a href="https://en.wikipedia.org/wiki/Dimensionality_reduction">here</a>) and reduce the computational complexity of a model fit.</p>
 <p>Putting our new dimensions into a kMeans model</p>
 <div id="cell-87" class="cell" data-execution_count="48">
@@ -3160,12 +3156,12 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.625000</td>
 <td>0.067797</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>4</td>
+<td>2</td>
 <td>-0.630703</td>
 <td>0.107578</td>
-<td>2</td>
+<td>0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
@@ -3173,12 +3169,12 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.416667</td>
 <td>0.067797</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>1</td>
+<td>0</td>
 <td>-0.622905</td>
 <td>-0.104260</td>
-<td>2</td>
+<td>0</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
@@ -3186,12 +3182,12 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.500000</td>
 <td>0.050847</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>1</td>
+<td>0</td>
 <td>-0.669520</td>
 <td>-0.051417</td>
-<td>2</td>
+<td>0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
@@ -3199,12 +3195,12 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.458333</td>
 <td>0.084746</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>1</td>
+<td>0</td>
 <td>-0.654153</td>
 <td>-0.102885</td>
-<td>2</td>
+<td>0</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
@@ -3212,12 +3208,12 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.666667</td>
 <td>0.067797</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>4</td>
+<td>2</td>
 <td>-0.648788</td>
 <td>0.133488</td>
-<td>2</td>
+<td>0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -3238,12 +3234,12 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.916667</td>
-<td>2</td>
+<td>1</td>
 <td>0</td>
-<td>0</td>
+<td>1</td>
 <td>0.551462</td>
 <td>0.059841</td>
-<td>0</td>
+<td>1</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">146</td>
@@ -3253,10 +3249,10 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.750000</td>
 <td>0</td>
 <td>0</td>
-<td>3</td>
+<td>4</td>
 <td>0.407146</td>
 <td>-0.171821</td>
-<td>1</td>
+<td>2</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">147</td>
@@ -3264,12 +3260,12 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.791667</td>
-<td>2</td>
+<td>1</td>
 <td>0</td>
-<td>3</td>
+<td>1</td>
 <td>0.447143</td>
 <td>0.037560</td>
-<td>0</td>
+<td>1</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">148</td>
@@ -3277,12 +3273,12 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.583333</td>
 <td>0.745763</td>
 <td>0.916667</td>
-<td>2</td>
+<td>1</td>
 <td>0</td>
-<td>0</td>
+<td>1</td>
 <td>0.488208</td>
 <td>0.149678</td>
-<td>0</td>
+<td>1</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">149</td>
@@ -3292,10 +3288,10 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <td>0.708333</td>
 <td>0</td>
 <td>0</td>
-<td>3</td>
+<td>4</td>
 <td>0.312066</td>
 <td>-0.031130</td>
-<td>1</td>
+<td>2</td>
 </tr>
 </tbody>
 </table>
@@ -3341,7 +3337,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-53-output-1.png" width="582" height="427" class="figure-img"></p>
+<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-53-output-1.png" width="589" height="430" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -3349,8 +3345,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <p>Three seems ok. We clearly want no more than three.</p>
 <p>These types of plots show an point about model complexity. More free parameters in the model (here the number of clusters) will improve how well the model captures the data, often with reducing returns. However, a model which overfits the data will not be able to fit new data well - referred to overfitting. Randomish internet blogs introduce the topic pretty well, see <a href="https://elitedatascience.com/overfitting-in-machine-learning">here</a>, and also wikipedia, see <a href="https://en.wikipedia.org/wiki/Overfitting">here</a>.</p>
 </section>
-<section id="missing-values" class="level3 page-columns page-full" data-number="16.3.3">
-<h3 data-number="16.3.3" class="anchored" data-anchor-id="missing-values"><span class="header-section-number">16.3.3</span> Missing values</h3>
+<section id="missing-values" class="level3 page-columns page-full" data-number="17.3.3">
+<h3 data-number="17.3.3" class="anchored" data-anchor-id="missing-values"><span class="header-section-number">17.3.3</span> Missing values</h3>
 <p>Finally, how we deal with missing values can impact the results of PCA and kMeans clustering.</p>
 <p>Lets us load in the iris dataset again and randomly remove 10% of the data (see code from <a href="https://stackoverflow.com/questions/42091018/randomly-insert-nas-values-in-a-pandas-dataframe-with-no-rows-completely-miss">here</a>).</p>
 <div id="cell-96" class="cell" data-execution_count="53">
@@ -3368,10 +3364,10 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb70-8"><a href="#cb70-8" aria-hidden="true" tabindex="-1"></a>df.isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="54">
-<pre><code>sepal length (cm)    27
+<pre><code>sepal length (cm)    26
 sepal width (cm)     33
-petal length (cm)    35
-petal width (cm)     30
+petal length (cm)    34
+petal width (cm)     27
 dtype: int64</code></pre>
 </div>
 </div>
@@ -3397,35 +3393,35 @@ dtype: int64</code></pre>
 <td>5.1</td>
 <td>3.5</td>
 <td>1.4</td>
-<td>0.2</td>
+<td>NaN</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
 <td>4.9</td>
 <td>NaN</td>
-<td>1.4</td>
+<td>NaN</td>
 <td>0.2</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
 <td>4.7</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>3.2</td>
+<td>1.3</td>
 <td>0.2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
 <td>4.6</td>
 <td>3.1</td>
-<td>NaN</td>
+<td>1.5</td>
 <td>0.2</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
 <td>5.0</td>
-<td>3.6</td>
-<td>1.4</td>
 <td>NaN</td>
+<td>1.4</td>
+<td>0.2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -3436,15 +3432,15 @@ dtype: int64</code></pre>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">145</td>
-<td>NaN</td>
+<td>6.7</td>
 <td>3.0</td>
-<td>5.2</td>
+<td>NaN</td>
 <td>2.3</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">146</td>
-<td>6.3</td>
-<td>2.5</td>
+<td>NaN</td>
+<td>NaN</td>
 <td>5.0</td>
 <td>1.9</td>
 </tr>
@@ -3452,7 +3448,7 @@ dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">147</td>
 <td>6.5</td>
 <td>3.0</td>
-<td>5.2</td>
+<td>NaN</td>
 <td>2.0</td>
 </tr>
 <tr class="even">
@@ -3465,7 +3461,7 @@ dtype: int64</code></pre>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">149</td>
 <td>5.9</td>
-<td>3.0</td>
+<td>NaN</td>
 <td>5.1</td>
 <td>1.8</td>
 </tr>
@@ -3477,8 +3473,8 @@ dtype: int64</code></pre>
 </div>
 </div>
 <p>About 20% of the data is randomly an NaN.</p>
-<section id="zeroing" class="level4 page-columns page-full" data-number="16.3.3.1">
-<h4 data-number="16.3.3.1" class="anchored" data-anchor-id="zeroing"><span class="header-section-number">16.3.3.1</span> Zeroing</h4>
+<section id="zeroing" class="level4 page-columns page-full" data-number="17.3.3.1">
+<h4 data-number="17.3.3.1" class="anchored" data-anchor-id="zeroing"><span class="header-section-number">17.3.3.1</span> Zeroing</h4>
 <p>We can 0 them and fit our models.</p>
 <div id="cell-100" class="cell" data-execution_count="56">
 <div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>df_1 <span class="op">=</span> df.copy()</span>
@@ -3506,35 +3502,35 @@ dtype: int64</code></pre>
 <td>5.1</td>
 <td>3.5</td>
 <td>1.4</td>
-<td>0.2</td>
+<td>0.0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
 <td>4.9</td>
 <td>0.0</td>
-<td>1.4</td>
+<td>0.0</td>
 <td>0.2</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
 <td>4.7</td>
-<td>0.0</td>
-<td>0.0</td>
+<td>3.2</td>
+<td>1.3</td>
 <td>0.2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
 <td>4.6</td>
 <td>3.1</td>
-<td>0.0</td>
+<td>1.5</td>
 <td>0.2</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
 <td>5.0</td>
-<td>3.6</td>
-<td>1.4</td>
 <td>0.0</td>
+<td>1.4</td>
+<td>0.2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -3545,15 +3541,15 @@ dtype: int64</code></pre>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">145</td>
-<td>0.0</td>
+<td>6.7</td>
 <td>3.0</td>
-<td>5.2</td>
+<td>0.0</td>
 <td>2.3</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">146</td>
-<td>6.3</td>
-<td>2.5</td>
+<td>0.0</td>
+<td>0.0</td>
 <td>5.0</td>
 <td>1.9</td>
 </tr>
@@ -3561,7 +3557,7 @@ dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">147</td>
 <td>6.5</td>
 <td>3.0</td>
-<td>5.2</td>
+<td>0.0</td>
 <td>2.0</td>
 </tr>
 <tr class="even">
@@ -3574,7 +3570,7 @@ dtype: int64</code></pre>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">149</td>
 <td>5.9</td>
-<td>3.0</td>
+<td>0.0</td>
 <td>5.1</td>
 <td>1.8</td>
 </tr>
@@ -3624,19 +3620,19 @@ dtype: int64</code></pre>
 <div id="cell-105" class="cell" data-execution_count="60">
 <div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>df_1_pca.explained_variance_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="60">
-<pre><code>array([6.53211311, 4.47901067])</code></pre>
+<pre><code>array([6.89223341, 3.77859544])</code></pre>
 </div>
 </div>
 <div id="cell-106" class="cell" data-execution_count="61">
 <div class="sourceCode cell-code" id="cb79"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>df_1_pca.components_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="61">
-<pre><code>array([[ 0.78683196, -0.00372672,  0.60451846,  0.12425384],
-       [-0.61327545, -0.1129114 ,  0.77113291,  0.1284456 ]])</code></pre>
+<pre><code>array([[ 0.7537384 , -0.00628944,  0.64017446,  0.14837628],
+       [-0.64749922, -0.16752744,  0.73527652,  0.1097623 ]])</code></pre>
 </div>
 </div>
 </section>
-<section id="replacing-with-the-average" class="level4 page-columns page-full" data-number="16.3.3.2">
-<h4 data-number="16.3.3.2" class="anchored" data-anchor-id="replacing-with-the-average"><span class="header-section-number">16.3.3.2</span> Replacing with the average</h4>
+<section id="replacing-with-the-average" class="level4 page-columns page-full" data-number="17.3.3.2">
+<h4 data-number="17.3.3.2" class="anchored" data-anchor-id="replacing-with-the-average"><span class="header-section-number">17.3.3.2</span> Replacing with the average</h4>
 <div id="cell-108" class="cell" data-execution_count="62">
 <div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>df_2 <span class="op">=</span> df.copy()</span>
 <span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>):</span>
@@ -3664,35 +3660,35 @@ dtype: int64</code></pre>
 <td>5.100000</td>
 <td>3.500000</td>
 <td>1.400000</td>
-<td>0.2000</td>
+<td>1.220325</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
 <td>4.900000</td>
-<td>3.086325</td>
-<td>1.400000</td>
-<td>0.2000</td>
+<td>3.077778</td>
+<td>3.664655</td>
+<td>0.200000</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
 <td>4.700000</td>
-<td>3.086325</td>
-<td>3.858261</td>
-<td>0.2000</td>
+<td>3.200000</td>
+<td>1.300000</td>
+<td>0.200000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
 <td>4.600000</td>
 <td>3.100000</td>
-<td>3.858261</td>
-<td>0.2000</td>
+<td>1.500000</td>
+<td>0.200000</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
 <td>5.000000</td>
-<td>3.600000</td>
+<td>3.077778</td>
 <td>1.400000</td>
-<td>1.1725</td>
+<td>0.200000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -3703,38 +3699,38 @@ dtype: int64</code></pre>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">145</td>
-<td>5.869106</td>
+<td>6.700000</td>
 <td>3.000000</td>
-<td>5.200000</td>
-<td>2.3000</td>
+<td>3.664655</td>
+<td>2.300000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">146</td>
-<td>6.300000</td>
-<td>2.500000</td>
+<td>5.856452</td>
+<td>3.077778</td>
 <td>5.000000</td>
-<td>1.9000</td>
+<td>1.900000</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">147</td>
 <td>6.500000</td>
 <td>3.000000</td>
-<td>5.200000</td>
-<td>2.0000</td>
+<td>3.664655</td>
+<td>2.000000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">148</td>
 <td>6.200000</td>
 <td>3.400000</td>
 <td>5.400000</td>
-<td>2.3000</td>
+<td>2.300000</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">149</td>
 <td>5.900000</td>
-<td>3.000000</td>
+<td>3.077778</td>
 <td>5.100000</td>
-<td>1.8000</td>
+<td>1.800000</td>
 </tr>
 </tbody>
 </table>
@@ -3780,21 +3776,21 @@ dtype: int64</code></pre>
 <div id="cell-112" class="cell" data-execution_count="66">
 <div class="sourceCode cell-code" id="cb85"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>df_2_pca.explained_variance_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="66">
-<pre><code>array([3.07318001, 0.30043442])</code></pre>
+<pre><code>array([3.26141175, 0.23101596])</code></pre>
 </div>
 </div>
 <div id="cell-113" class="cell" data-execution_count="67">
 <div class="sourceCode cell-code" id="cb87"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a>df_2_pca.components_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="67">
-<pre><code>array([[ 0.35776982, -0.08204292,  0.87268026,  0.32202311],
-       [ 0.80763506,  0.30285429, -0.41134634,  0.29461683]])</code></pre>
+<pre><code>array([[ 0.34499628, -0.0665369 ,  0.87639125,  0.32937634],
+       [ 0.83810675,  0.34382495, -0.37661979,  0.19369825]])</code></pre>
 </div>
 </div>
 </section>
 </section>
 </section>
-<section id="useful-resources" class="level2" data-number="16.4">
-<h2 data-number="16.4" class="anchored" data-anchor-id="useful-resources"><span class="header-section-number">16.4</span> Useful resources</h2>
+<section id="useful-resources" class="level2" data-number="17.4">
+<h2 data-number="17.4" class="anchored" data-anchor-id="useful-resources"><span class="header-section-number">17.4</span> Useful resources</h2>
 <p>The scikit learn UserGuide is very good. Both approaches here are often referred to as unsupervised learning methods and you can find the scikit learn section on these <a href="https://scikit-learn.org/stable/unsupervised_learning.html">here</a>.</p>
 <p>If you have issues with the documentation then also look at the scikit-learn <a href="https://scikit-learn.org/stable/auto_examples/index.html">examples</a>.</p>
 <p>Also, in no particular order:</p>
@@ -3819,239 +3815,242 @@ Fisher, R. A. 1936. <span>“Iris.”</span> UCI Machine Learning Repository. <a
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/warwickcim\.github\.io\/IM939_handbook\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
+      return false;
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/warwickcim\.github\.io\/IM939_handbook\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
         }
-        return container.innerHTML
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -4059,194 +4058,170 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../../content/labs/Lab_4/IM939_Session-04_PCA_playground.html" class="pagination-link" aria-label="Working with Dimension Reduction Methods">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Working with Dimension Reduction Methods</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Working with Dimension Reduction Methods</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../../content/labs/Lab_4/IM939_Lab_4_2_Crime.html" class="pagination-link" aria-label="Lab: Dimension reduction (2)">
-        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Lab: Dimension reduction (2)</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Lab: Dimension reduction (2)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
