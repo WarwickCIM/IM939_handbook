@@ -1,4 +1,4 @@
-# Teaching Staff {.unnumbered}
+# Teaching Staff 
 
 #### [Kavin Narasimhan](https://warwick.ac.uk/fac/cross_fac/cim/people/kavin-narasimhan/)
 
