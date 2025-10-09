@@ -61,7 +61,7 @@ df.head()
 
 or even interactive figures!
 
-{{< embed ../labs/Lab_6/IM939_Lab_6_3-Choropleths.ipynb#fig-default-choropleth-map >}}
+
 
 
 ## Callouts

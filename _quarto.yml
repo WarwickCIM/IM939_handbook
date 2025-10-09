@@ -82,7 +82,7 @@ book:
         - content/sessions/session-06.md
         - content/labs/Lab_6/IM939_Lab_6_1-illusions.ipynb
         - content/labs/Lab_6/IM939_Lab_6_2-AxisManipulation.ipynb
-        - content/labs/Lab_6/IM939_Lab_6_3-Choropleths.ipynb
+        # - content/labs/Lab_6/IM939_Lab_6_3-Choropleths.ipynb
         - content/labs/Lab_6/IM939_Lab_6_4-Exercises.ipynb
         - content/labs/Lab_6/IM939_Lab_6_5-Simpsons_Paradox.ipynb
     - part: "Data Science & Society"
@@ -129,3 +129,4 @@ format:
 
 editor: visual
 
+# Exclude the problematic notebook
