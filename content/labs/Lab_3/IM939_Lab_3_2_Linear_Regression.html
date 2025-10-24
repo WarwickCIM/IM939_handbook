@@ -1352,11 +1352,11 @@ Intercept: [111.95135764]</code></pre>
 </div>
 <div id="cell-42" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"MSE:"</span>, metrics.mean_squared_error(y, y_hat))</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"R^2:"</span>, metrics.r2_score(y_hat,y))</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"R^2:"</span>, metrics.r2_score(y, y_hat))</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"var:"</span>, y.var())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>MSE: 9.453277027370586
-R^2: -35.00545377482934
+R^2: 0.027023043848747097
 var: extent    9.738906
 dtype: float64</code></pre>
 </div>
@@ -1382,10 +1382,10 @@ dtype: float64</code></pre>
 <span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'extent (January)'</span>)</span>
 <span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"MSE:"</span>, metrics.mean_squared_error(y, y_hat))</span>
-<span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"R^2:"</span>, metrics.r2_score(y_hat, y))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"R^2:"</span>, metrics.r2_score( y, y_hat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>MSE: 0.053200181830256245
-R^2: 0.7810636041396224</code></pre>
+R^2: 0.8203873503130218</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div>
