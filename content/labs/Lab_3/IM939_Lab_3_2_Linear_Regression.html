@@ -1400,11 +1400,10 @@ R^2: 0.8203873503130218</code></pre>
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.array(<span class="dv">2026</span>) </span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>y_hat <span class="op">=</span> model.predict(X.reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>))</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>j <span class="op">=</span> <span class="dv">1</span> <span class="co"># january</span></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="co"># original value (before normalisation)</span></span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>y_hat <span class="op">=</span> (y_hat<span class="op">*</span>month_means.mean()<span class="op">/</span><span class="dv">100</span>) <span class="op">+</span> month_means[j]</span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"Prediction of extent for January 2026 (in millions of square km):"</span>, y_hat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"Prediction of extent for January 2026 (in millions of square km):"</span>, y_hat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Prediction of extent for January 2026 (in millions of square km): [[16.02112428]]</code></pre>
+<pre><code>Prediction of extent for January 2026 (in millions of square km): [[13.09725704]]</code></pre>
 </div>
 </div>
 </section>
