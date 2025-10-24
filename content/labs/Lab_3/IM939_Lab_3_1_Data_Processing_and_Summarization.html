@@ -595,12 +595,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.spatial.distance <span class="im">import</span> cdist <span class="co"># This is the function that computes the Mahalanobis distance</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> skew, kurtosis <span class="co"># The skew and kurtosis of a distribution</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> statsmodels.robust.scale <span class="im">import</span> mad <span class="co"># This computes the median absolute deviation of a distribution</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.spatial.distance <span class="im">import</span> cdist <span class="co"># this is a function that computes the Mahalanobis distance</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> skew, kurtosis <span class="co"># the skew and kurtosis of a distribution - (re)watch the video lectures if you need a reminder of skew &amp; curtosis</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> statsmodels.robust.scale <span class="im">import</span> mad <span class="co"># this computes the median absolute deviation of a distribution</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#%matplotlib inline # Display matplotlib plots inline with the text. +info: https://stackoverflow.com/a/43028034/1913457</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#%matplotlib inline #display matplotlib plots inline with the text. +info: https://stackoverflow.com/a/43028034/1913457</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="outliers" class="level2 page-columns page-full" data-number="12.1">
 <h2 data-number="12.1" class="anchored" data-anchor-id="outliers"><span class="header-section-number">12.1</span> Outliers</h2>
@@ -763,9 +763,9 @@ Do this yourself:
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We only get the summaries for the numeric values here. How about the others, such as <code>trim</code>, <code>engine</code> or <code>transmission</code>? Can you think of a way to get an idea of statistics that will provide you an overview of the distribution of these values? Also, do you think the mean of the <code>year</code> values make sense? What could be a better statistics here?</p>
+<p>We only get the summaries for the numeric values here. How about the others, such as <code>trim</code>, <code>engine</code> or <code>transmission</code>? Remember to also visually inspect the dataset using spreadsheet software like Excel or Numbers. You can also use df.columns.tolist() to see a list of column names in your dataframe. Can you think of a way to get an idea of statistics that will provide you an overview of the distribution of these values? Also, do you think the mean of the <code>year</code> values make sense? What could be a better statistics here?</p>
 <div id="cell-8" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">## One thing to try is the describe function with an "all" parameter:</span></span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">## one thing to try is the describe function with an "all" parameter:</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df.describe(include<span class="op">=</span><span class="st">'all'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
@@ -891,8 +891,7 @@ Do this yourself:
 </div>
 <div id="cell-9" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># But this doesn't address our question. Think about visuals that can help you here? Maybe a histrogram would help?</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>?, x<span class="op">=</span><span class="st">"?"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>?, x<span class="op">=</span>?)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -902,15 +901,15 @@ Do this yourself:
 <h3 data-number="12.1.2" class="anchored" data-anchor-id="identify-outliers-visually"><span class="header-section-number">12.1.2</span> Identify outliers visually</h3>
 <p>In this case we will <strong>explore variables individually (1D)</strong> by creating a <em>boxplot</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. We will visualise the columns <code>price</code> and <code>mileage</code> using matplotlib’s subplots, which combines multiple plots into a single figure:</p>
 <div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Boxplots may be difficult to interpret if we are not used to them. It is used to visualise distributions, where the box represents the <em>Interquartile range (IQR)</em>, whereas the whiskers can be defined in multiple ways (e.g.&nbsp;the first and third quartiles, 1.5 IQR…) . <img src="figs/440px-Boxplot_vs_PDF.svg.png" class="img-fluid" alt="A visualisation depicting how a Box Plot works. Source: Wikipedia"> From <a href="https://en.wikipedia.org/wiki/Box_plot">Wikipedia</a>: “In descriptive statistics, a box plot or boxplot is a method for graphically demonstrating the locality, spread and skewness groups of numerical data through their quartiles.”</p></div></div><div id="cell-12" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1D Visualizations</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">5</span>)) <span class="co"># Setting the figure's size: format width, height (in inches)</span></span>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1D visualisation</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">5</span>)) <span class="co"># setting the figure's size: format width, height (in inches)</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>) <span class="co"># subplot(nrows, ncols, index, **kwargs)</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>plt.boxplot(df.price)</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Boxplot of the Price attribute"</span>)</span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>plt.boxplot(df.mileage)</span>
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Boxplot of the Mileage attribute"</span>)<span class="op">;</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># A semicolon in Python denotes separation, rather than termination. </span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># a semicolon in Python denotes separation, rather than termination. </span></span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># It allows you to write multiple statements on the same line. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -922,8 +921,8 @@ Do this yourself:
 </div>
 <p>But we may want to <strong>identify the 2D outliers</strong> using a scatterplot</p>
 <div id="cell-14" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2D Visualization</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(df.price, df.mileage, alpha <span class="op">=</span> <span class="fl">.5</span>)</span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2D visualisation</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(df.price, df.mileage, alpha <span class="op">=</span> <span class="fl">0.5</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Price'</span>)</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Mileage'</span>)</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Mileage vs. Price</span><span class="ch">\n</span><span class="st">'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1057,11 +1056,11 @@ Alternative method
 <div class="callout-body-container callout-body">
 <p>We may want to use this more succint approach:</p>
 <div id="cell-19" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Second way of doing the above using the np.where() function</span></span>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># second way of doing the above using the np.where() function</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'isOutlierPrice'</span>] <span class="op">=</span> np.where(<span class="bu">abs</span>(df.price <span class="op">-</span> df.price.mean()) <span class="op">&lt;</span> <span class="dv">2</span><span class="op">*</span>df.price.std(), <span class="va">False</span>, <span class="va">True</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'isOutlierMileage'</span>] <span class="op">=</span> np.where(<span class="bu">abs</span>(df.mileage <span class="op">-</span> df.mileage.mean()) <span class="op">&lt;</span> <span class="dv">2</span><span class="op">*</span>df.mileage.std(), <span class="va">False</span>, <span class="va">True</span>)</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect the new DataFrame with the added columns</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect the new DataFrame with the added columns</span></span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <div>
@@ -1148,7 +1147,7 @@ Alternative method
 </div>
 <p>Now that we have these two new columns, we could visualize these values with a different color in the plot. Observe whether they are the same as you would mark them:</p>
 <div id="cell-22" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizing outliers in a different color</span></span>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># visualising outliers in a different color</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>col <span class="op">=</span> [<span class="st">'tomato'</span> <span class="cf">if</span> i<span class="op">+</span>j <span class="cf">else</span> <span class="st">'seagreen'</span> <span class="cf">for</span> i,j <span class="kw">in</span> <span class="bu">zip</span>(df.isOutlierPrice, df.isOutlierMileage)]</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>plt.scatter(df.price, df.mileage, color <span class="op">=</span> col)</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Price'</span>)</span>
@@ -1166,7 +1165,7 @@ Alternative method
 <p>In this case, we can use the deviation from the mean to define a threshold that separates ‘normal’ values from ‘outliers’. Here, we opted for a two standard deviation threshold.</p>
 <p>The mathematical intuition behind this, is that under the normality assumption (if we assume our variable is normally distributed, which it almost is, refer to the next plot), then the probability of it having a value two standard deviations OR MORE away from the mean, is around 5%, which is very unlikely to happen. This is why we label these data points as outliers with respect to the (assumed) probability distribution of the variable. But this remains a way to identify 1D outliers only (identifying outliers within each column separately)</p>
 <div id="cell-24" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Histograms of Price and Mileage (checking the normality assumption)</span></span>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># histograms of Price and Mileage (checking the normality assumption)</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>plt.hist(df.price, bins <span class="op">=</span> <span class="dv">12</span>)</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Price'</span>)</span>
@@ -1188,15 +1187,15 @@ Alternative method
 <li>Using the 2D Mahalanobis distance to find outliers</li>
 </ol>
 <div id="cell-26" class="cell page-columns page-full" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mean vector (computing the mean returns a Series, which we need to convert back to a DataFrame because cdist requires it)</span></span>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mean vector (computing the mean returns a Series, which we need to convert back to a DataFrame because cdist requires it)</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>mean_v <span class="op">=</span> df.iloc[:, <span class="dv">0</span>:<span class="dv">2</span>].mean().to_frame().T <span class="co"># DataFrame.T returns the Transpose of the DataFrame</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#mean_v = np.asarray([df.price.mean(), df.mileage.mean()]).reshape(1,2) # This is a better way of writing the line before (for our use case : cdist function)</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Computing the Mahalanobis distance of each row to the mean vector</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># computing the Mahalanobis distance of each row to the mean vector</span></span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> cdist(df.iloc[:, <span class="dv">0</span>:<span class="dv">2</span>], mean_v, metric<span class="op">=</span><span class="st">'mahalanobis'</span>)</span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#d = cdist(df[['price', 'mileage']].values, mean_v, metric='mahalanobis') # Another way of writing the line before</span></span>
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizing the scatter plot while coloring each point (i.e row) with a color from a chosen gradient colormap corresponding to the mahalanobis score</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># visualizing the scatter plot while coloring each point (i.e row) with a color from a chosen gradient colormap corresponding to the mahalanobis score</span></span>
 <span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">5</span>))</span>
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>plt.scatter(df.price, df.mileage, c <span class="op">=</span> d.flatten(), cmap <span class="op">=</span> <span class="st">'plasma'</span>) <span class="co"># in order to know why we use flatten() on d, try printing d with and without flatten</span></span>
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>plt.colorbar() <span class="co"># to show the colorbar</span></span>
@@ -1664,27 +1663,27 @@ Results for the Kurtosis :</code></pre>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">5</td>
-<td>-1.470879</td>
-<td>-0.274282</td>
-<td>-1.644427</td>
+<td>-1.770279</td>
+<td>-0.329427</td>
+<td>0.150445</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">20</td>
-<td>-0.093057</td>
-<td>-0.773104</td>
-<td>2.089259</td>
+<td>2.639660</td>
+<td>0.006423</td>
+<td>-1.064719</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">100</td>
-<td>-0.335413</td>
-<td>-0.653950</td>
-<td>-0.566262</td>
+<td>-0.513446</td>
+<td>-0.379677</td>
+<td>-0.389777</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2000</td>
-<td>0.098834</td>
-<td>-0.002571</td>
-<td>0.007787</td>
+<td>-0.023805</td>
+<td>0.040466</td>
+<td>0.181889</td>
 </tr>
 </tbody>
 </table>
@@ -1702,22 +1701,22 @@ Results for the Kurtosis :</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>Standard Deviation                   0.5       1.0       3.0
                    Sample Size                              
-Mean               5            0.042462 -0.146640  2.578423
-                   20          -0.188704 -0.225163  0.471843
-                   100         -0.041065 -0.063242 -0.551446
-                   2000         0.003018  0.026159 -0.080545
-Standard Deviation 5            0.609273  0.914124  2.485569
-                   20           0.564230  0.901972  2.312858
-                   100          0.475544  1.054971  2.979704
-                   2000         0.488299  1.011860  3.002391
-Skewness           5           -0.026639 -1.173979 -0.185526
-                   20          -0.327811 -0.029473  0.967682
-                   100         -0.048692 -0.026696  0.239292
-                   2000        -0.008894 -0.012757  0.169020
-Kurtosis           5           -1.470879 -0.274282 -1.644427
-                   20          -0.093057 -0.773104  2.089259
-                   100         -0.335413 -0.653950 -0.566262
-                   2000         0.098834 -0.002571  0.007787</code></pre>
+Mean               5           -0.168094 -0.101869 -1.540097
+                   20          -0.018076  0.213973  1.272730
+                   100          0.082081 -0.035222  0.269341
+                   2000        -0.003540  0.034942 -0.060452
+Standard Deviation 5            0.536345  1.431947  1.553925
+                   20           0.478282  1.102995  3.748023
+                   100          0.506883  0.963681  3.115163
+                   2000         0.496613  1.007466  3.021929
+Skewness           5           -0.379170 -1.043192 -1.424851
+                   20          -1.639109 -0.272261  0.205837
+                   100         -0.293199 -0.092805 -0.402604
+                   2000        -0.031670 -0.048974  0.047444
+Kurtosis           5           -1.770279 -0.329427  0.150445
+                   20           2.639660  0.006423 -1.064719
+                   100         -0.513446 -0.379677 -0.389777
+                   2000        -0.023805  0.040466  0.181889</code></pre>
 </div>
 </div>
 <p>
@@ -1725,10 +1724,10 @@ Basically, the more data you have (the bigger your sample), the more accurate yo
 </p>
 <p><b>2) Same as before but with a Poisson distribution (which has just one parameter lambda instead of 2 like the gaussian)</b></p>
 <div id="cell-49" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Defining a few variables se we can change their values easily without having to change the rest of the code</span></span>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Defining a few variables so we can change their values easily without having to change the rest of the code</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">20</span>, <span class="dv">100</span>, <span class="dv">2000</span>]</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>lambd <span class="op">=</span> [<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">3</span>] <span class="co"># In a gaussian we had two parameters, a var specified here and a mean we chose to be 0 </span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co">#everywhere. Here we have one parameter called lambda.</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># everywhere. Here we have one parameter called lambda.</span></span>
 <span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Initializing empty 2D arrays where we're going to store the results of our simulation</span></span>
 <span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> np.empty([<span class="bu">len</span>(n), <span class="bu">len</span>(lambd)])</span>
@@ -1805,27 +1804,27 @@ Results for the Kurtosis :</code></pre>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">5</td>
-<td>0.250000</td>
-<td>-1.044379</td>
-<td>-0.187243</td>
+<td>-1.833333</td>
+<td>-1.153061</td>
+<td>NaN</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">20</td>
-<td>0.969291</td>
-<td>-0.086168</td>
-<td>-0.795075</td>
+<td>-0.314050</td>
+<td>-1.201927</td>
+<td>-0.617171</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">100</td>
-<td>1.131030</td>
-<td>1.130328</td>
-<td>0.409107</td>
+<td>4.007850</td>
+<td>2.091557</td>
+<td>0.062109</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2000</td>
-<td>1.809259</td>
-<td>1.282974</td>
-<td>0.096190</td>
+<td>1.507728</td>
+<td>0.838610</td>
+<td>-0.021012</td>
 </tr>
 </tbody>
 </table>

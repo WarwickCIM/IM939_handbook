@@ -999,88 +999,88 @@ dtype: object</code></pre>
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
 Cell <span class="ansi-green-fg">In[15], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">df</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">mean</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">----&gt; 1</span> df<span style="color:rgb(98,98,98)">.</span>mean()
 
-File <span class="ansi-green-fg">/opt/anaconda3/envs/IM939/lib/python3.12/site-packages/pandas/core/frame.py:11693</span>, in <span class="ansi-cyan-fg">DataFrame.mean</span><span class="ansi-blue-fg">(self, axis, skipna, numeric_only, **kwargs)</span>
+File <span class="ansi-green-fg">/opt/anaconda3/lib/python3.12/site-packages/pandas/core/frame.py:11693</span>, in <span class="ansi-cyan-fg">DataFrame.mean</span><span class="ansi-blue-fg">(self, axis, skipna, numeric_only, **kwargs)</span>
 <span class="ansi-green-fg ansi-bold">  11685</span> <span style="color:rgb(175,0,255)">@doc</span>(make_doc(<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">mean</span><span style="color:rgb(175,0,0)">"</span>, ndim<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(98,98,98)">2</span>))
 <span class="ansi-green-fg ansi-bold">  11686</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span> <span style="color:rgb(0,0,255)">mean</span>(
 <span class="ansi-green-fg ansi-bold">  11687</span>     <span style="color:rgb(0,135,0)">self</span>,
 <span class="ansi-green-fg">   (...)</span>
 <span class="ansi-green-fg ansi-bold">  11691</span>     <span style="color:rgb(98,98,98)">*</span><span style="color:rgb(98,98,98)">*</span>kwargs,
 <span class="ansi-green-fg ansi-bold">  11692</span> ):
-<span class="ansi-green-fg">&gt; 11693</span>     result <span style="color:rgb(98,98,98)">=</span> <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">super</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">mean</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">axis</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">skipna</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">numeric_only</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">*</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">&gt; 11693</span>     result <span style="color:rgb(98,98,98)">=</span> <span style="color:rgb(0,135,0)">super</span>()<span style="color:rgb(98,98,98)">.</span>mean(axis, skipna, numeric_only, <span style="color:rgb(98,98,98)">*</span><span style="color:rgb(98,98,98)">*</span>kwargs)
 <span class="ansi-green-fg ansi-bold">  11694</span>     <span style="font-weight:bold;color:rgb(0,135,0)">if</span> <span style="color:rgb(0,135,0)">isinstance</span>(result, Series):
 <span class="ansi-green-fg ansi-bold">  11695</span>         result <span style="color:rgb(98,98,98)">=</span> result<span style="color:rgb(98,98,98)">.</span>__finalize__(<span style="color:rgb(0,135,0)">self</span>, method<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">mean</span><span style="color:rgb(175,0,0)">"</span>)
 
-File <span class="ansi-green-fg">/opt/anaconda3/envs/IM939/lib/python3.12/site-packages/pandas/core/generic.py:12420</span>, in <span class="ansi-cyan-fg">NDFrame.mean</span><span class="ansi-blue-fg">(self, axis, skipna, numeric_only, **kwargs)</span>
+File <span class="ansi-green-fg">/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py:12420</span>, in <span class="ansi-cyan-fg">NDFrame.mean</span><span class="ansi-blue-fg">(self, axis, skipna, numeric_only, **kwargs)</span>
 <span class="ansi-green-fg ansi-bold">  12413</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span> <span style="color:rgb(0,0,255)">mean</span>(
 <span class="ansi-green-fg ansi-bold">  12414</span>     <span style="color:rgb(0,135,0)">self</span>,
 <span class="ansi-green-fg ansi-bold">  12415</span>     axis: Axis <span style="color:rgb(98,98,98)">|</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span> <span style="color:rgb(98,98,98)">=</span> <span style="color:rgb(98,98,98)">0</span>,
 <span class="ansi-green-fg">   (...)</span>
 <span class="ansi-green-fg ansi-bold">  12418</span>     <span style="color:rgb(98,98,98)">*</span><span style="color:rgb(98,98,98)">*</span>kwargs,
 <span class="ansi-green-fg ansi-bold">  12419</span> ) <span style="color:rgb(98,98,98)">-</span><span style="color:rgb(98,98,98)">&gt;</span> Series <span style="color:rgb(98,98,98)">|</span> <span style="color:rgb(0,135,0)">float</span>:
-<span class="ansi-green-fg">&gt; 12420</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">_stat_function</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-fg ansi-bold">  12421</span> <span class="ansi-yellow-bg">        </span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">mean</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">nanops</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">nanmean</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">axis</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">skipna</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">numeric_only</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">*</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">kwargs</span>
-<span class="ansi-green-fg ansi-bold">  12422</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">&gt; 12420</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>_stat_function(
+<span class="ansi-green-fg ansi-bold">  12421</span>         <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">mean</span><span style="color:rgb(175,0,0)">"</span>, nanops<span style="color:rgb(98,98,98)">.</span>nanmean, axis, skipna, numeric_only, <span style="color:rgb(98,98,98)">*</span><span style="color:rgb(98,98,98)">*</span>kwargs
+<span class="ansi-green-fg ansi-bold">  12422</span>     )
 
-File <span class="ansi-green-fg">/opt/anaconda3/envs/IM939/lib/python3.12/site-packages/pandas/core/generic.py:12377</span>, in <span class="ansi-cyan-fg">NDFrame._stat_function</span><span class="ansi-blue-fg">(self, name, func, axis, skipna, numeric_only, **kwargs)</span>
+File <span class="ansi-green-fg">/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py:12377</span>, in <span class="ansi-cyan-fg">NDFrame._stat_function</span><span class="ansi-blue-fg">(self, name, func, axis, skipna, numeric_only, **kwargs)</span>
 <span class="ansi-green-fg ansi-bold">  12373</span> nv<span style="color:rgb(98,98,98)">.</span>validate_func(name, (), kwargs)
 <span class="ansi-green-fg ansi-bold">  12375</span> validate_bool_kwarg(skipna, <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">skipna</span><span style="color:rgb(175,0,0)">"</span>, none_allowed<span style="color:rgb(98,98,98)">=</span><span style="font-weight:bold;color:rgb(0,135,0)">False</span>)
-<span class="ansi-green-fg">&gt; 12377</span> <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">_reduce</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-fg ansi-bold">  12378</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">func</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">name</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">name</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">axis</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">axis</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">skipna</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">skipna</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">numeric_only</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">numeric_only</span>
-<span class="ansi-green-fg ansi-bold">  12379</span> <span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">&gt; 12377</span> <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>_reduce(
+<span class="ansi-green-fg ansi-bold">  12378</span>     func, name<span style="color:rgb(98,98,98)">=</span>name, axis<span style="color:rgb(98,98,98)">=</span>axis, skipna<span style="color:rgb(98,98,98)">=</span>skipna, numeric_only<span style="color:rgb(98,98,98)">=</span>numeric_only
+<span class="ansi-green-fg ansi-bold">  12379</span> )
 
-File <span class="ansi-green-fg">/opt/anaconda3/envs/IM939/lib/python3.12/site-packages/pandas/core/frame.py:11562</span>, in <span class="ansi-cyan-fg">DataFrame._reduce</span><span class="ansi-blue-fg">(self, op, name, axis, skipna, numeric_only, filter_type, **kwds)</span>
+File <span class="ansi-green-fg">/opt/anaconda3/lib/python3.12/site-packages/pandas/core/frame.py:11562</span>, in <span class="ansi-cyan-fg">DataFrame._reduce</span><span class="ansi-blue-fg">(self, op, name, axis, skipna, numeric_only, filter_type, **kwds)</span>
 <span class="ansi-green-fg ansi-bold">  11558</span>     df <span style="color:rgb(98,98,98)">=</span> df<span style="color:rgb(98,98,98)">.</span>T
 <span class="ansi-green-fg ansi-bold">  11560</span> <span style="font-style:italic;color:rgb(95,135,135)"># After possibly _get_data and transposing, we are now in the</span>
 <span class="ansi-green-fg ansi-bold">  11561</span> <span style="font-style:italic;color:rgb(95,135,135)">#  simple case where we can use BlockManager.reduce</span>
-<span class="ansi-green-fg">&gt; 11562</span> res <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">df</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">_mgr</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">reduce</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">blk_func</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">&gt; 11562</span> res <span style="color:rgb(98,98,98)">=</span> df<span style="color:rgb(98,98,98)">.</span>_mgr<span style="color:rgb(98,98,98)">.</span>reduce(blk_func)
 <span class="ansi-green-fg ansi-bold">  11563</span> out <span style="color:rgb(98,98,98)">=</span> df<span style="color:rgb(98,98,98)">.</span>_constructor_from_mgr(res, axes<span style="color:rgb(98,98,98)">=</span>res<span style="color:rgb(98,98,98)">.</span>axes)<span style="color:rgb(98,98,98)">.</span>iloc[<span style="color:rgb(98,98,98)">0</span>]
 <span class="ansi-green-fg ansi-bold">  11564</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> out_dtype <span style="font-weight:bold;color:rgb(175,0,255)">is</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span> <span style="font-weight:bold;color:rgb(175,0,255)">and</span> out<span style="color:rgb(98,98,98)">.</span>dtype <span style="color:rgb(98,98,98)">!=</span> <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">boolean</span><span style="color:rgb(175,0,0)">"</span>:
 
-File <span class="ansi-green-fg">/opt/anaconda3/envs/IM939/lib/python3.12/site-packages/pandas/core/internals/managers.py:1500</span>, in <span class="ansi-cyan-fg">BlockManager.reduce</span><span class="ansi-blue-fg">(self, func)</span>
+File <span class="ansi-green-fg">/opt/anaconda3/lib/python3.12/site-packages/pandas/core/internals/managers.py:1500</span>, in <span class="ansi-cyan-fg">BlockManager.reduce</span><span class="ansi-blue-fg">(self, func)</span>
 <span class="ansi-green-fg ansi-bold">   1498</span> res_blocks: <span style="color:rgb(0,135,0)">list</span>[Block] <span style="color:rgb(98,98,98)">=</span> []
 <span class="ansi-green-fg ansi-bold">   1499</span> <span style="font-weight:bold;color:rgb(0,135,0)">for</span> blk <span style="font-weight:bold;color:rgb(175,0,255)">in</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>blocks:
-<span class="ansi-green-fg">-&gt; 1500</span>     nbs <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">blk</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">reduce</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">func</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">-&gt; 1500</span>     nbs <span style="color:rgb(98,98,98)">=</span> blk<span style="color:rgb(98,98,98)">.</span>reduce(func)
 <span class="ansi-green-fg ansi-bold">   1501</span>     res_blocks<span style="color:rgb(98,98,98)">.</span>extend(nbs)
 <span class="ansi-green-fg ansi-bold">   1503</span> index <span style="color:rgb(98,98,98)">=</span> Index([<span style="font-weight:bold;color:rgb(0,135,0)">None</span>])  <span style="font-style:italic;color:rgb(95,135,135)"># placeholder</span>
 
-File <span class="ansi-green-fg">/opt/anaconda3/envs/IM939/lib/python3.12/site-packages/pandas/core/internals/blocks.py:404</span>, in <span class="ansi-cyan-fg">Block.reduce</span><span class="ansi-blue-fg">(self, func)</span>
+File <span class="ansi-green-fg">/opt/anaconda3/lib/python3.12/site-packages/pandas/core/internals/blocks.py:404</span>, in <span class="ansi-cyan-fg">Block.reduce</span><span class="ansi-blue-fg">(self, func)</span>
 <span class="ansi-green-fg ansi-bold">    398</span> <span style="color:rgb(175,0,255)">@final</span>
 <span class="ansi-green-fg ansi-bold">    399</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span> <span style="color:rgb(0,0,255)">reduce</span>(<span style="color:rgb(0,135,0)">self</span>, func) <span style="color:rgb(98,98,98)">-</span><span style="color:rgb(98,98,98)">&gt;</span> <span style="color:rgb(0,135,0)">list</span>[Block]:
 <span class="ansi-green-fg ansi-bold">    400</span>     <span style="font-style:italic;color:rgb(95,135,135)"># We will apply the function and reshape the result into a single-row</span>
 <span class="ansi-green-fg ansi-bold">    401</span>     <span style="font-style:italic;color:rgb(95,135,135)">#  Block with the same mgr_locs; squeezing will be done at a higher level</span>
 <span class="ansi-green-fg ansi-bold">    402</span>     <span style="font-weight:bold;color:rgb(0,135,0)">assert</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>ndim <span style="color:rgb(98,98,98)">==</span> <span style="color:rgb(98,98,98)">2</span>
-<span class="ansi-green-fg">--&gt; 404</span>     result <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">func</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">values</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">--&gt; 404</span>     result <span style="color:rgb(98,98,98)">=</span> func(<span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>values)
 <span class="ansi-green-fg ansi-bold">    406</span>     <span style="font-weight:bold;color:rgb(0,135,0)">if</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>values<span style="color:rgb(98,98,98)">.</span>ndim <span style="color:rgb(98,98,98)">==</span> <span style="color:rgb(98,98,98)">1</span>:
 <span class="ansi-green-fg ansi-bold">    407</span>         res_values <span style="color:rgb(98,98,98)">=</span> result
 
-File <span class="ansi-green-fg">/opt/anaconda3/envs/IM939/lib/python3.12/site-packages/pandas/core/frame.py:11481</span>, in <span class="ansi-cyan-fg">DataFrame._reduce.&lt;locals&gt;.blk_func</span><span class="ansi-blue-fg">(values, axis)</span>
+File <span class="ansi-green-fg">/opt/anaconda3/lib/python3.12/site-packages/pandas/core/frame.py:11481</span>, in <span class="ansi-cyan-fg">DataFrame._reduce.&lt;locals&gt;.blk_func</span><span class="ansi-blue-fg">(values, axis)</span>
 <span class="ansi-green-fg ansi-bold">  11479</span>         <span style="font-weight:bold;color:rgb(0,135,0)">return</span> np<span style="color:rgb(98,98,98)">.</span>array([result])
 <span class="ansi-green-fg ansi-bold">  11480</span> <span style="font-weight:bold;color:rgb(0,135,0)">else</span>:
-<span class="ansi-green-fg">&gt; 11481</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">op</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">values</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">axis</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">axis</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">skipna</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">skipna</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">*</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">kwds</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">&gt; 11481</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> op(values, axis<span style="color:rgb(98,98,98)">=</span>axis, skipna<span style="color:rgb(98,98,98)">=</span>skipna, <span style="color:rgb(98,98,98)">*</span><span style="color:rgb(98,98,98)">*</span>kwds)
 
-File <span class="ansi-green-fg">/opt/anaconda3/envs/IM939/lib/python3.12/site-packages/pandas/core/nanops.py:147</span>, in <span class="ansi-cyan-fg">bottleneck_switch.__call__.&lt;locals&gt;.f</span><span class="ansi-blue-fg">(values, axis, skipna, **kwds)</span>
+File <span class="ansi-green-fg">/opt/anaconda3/lib/python3.12/site-packages/pandas/core/nanops.py:147</span>, in <span class="ansi-cyan-fg">bottleneck_switch.__call__.&lt;locals&gt;.f</span><span class="ansi-blue-fg">(values, axis, skipna, **kwds)</span>
 <span class="ansi-green-fg ansi-bold">    145</span>         result <span style="color:rgb(98,98,98)">=</span> alt(values, axis<span style="color:rgb(98,98,98)">=</span>axis, skipna<span style="color:rgb(98,98,98)">=</span>skipna, <span style="color:rgb(98,98,98)">*</span><span style="color:rgb(98,98,98)">*</span>kwds)
 <span class="ansi-green-fg ansi-bold">    146</span> <span style="font-weight:bold;color:rgb(0,135,0)">else</span>:
-<span class="ansi-green-fg">--&gt; 147</span>     result <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">alt</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">values</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">axis</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">axis</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">skipna</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">skipna</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">*</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">kwds</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">--&gt; 147</span>     result <span style="color:rgb(98,98,98)">=</span> alt(values, axis<span style="color:rgb(98,98,98)">=</span>axis, skipna<span style="color:rgb(98,98,98)">=</span>skipna, <span style="color:rgb(98,98,98)">*</span><span style="color:rgb(98,98,98)">*</span>kwds)
 <span class="ansi-green-fg ansi-bold">    149</span> <span style="font-weight:bold;color:rgb(0,135,0)">return</span> result
 
-File <span class="ansi-green-fg">/opt/anaconda3/envs/IM939/lib/python3.12/site-packages/pandas/core/nanops.py:404</span>, in <span class="ansi-cyan-fg">_datetimelike_compat.&lt;locals&gt;.new_func</span><span class="ansi-blue-fg">(values, axis, skipna, mask, **kwargs)</span>
+File <span class="ansi-green-fg">/opt/anaconda3/lib/python3.12/site-packages/pandas/core/nanops.py:404</span>, in <span class="ansi-cyan-fg">_datetimelike_compat.&lt;locals&gt;.new_func</span><span class="ansi-blue-fg">(values, axis, skipna, mask, **kwargs)</span>
 <span class="ansi-green-fg ansi-bold">    401</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> datetimelike <span style="font-weight:bold;color:rgb(175,0,255)">and</span> mask <span style="font-weight:bold;color:rgb(175,0,255)">is</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span>:
 <span class="ansi-green-fg ansi-bold">    402</span>     mask <span style="color:rgb(98,98,98)">=</span> isna(values)
-<span class="ansi-green-fg">--&gt; 404</span> result <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">func</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">values</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">axis</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">axis</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">skipna</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">skipna</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">mask</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">mask</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">*</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">--&gt; 404</span> result <span style="color:rgb(98,98,98)">=</span> func(values, axis<span style="color:rgb(98,98,98)">=</span>axis, skipna<span style="color:rgb(98,98,98)">=</span>skipna, mask<span style="color:rgb(98,98,98)">=</span>mask, <span style="color:rgb(98,98,98)">*</span><span style="color:rgb(98,98,98)">*</span>kwargs)
 <span class="ansi-green-fg ansi-bold">    406</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> datetimelike:
 <span class="ansi-green-fg ansi-bold">    407</span>     result <span style="color:rgb(98,98,98)">=</span> _wrap_results(result, orig_values<span style="color:rgb(98,98,98)">.</span>dtype, fill_value<span style="color:rgb(98,98,98)">=</span>iNaT)
 
-File <span class="ansi-green-fg">/opt/anaconda3/envs/IM939/lib/python3.12/site-packages/pandas/core/nanops.py:720</span>, in <span class="ansi-cyan-fg">nanmean</span><span class="ansi-blue-fg">(values, axis, skipna, mask)</span>
+File <span class="ansi-green-fg">/opt/anaconda3/lib/python3.12/site-packages/pandas/core/nanops.py:720</span>, in <span class="ansi-cyan-fg">nanmean</span><span class="ansi-blue-fg">(values, axis, skipna, mask)</span>
 <span class="ansi-green-fg ansi-bold">    718</span> count <span style="color:rgb(98,98,98)">=</span> _get_counts(values<span style="color:rgb(98,98,98)">.</span>shape, mask, axis, dtype<span style="color:rgb(98,98,98)">=</span>dtype_count)
 <span class="ansi-green-fg ansi-bold">    719</span> the_sum <span style="color:rgb(98,98,98)">=</span> values<span style="color:rgb(98,98,98)">.</span>sum(axis, dtype<span style="color:rgb(98,98,98)">=</span>dtype_sum)
-<span class="ansi-green-fg">--&gt; 720</span> the_sum <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">_ensure_numeric</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">the_sum</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">--&gt; 720</span> the_sum <span style="color:rgb(98,98,98)">=</span> _ensure_numeric(the_sum)
 <span class="ansi-green-fg ansi-bold">    722</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> axis <span style="font-weight:bold;color:rgb(175,0,255)">is</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span> <span style="font-weight:bold;color:rgb(175,0,255)">and</span> <span style="color:rgb(0,135,0)">getattr</span>(the_sum, <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">ndim</span><span style="color:rgb(175,0,0)">"</span>, <span style="font-weight:bold;color:rgb(0,135,0)">False</span>):
 <span class="ansi-green-fg ansi-bold">    723</span>     count <span style="color:rgb(98,98,98)">=</span> cast(np<span style="color:rgb(98,98,98)">.</span>ndarray, count)
 
-File <span class="ansi-green-fg">/opt/anaconda3/envs/IM939/lib/python3.12/site-packages/pandas/core/nanops.py:1686</span>, in <span class="ansi-cyan-fg">_ensure_numeric</span><span class="ansi-blue-fg">(x)</span>
+File <span class="ansi-green-fg">/opt/anaconda3/lib/python3.12/site-packages/pandas/core/nanops.py:1686</span>, in <span class="ansi-cyan-fg">_ensure_numeric</span><span class="ansi-blue-fg">(x)</span>
 <span class="ansi-green-fg ansi-bold">   1683</span> inferred <span style="color:rgb(98,98,98)">=</span> lib<span style="color:rgb(98,98,98)">.</span>infer_dtype(x)
 <span class="ansi-green-fg ansi-bold">   1684</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> inferred <span style="font-weight:bold;color:rgb(175,0,255)">in</span> [<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">string</span><span style="color:rgb(175,0,0)">"</span>, <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">mixed</span><span style="color:rgb(175,0,0)">"</span>]:
 <span class="ansi-green-fg ansi-bold">   1685</span>     <span style="font-style:italic;color:rgb(95,135,135)"># GH#44008, GH#36703 avoid casting e.g. strings to numeric</span>
@@ -1270,9 +1270,9 @@ Important
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">KeyError</span>                                  Traceback (most recent call last)
-File <span class="ansi-green-fg">/opt/anaconda3/envs/IM939/lib/python3.12/site-packages/pandas/core/indexes/base.py:3805</span>, in <span class="ansi-cyan-fg">Index.get_loc</span><span class="ansi-blue-fg">(self, key)</span>
+File <span class="ansi-green-fg">/opt/anaconda3/lib/python3.12/site-packages/pandas/core/indexes/base.py:3805</span>, in <span class="ansi-cyan-fg">Index.get_loc</span><span class="ansi-blue-fg">(self, key)</span>
 <span class="ansi-green-fg ansi-bold">   3804</span> <span style="font-weight:bold;color:rgb(0,135,0)">try</span>:
-<span class="ansi-green-fg">-&gt; 3805</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">_engine</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">get_loc</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">casted_key</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">-&gt; 3805</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>_engine<span style="color:rgb(98,98,98)">.</span>get_loc(casted_key)
 <span class="ansi-green-fg ansi-bold">   3806</span> <span style="font-weight:bold;color:rgb(0,135,0)">except</span> <span style="font-weight:bold;color:rgb(215,95,95)">KeyError</span> <span style="font-weight:bold;color:rgb(0,135,0)">as</span> err:
 
 File <span class="ansi-green-fg">index.pyx:167</span>, in <span class="ansi-cyan-fg">pandas._libs.index.IndexEngine.get_loc</span><span class="ansi-blue-fg">()</span>
@@ -1289,16 +1289,16 @@ The above exception was the direct cause of the following exception:
 
 <span class="ansi-red-fg">KeyError</span>                                  Traceback (most recent call last)
 Cell <span class="ansi-green-fg">In[22], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">df</span><span class="ansi-yellow-bg">[</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">'</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">imdb_rating</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">'</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">'</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">total_votes</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">'</span><span class="ansi-yellow-bg">]</span>
+<span class="ansi-green-fg">----&gt; 1</span> df[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">imdb_rating</span><span style="color:rgb(175,0,0)">'</span>, <span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">total_votes</span><span style="color:rgb(175,0,0)">'</span>]
 
-File <span class="ansi-green-fg">/opt/anaconda3/envs/IM939/lib/python3.12/site-packages/pandas/core/frame.py:4102</span>, in <span class="ansi-cyan-fg">DataFrame.__getitem__</span><span class="ansi-blue-fg">(self, key)</span>
+File <span class="ansi-green-fg">/opt/anaconda3/lib/python3.12/site-packages/pandas/core/frame.py:4102</span>, in <span class="ansi-cyan-fg">DataFrame.__getitem__</span><span class="ansi-blue-fg">(self, key)</span>
 <span class="ansi-green-fg ansi-bold">   4100</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>columns<span style="color:rgb(98,98,98)">.</span>nlevels <span style="color:rgb(98,98,98)">&gt;</span> <span style="color:rgb(98,98,98)">1</span>:
 <span class="ansi-green-fg ansi-bold">   4101</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>_getitem_multilevel(key)
-<span class="ansi-green-fg">-&gt; 4102</span> indexer <span style="color:rgb(98,98,98)">=</span> <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">columns</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">get_loc</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">key</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">-&gt; 4102</span> indexer <span style="color:rgb(98,98,98)">=</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>columns<span style="color:rgb(98,98,98)">.</span>get_loc(key)
 <span class="ansi-green-fg ansi-bold">   4103</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> is_integer(indexer):
 <span class="ansi-green-fg ansi-bold">   4104</span>     indexer <span style="color:rgb(98,98,98)">=</span> [indexer]
 
-File <span class="ansi-green-fg">/opt/anaconda3/envs/IM939/lib/python3.12/site-packages/pandas/core/indexes/base.py:3812</span>, in <span class="ansi-cyan-fg">Index.get_loc</span><span class="ansi-blue-fg">(self, key)</span>
+File <span class="ansi-green-fg">/opt/anaconda3/lib/python3.12/site-packages/pandas/core/indexes/base.py:3812</span>, in <span class="ansi-cyan-fg">Index.get_loc</span><span class="ansi-blue-fg">(self, key)</span>
 <span class="ansi-green-fg ansi-bold">   3807</span>     <span style="font-weight:bold;color:rgb(0,135,0)">if</span> <span style="color:rgb(0,135,0)">isinstance</span>(casted_key, <span style="color:rgb(0,135,0)">slice</span>) <span style="font-weight:bold;color:rgb(175,0,255)">or</span> (
 <span class="ansi-green-fg ansi-bold">   3808</span>         <span style="color:rgb(0,135,0)">isinstance</span>(casted_key, abc<span style="color:rgb(98,98,98)">.</span>Iterable)
 <span class="ansi-green-fg ansi-bold">   3809</span>         <span style="font-weight:bold;color:rgb(175,0,255)">and</span> <span style="color:rgb(0,135,0)">any</span>(<span style="color:rgb(0,135,0)">isinstance</span>(x, <span style="color:rgb(0,135,0)">slice</span>) <span style="font-weight:bold;color:rgb(0,135,0)">for</span> x <span style="font-weight:bold;color:rgb(175,0,255)">in</span> casted_key)
@@ -1322,14 +1322,14 @@ File <span class="ansi-green-fg">/opt/anaconda3/envs/IM939/lib/python3.12/site-p
 <div id="cell-45" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'imdb_rating'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
-<pre><code>np.float64(8.25744680851064)</code></pre>
+<pre><code>8.25744680851064</code></pre>
 </div>
 </div>
 <p>Or to calculate the total number of votes:</p>
 <div id="cell-47" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes'</span>].<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="24">
-<pre><code>np.int64(399810)</code></pre>
+<pre><code>399810</code></pre>
 </div>
 </div>
 <p>Or a combination of multiple columns:</p>
@@ -1657,20 +1657,20 @@ Name: 178, dtype: object</code></pre>
 <div id="cell-64" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>df.iloc[:<span class="dv">100</span>,<span class="dv">3</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="33">
-<pre><code>np.float64(8.483)</code></pre>
+<pre><code>8.483</code></pre>
 </div>
 </div>
 <div id="cell-65" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="op">-</span><span class="dv">100</span>:,<span class="dv">3</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="34">
-<pre><code>np.float64(8.062)</code></pre>
+<pre><code>8.062</code></pre>
 </div>
 </div>
 <p>If you are unsure how many rows you have then the count method comes to the rescue.</p>
 <div id="cell-67" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="op">-</span><span class="dv">100</span>:,<span class="dv">3</span>].count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="35">
-<pre><code>np.int64(100)</code></pre>
+<pre><code>100</code></pre>
 </div>
 </div>
 <div id="cell-68" class="cell" data-execution_count="36">
@@ -2331,7 +2331,7 @@ Understanding the criteria
 Name: season, Length: 188, dtype: bool</code></pre>
 </div>
 </div>
-<p>As you can see, it returns a boolean serie specifiying which rows are matching the criteria (<code>True</code>) and which ones are not (<code>False</code>)</p>
+<p>As you can see, it returns a boolean series specifiying which rows are matching the criteria (<code>True</code>) and which ones are not (<code>False</code>)</p>
 <p>As a side note, while writing the name of the dataframe twice may seem redundant, this means that we could filter rows based on other objects.</p>
 </div>
 </div>
