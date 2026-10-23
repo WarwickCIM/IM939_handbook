@@ -641,7 +641,12 @@ window.Quarto = {
 <section id="wine-dataset" class="level2" data-number="13.2">
 <h2 data-number="13.2" class="anchored" data-anchor-id="wine-dataset"><span class="header-section-number">13.2</span> Wine Dataset</h2>
 <p>For this exercise we will be using Wine Quality Dataset from <span class="citation" data-cites="cortezWineQuality2009">Cortez et al. (<a href="../../references.html#ref-cortezWineQuality2009" role="doc-biblioref">2009</a>)</span>. You can find more information about it here: <a href="https://doi.org/10.24432/C56S3T" class="uri">https://doi.org/10.24432/C56S3T</a></p>
-<p>What would be your research question? What do you like to learn, given the data you have?</p>
+<p><strong><em>What would be your research question? What do you like to learn, given the data you have?</em></strong></p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>Create a markdown cell below and put your research question there</p>
+</blockquote>
+</blockquote>
 </section>
 <section id="reading-data" class="level2" data-number="13.3">
 <h2 data-number="13.3" class="anchored" data-anchor-id="reading-data"><span class="header-section-number">13.3</span> Reading Data</h2>
@@ -652,10 +657,7 @@ window.Quarto = {
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="cell-6" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>wine <span class="op">=</span> pd.read_excel(<span class="st">'data/raw/winequality-red_v2.xlsx'</span>, engine <span class="op">=</span> <span class="st">'openpyxl'</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#You might need to use encoding, then the code will look like:</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># wine = pd.read_excel('data/raw/winequality-red_v2.xlsx', engine = 'openpyxl', encoding='UTF-8')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>wine <span class="op">=</span> pd.read_excel(<span class="st">'data/raw/winequality-red_v2.xlsx'</span>, engine <span class="op">=</span> <span class="st">'openpyxl'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="data-exploration" class="level2" data-number="13.4">
@@ -773,28 +775,27 @@ window.Quarto = {
 </div>
 <section id="check-your-variables" class="level3" data-number="13.4.1">
 <h3 data-number="13.4.1" class="anchored" data-anchor-id="check-your-variables"><span class="header-section-number">13.4.1</span> Check your variables</h3>
-<p>Use lmplot() function from Seaborn to explore linear relationship Input data must be in a Pandas DataFrame. To plot them, we provide the predictor and response variable names along with the dataset</p>
-<p>Did you find outliers or missing data? You can use function np.unique and find the unique elements of an array.</p>
+<p><strong>Hint:</strong> Use lmplot() function from Seaborn to explore linear relationship Input data must be in a Pandas DataFrame. To plot them, we provide the predictor and response variable names along with the dataset</p>
+<p><strong>Hint:</strong> Did you find outliers or missing data? You can use function np.unique and find the unique elements of an array.</p>
 <div id="cell-12" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>?np.unique</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Do you need to remove any cases?</p>
-<p>Did you need to standarize data?</p>
-<p>If you standarized data, try to plot them again</p>
-<div id="cell-20" class="cell" data-execution_count="11">
+<p><strong>Hint:</strong> Do you need to remove any cases?</p>
+<p><strong>Hint:</strong> Did you need to standarize data?</p>
+<p><strong>Hint:</strong> If you standarized data, try to plot them again</p>
+<div id="cell-19" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
 <section id="form-ideas-about-the-data" class="level2" data-number="13.5">
 <h2 data-number="13.5" class="anchored" data-anchor-id="form-ideas-about-the-data"><span class="header-section-number">13.5</span> Form ideas about the data</h2>
-<p>Before you move on to exploring correlations and maybe other kinds of models, try and build some sense of the relations between the variables. What are some relations that stand out. Do you know a bit more about the wines in this dataset or wines more generally?</p>
+<p>Before you move on to exploring correlations and maybe other kinds of models, try and build some sense of the relations between the variables. What are some relations that stand out. Do you know a bit more about the wines in this dataset or wines more generally that you can draw on to inform your exploration?</p>
 </section>
 <section id="move-on-to-building-some-simple-models" class="level2" data-number="13.6">
 <h2 data-number="13.6" class="anchored" data-anchor-id="move-on-to-building-some-simple-models"><span class="header-section-number">13.6</span> Move on to building some simple models</h2>
-<p>You can calculates a Pearson correlation coefficient and the p-value for testing non-correlation.</p>
-<p>We will be using the scikit-learn package here. This is a package we will be making use of very frequently.</p>
-<div id="cell-23" class="cell" data-execution_count="12">
+<p><strong>Hint:</strong> You can calculates a Pearson correlation coefficient and the p-value for testing non-correlation.</p>
+<div id="cell-22" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.stats</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>scipy.stats.pearsonr(???wine.???.values, ???wine.???.values)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
@@ -807,8 +808,8 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>using <strong>Scikit-learn</strong>, build a simple linear regression (OLS)</p>
-<div id="cell-25" class="cell" data-execution_count="13">
+<p><strong>Hint:</strong> using <strong>Scikit-learn</strong>, build a simple linear regression (OLS)</p>
+<div id="cell-24" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>est <span class="op">=</span> LinearRegression(fit_intercept <span class="op">=</span> <span class="va">True</span>)</span>
@@ -830,8 +831,8 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>What is the model’s mean squared error (<span class="math inline">\(MSE\)</span>) and the coefficient of determination (<span class="math inline">\(R^2\)</span>) ?</p>
-<div id="cell-27" class="cell" data-execution_count="14">
+<p><strong>Hint:</strong> What is the model’s mean squared error (<span class="math inline">\(MSE\)</span>) and the coefficient of determination (<span class="math inline">\(R^2\)</span>) ?</p>
+<div id="cell-26" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> metrics</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LinearRegression()</span>
@@ -861,7 +862,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>What’s the conclusion?</p>
+<p><strong>What’s the conclusion?</strong></p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">

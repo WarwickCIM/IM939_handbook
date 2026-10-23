@@ -1338,7 +1338,7 @@ dtype: float64</code></pre>
 </section>
 <section id="selecting-by-position" class="level4" data-number="6.6.1.2">
 <h4 data-number="6.6.1.2" class="anchored" data-anchor-id="selecting-by-position"><span class="header-section-number">6.6.1.2</span> Selecting by position</h4>
-<p>If we do not want to use column names, we can use <code>iloc</code> method by using the syntax <code>&lt;object&gt;.iloc[&lt;row slice&gt;, &lt;column slice&gt;]</code>, where a slice is a range of numbers separated by a colon <code>:</code>. So, if we were to select the value in the 4th row and 2nd column, we’d use:</p>
+<p>If we do not want to use column names, we can use <code>iloc</code> method by using the syntax <code>&lt;object&gt;.iloc[&lt;row slice&gt;, &lt;column slice&gt;]</code>, where a slice is a range of numbers separated by a colon <code>:</code>. So, if we were to select the value in the 5th row and 3rd column (remember Python starts indexing from 0), we’d use:</p>
 <div id="cell-51" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="dv">4</span>,<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="26">
@@ -2602,7 +2602,8 @@ Name: imdb_rating, dtype: float64</code></pre>
 </div>
 </div>
 <div id="cell-87" class="cell" data-execution_count="45">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span>  df[<span class="st">'season'</span>] <span class="op">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co">#can you guess what the difference is between the above operation and the one below?</span></span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span>  df[<span class="st">'season'</span>] <span class="op">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="writing-data" class="level2" data-number="6.8">
@@ -2856,7 +2857,7 @@ Name: imdb_rating, dtype: float64</code></pre>
 <h3 data-number="6.9.1" class="anchored" data-anchor-id="well-done"><span class="header-section-number">6.9.1</span> Well done!</h3>
 <p>Well done! You’ve reached the end of a pretty long notebook that went through a lot of details about how to work with this pretty critical package called Pandas. We haven’t really done a lot of detailed analysis in this one yet but we will use Pandas a lot and frequently.</p>
 <p>Your best friend will be the Pandas documentation – https://pandas.pydata.org/docs/index.html</p>
-<p>This documentation is great. We particuarly recomment the User Guide that will answer most of your questions and will give you a lot of code to copy and paste first and then modify to do what you need to do – https://pandas.pydata.org/docs/user_guide/index.html#user-guide</p>
+<p>This documentation is great. We particuarly recommend the User Guide that will answer most of your questions and will give you a lot of code to copy and paste first and then modify to do what you need to do – https://pandas.pydata.org/docs/user_guide/index.html#user-guide</p>
 
 
 </section>
